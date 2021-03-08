@@ -1,0 +1,271 @@
+\documentclass[a4paper,twoside,openany,notitlepage]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,italian]{babel}
+\usepackage{geometry}
+\geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm,%
+	heightrounded,bindingoffset=5mm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{caption} %per inserire immagini
+\usepackage{sidecap} %per inserire immagini con descrizione laterale
+\usepackage{wrapfig} %per inserire immagini a lato pagina, wrappando il testo intorno
+\usepackage{graphicx} %impaginazione
+\usepackage{blindtext} %boh
+\usepackage{isotope} %scrittura isotopi
+\usepackage{url} %scrittura di link
+
+%Per l'inserimento immagini la guida molto utile di wikipedia:
+%https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+
+%Definizione comando per notazione vettoriale e simbolo definizione
+\renewcommand{\vec}{\boldsymbol}
+\newcommand{\Def}{\overset{\mathit{def}}{=}}
+
+%Definizione comando per notazione scientifica
+\newcommand{\e}[1]{\cdot 10^{#1}}
+
+%Definizione unità di misura
+\newcommand{\angstrom}{\mbox{\normalfont\AA}}
+
+%Funzioni trigonometriche iperboliche ed inverse
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arcCot}
+\DeclareMathOperator{\arccsc}{arcCsc}
+\DeclareMathOperator{\arccosh}{arcCosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arcCsch}
+\DeclareMathOperator{\arccoth}{arcCoth}
+
+%Definizione comandi per teoremi, enunciati ecc
+\theoremstyle{definition}
+\newtheorem{definizione}{Definizione}
+\newtheorem*{definizionenn}{Definizione}
+\newtheorem*{principio}{Principio}
+\newtheorem*{postulato}{Postulato}
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}
+\newtheorem*{teoremann}{Teorema}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proprietà}{Si trova che}
+
+\begin{document}
+\frontmatter
+\author{Volpe Francesco}
+\title{Appunti di Astrofisica sperimentale}
+\date{}
+\maketitle
+
+\pagestyle{plain}
+\tableofcontents
+
+\chapter*{Prefazione}
+
+Il corso di cui si riportano gli appunti è dell'anno accademico 2020/2021 presso l'università di Ferrara ed è suddiviso in tre parti: la prima tenuta dal professore P. Rosati, la seconda tenuta dal professore C. Guidorzi, la terza (prettamente sperimentale) tenuta dal prof E. Virgilli.
+
+I concetti di base del corso sono ripresi e integrati dal corso di Astrofisica del primo semestre del terzo anno, a cui si aggiungono alcuni dettagli sulle misurazioni fotometriche e una trattazione aggiuntiva sulla misurazione delle distanze. Sulle grandi distanze verranno introdotti anche alcuni concetti del corso opzionale di Cosmologia, poiché risulterà impossibile continuare una trattazione classica. Finita la prima parte di trattazione dei telescopi e di tecniche di misura basate sui raggi x e sui "soft" x si passa alla seconda parte del corso, che tratterà la misura di masse, i sistemi binari fino ad arrivare ad accennare alle stelle compatte e i buchi neri, parlerà inoltre di onde gravitazionali, dell'astronomia multi-messaggera (che verrà introdotta nella prima parte del corso) e di tecniche di rivelazione di nuovi pianeti extra-solari. La terza parte tratterà la fisica dei rivelatori e l'astrofisica ad alte energie (quindi oltre i raggi x), la spettroscopia e fondamenti di analisi di X e $\gamma$, con esperienze al LARIX (laboratorio interrato al polo scientifico-tecnologico a Ferrara) e se sarà possibile all'INAF a Bologna.
+
+I libri principalmente usati sarano Astronomy Methods - H. Bradt, Astronomy principles and practice - A.E.Roy \& D. Clarke, Fundamental Astronomy - Kattunen.
+
+\mainmatter
+
+\part{Rosati}
+
+\chapter{Concetti base di osservazioni e misurazioni}
+
+\section{Sonde di informazione}
+
+Spaziamo in varie scale di grandezza, dalle scale scolari fino a quelle intergalattiche.
+Le sonde di informazione principali fino a circa il 2015 erano le onde elettromagnetiche, con tutte le loro caratteristiche. Successivamente vennero rivalutati e sempre più utilizzati i raggi cosmici, ossia elettroni, protoni, nuclei pesanti e altre particelle molto energetiche. Una grande aggiunta alle fonti di informazione fu la scoperta dei neutrini cosmici e successivamente quella delle onde gravitazionali, entrambi questi ultimi sono molto difficili da rivelare, ma il loro vantaggio è che subiscono pochissime alterazioni nonostante le gigantesche distanze percorse. Infatti, alcune onde gravitazionali portano informazioni fino al Big Bang, questo le rende, insieme ai neutrini, delle ottime sonde d'informazione, rendendo possibile studiare direttamente la fisica delle fonti, a differenza di quanto avviene con le onde elettromagnetiche, soggette ad un grande numero di perturbazioni e assorbimenti prima di arrivare a noi. Lo spettro di queste ultime viene modificato pesantemente, passando per il mezzo interstellare e il mezzo intergalattico, subisce redshift, scattering, assorbimenti, distorsioni spaziali, cambi della polarizzazione e così via. A questo si aggiungono gli effetti dell'atmosfera nel caso l'osservatorio si trovi sul pianeta e non in orbita, effetti come l'aumento di background dato dalla luminosità del cielo, oltre ad ulteriori distorsioni e assorbimenti. Questo rende chiaramente le onde elettromagnetiche, pur quanto facilmente rivelabili, difficili da trattare, poiché prima di interpretare la fisica della fonte del segnale bisogna fare un ottimo lavoro di comprensione del mezzo che il segnale ha percorso ed elaborare correttamente quest'ultimo. Nel caso di rivelatori a terra, è necessario scegliere la tecnologia di rivelazione e la postazione in cui installare i dispositivi per ridurre al minimo il disturbo atmosferico. L'astronomia multi-frequenza è ora estremamente diffusa e sfruttata per cui è importante ricordarsi i valori della bande in cui si lavora e delle relative energie poiché saranno frequenti i salti dal radio fino ai raggi X.
+
+\begin{figure}[h]
+	%figura presa dalle slide
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Immagini/trasparenza_atm.png}
+	\caption*{Trasparenza atmosferica in funzione della radiazione incidente}
+\end{figure}
+
+Vedendo un classico diagramma delle frazioni di atmosfera in funzione delle lunghezze d'onda, avremo due linee, una indica la frazione di atmosfera al di sotto della quale il 50\% della radiazione in quell'ascissa viene schermata, e una seconda linea, più bassa, che indica la porzione di atmosfera necessaria a schermare il 90\%. Si nota che la seconda curva, relativamente ai raggi oltre l'ottico, compresi X e $\gamma$, è fortunatamente ben al di sopra dei $10km$ di quota, cosa che preserva la vita sul pianeta ma al tempo stesso rende necessari satelliti e rivelatori ben al di sopra dell'atmosfera per lo studio di eventi particolarmente energetici e che quindi riguardano principalmente i raggi X e $\gamma$. Per motivi di assorbimento delle molecole presenti nell'atmosfera (azoto molecolare, acqua, ossigeno molecolare, anidride carbonica ecc) si presenta un'assorbimento nullo nella banda del radio ma più interessante ancora la finestra presente nella banda ottica, a cui il nostro occhio si è adattato nel corso dell'evoluzione, finestra che va da $4000\angstrom$ a $9000\angstrom$. Un'altra finestra che ha acquisito interesse negli ultimi anni e in cui l'assorbimento è meno efficiente e a quota minore è quella dell'infrarosso, analizzabile anche tramite palloni aerostatici (pur quanto il satellite rimanga sempre la scelta più fine e con meno disturbo del segnale). Si parla di vicino infrarosso quando si va nel millimetrico, ossia sopra i $500\mu m$, fino ad arrivare alla banda radio che inizia a $2mm$ di lunghezza d'onda. Per questa banda è fondamentale, oltre il raggiungere una buona quota, di trovarsi in un posto molto secco, in quanto il vapore acqueo è estremamente efficiente in questo assorbimento. Il radio non presenta particolari problemi se non a lunghezze d'onda eccessivamente grandi per cui la ionosfera diventa opaca per via dell'assorbimento degli elettroni. Solitamente si parla di energia $h\nu$ dei fotoni o delle frequenze più che delle lunghezze d'onda, soprattutto per le bande maggiori, ma la trattazione rimane analoga e per il radio e infrarosso si continua a parlare anche in termini di lunghezza d'onda $\lambda$. Parlando da un punto di vista storico, la tecnologia astrofisica ha spesso fatto da spin-off per quella bellica, la prima tecnologia ad essersi sviluppata fu quella radio per le comunicazioni durante la seconda mondiale, così come per gli X relativamente all'osservazione di eventuali esplosioni di ordigni atomici negli anni '50 e '60, negli anni '90 si sviluppò quella infrarossa e i detector a stato solido, questi ultimi furono di impatto fondamentale sulla qualità delle analisi nell'ottico e nell'infrarosso. I primi rivelatori a stato solido (SSD - solid state detector) coprivano 256 pixel, mentre oggi ci sono camere intere che coprono dei gigapixel. Per le singole bande esistono poi grafici più specifici descriventi l'assorbimento relativo in funzione della lunghezza d'onda a quota fissata.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	%figura presa dalle slide
+	\vspace{-8pt} %toglie lo spazio bianco in eccesso che figure e centering mettono
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Immagini/trasparenza_atm_IR.png}
+	\vspace{-5pt}
+	\caption*{Trasparenza atmosferica nell'infrarosso e vicino infrarosso}
+	\vspace{-8pt}
+\end{wrapfigure}
+
+Si nota nel grafico come ci siano varie finestre nel vicino infrarosso, corrispondenti alle parti di banda non oscurate, e che combaciano di fatti con i filtri J, H, K appositamente tarati, cosa peculiare degli IR, mentre nell'ottico non avendo assorbimento possono essere costruiti filtri secondo criteri di comodità. Le osservazioni si fanno particolarmente difficili da terra per onde oltre i $2\mu m$, poiché la luminosità del cielo va a creare un background troppo fastidioso per fotoni così poco energetici, per cui si arriva ad avere troppo contrasto nelle rivelazioni. Per questo, i siti astronomici devono essere messi lontani dalle città, per via del loro grande inquinamento luminoso, oltre che ad alta quota e in luoghi secchi, per altri motivi che discuteremo i siti migliori sono sulle isole o nelle coste occidentali dei continenti per via della costanza degli eventi ad alta quota (i venti tirano da ovest a est e così facendo sopra gli osservatori non passano eventi che hanno attraversato la terra), o ai poli per via della quota e dell'aria molto secca.
+
+Un fattore molto importante è quello della luminosità del cielo, soprattutto per le fonti più deboli, che esse siano puntiformi o meno, e si introduce il concetto di brillanza superficiale del cielo per quantificare questo fattore di disturbo. Concetto base per introdurre la brillanza è quella di magnitudine, che è il flusso elettromagnetico per unità di angolo solido osservato. Per quantificare il fondo del cielo, si può prendere un secondo d'arco di cielo, o equivalentemente un grado sessagesimale e dividerlo poi per 3600, e poi misurare il flusso in sola quella porzione di cielo, facendo il rapporto esce quanto cercato. Ci si chiede come mai di notte non si osservi un cielo completamente nero e questo è dovuto in parte, nelle zone più isolate, prevalentemente a fonti di origine extra-terrestre, di cui la principale è la luce zodiacale. Dalla formazione del sistema solare e dei pianeti è rimasta una nube di gas e detriti proto-solare (silicati e materiali pesanti, di dimensione molto varia) che si trova sullo stesso piano dei pianeti e del Sole (l'eclittica) per conservazione del momento angolare (essendo che si è formato prima il sole e successivamente dai detriti i pianeti).
+
+\begin{figure}[h]
+	%figura presa dalle slide
+	\centering
+	\includegraphics[width=0.6\textwidth]{./Immagini/brillanza_sup_cielo.png}
+	\caption*{Fonti della brillanza superficiale del cielo}
+\end{figure}
+
+Questa polvere si trova tra i $250K$ e i $300K$ e viene illuminata dai raggi solari, nella banda dell'ottico, da qui la cosiddetta luce zodiacale, con picco del flusso sui $3\mu m$ per via della propria emissione in quanto corpo nero, e con picco tipico del flusso solare (a circa $0.9\mu m$) per quanto riguarda lo scattering dei raggi provenienti dal sole, il quale è anch'esso un corpo nero. Di fatti la curva in entrambi i punti segue quella del corpo nero essendo la sovrapposizione di due flussi emittenti di corpi neri, perciò risulta particolarmente importante per il trattamento dell'irraggiamento termico conoscere la legge di Wien. Oltre a questo fattore c'è anche il fondo cosmico, il più perfetto corpo nero misurato, dato dal Big Bang e dominante sul fondo nella banda del millimetrico, inoltre c'è il mezzo intergalattico illuminato da stelle particolarmente luminose, più fredde del sole, che danno un contributo minore in ordini di grandezza ma comunque rilevante al fondo. Mettendosi nel sistema di riferimento dell'eclittica (che si ricorda essere la traiettoria del Sole vista dalla Terra), ossia prendendo asse x e y sull'eclittica e asse z perpendicolare a tale piano, prendendo come origine l'equinozio vernale, si possono fare osservazioni meno disturbate dalla luce zodiacale andando verso il polo nord eclittico, che sarà il punto più lontano dall'eclittica e quindi dalla serie di detriti che generano il rumore di fondo.
+
+Un secondo contributo alla brillanza superficiale del cielo è dato dai fattori di origine terrestre: air glow, aurora boreale (frutto dell'attività solare), emissione termica del pianeta, luce lunare diffusa, inquinamento luminoso dato dalle attività umane (di grande disturbo, per questo i siti di osservazione sono molto isolati), nano-satelliti in orbita (ad esempio di Google, Space X ecc, che vanno a mettersi in mezzo alla linea di osservazione durante le misurazioni e sono in aumento giornaliero vertiginoso). Il primo fattore riguarda le molecole e gli atomi presenti in atmosfera, soprattutto negli strati più alti, e si tratta dell'emissione a righe (secondo i vari spettri atomici) a seguito dell'irraggiamento che subiscono dai fotoni in arrivo dallo spazio, questa componente è particolarmente di disturbo da terra e possiede sia una componente spettrale a righe che una parte continua di fondo. L'emissione termica è la semplice emissione del pianeta in quanto corpo nero, il cui picco di emissione, data la temperatura, si attesta su qualche micron, i prossimi satelliti verranno per questo inviati a milioni di km dalla Terra, poiché fonte di grande rumore di fondo per le osservazioni oltre il vicino infrarosso, come è stato osservato dalle acquisizioni del telescopio spaziale Hubble.
+
+\section{Misure fotometriche}
+\subsection*{Sorgenti puntiformi}
+Prendiamo una sorgente puntiforme con emissione elettromagnetica isotropa, si definisce \textbf{densità spettrale di flusso} l'energia raccolta per unità di superficie collettrice, di tempo e di banda di frequenza passante, essendo che sarà un'emissione a spettro si deve distinguere per le varie bande analizzate:
+\begin{equation*}
+	dE=S_\nu dAdtd\nu
+\end{equation*}
+Le unità di misura cambiano a seconda della banda per comodità, solitamente per il radio si usa il Jansky ($1 Jansky = \e{-26} W/m^2/Hz$). Per i raggi X e $\gamma$ si usa l'energia invece che l'unità di banda e si adopera $erg/cm^2/s$, passando quindi alla \textbf{densità di flusso}, definita come la densità di flusso spettrale integrata sulla specifica banda di frequenze:
+\begin{equation*}
+	\Phi=F_{\Delta\nu}=\int_{\Delta\nu}^{}S(\nu)d\nu = S_{mean}\Delta\nu
+\end{equation*}
+Si definisce da qui la densità di flusso di fotoni come il rapporto tra la densità di flusso in una banda e l'energia media specifica di quella banda:
+\begin{equation*}
+	\Phi_{ph}=\frac{F_{\Delta\nu}}{<E>}
+\end{equation*}
+Bisogna fare attenzione al cambio tra unità di frequenza e unità di lunghezza d'onda:
+\begin{equation*}
+	S_\nu d\nu = S_\lambda d\lambda, \quad \lambda=\frac{c}{\nu} \quad \longrightarrow \quad
+	S_\nu = -S_\lambda \frac{\lambda^2}{c}, \quad S_\lambda = -S_\nu \frac{\nu^2}{c}
+\end{equation*}
+Si continua introducendo la \textbf{potenza ricevuta} da un'antenna ricevente come l'integrale della densità di flusso spettrale sull'area collettrice nella specifica banda:
+\begin{equation*}
+	P=A_{eff}\int_{\Delta \nu}^{} S(\nu)d\nu
+\end{equation*}
+Espressa in $W$, si tiene conto delle efficienze delle componenti costituenti i detector nel termine $A_{eff}$ con cui si intende l'area efficace alla rivelazione.
+Si passa alle misure fotometriche in relazione alle sorgenti stesse col definire il concetto di \textbf{luminosità}: questa è l'energia emessa per unità di tempo e in una determinata banda, che per una sorgente isotropa diventa
+\begin{equation*}
+	L_{\Delta\nu} =F_{\Delta\nu} \cdot 4\pi R^2, \quad R=\text{distanza sorgente}
+\end{equation*}
+Dove il termine di superficie deriva dalla superficie sottesa dall'angolo solido che ha come vertice la sorgente puntiforme, tiene in questo modo conto della "diluizione" dell'energia nello spazio in cui viene irradiata. Questo concetto si estende alla cosiddetta \textbf{luminosità bolometrica} nel momento in cui si trattano tutte le bande di emissione di una stessa sorgente:
+\begin{equation*}
+	L_{bol} = 4\pi R^2 \int_{-\infty}^{+\infty} F(\nu) d\nu
+\end{equation*}
+Una costante importante nel nostro sistema è la \textit{costante solare}, che è la potenza emessa per metro quadro subito al di sopra della nostra atmosfera, che è pari a $1366W/m^2$, da qui per trovare la luminosità del Sole rispetto al nostro pianeta è sufficiente moltiplicare per $4\pi R^2$, dove $R$ diventa la distanza tra la terra ed il Sole, $R=1.5\e{11}m$ (altra costante abbastanza ricorrente), da cui la luminosità bolometrica del Sole è $L_\odot=3.8\e{26}W$. Prendendo un esempio, se si considera una sorgente radio al centro galattico, con densità di flusso tipica di queste sorgenti $F_{50-150MHz}=1Jy$, avrà una luminosità data dalla definizione di luminosità per sorgenti isotrope, dove si ricorda che $1Jy=1\e{-26}W/m^2$, che la distanza tra la Terra e il centro galattico è $R=2.4\e{20}m$ e che $\Delta\nu=1\e{8}Hz$, da cui $L_{radio} = 1\e{-26} \cdot 1\e{8} \cdot 4\pi \cdot (2.4\e{20})^2=7\e{23}W$. Lo stesso discorso può essere fatto per il quasar 3C273 alimentato da un buco nero a distanze cosmologiche ($R=749Mpc=749 \cdot 3\e{22}m$), dove $F_\nu=100Jy$ nella banda $0.1-1GHz$, da cui la sua luminosità nel radio è $L_{radio} = 100\e{-26} \cdot 900\e{6} \cdot 4\pi (749 \cdot 3\e{22})^2 = 5\e{36}W$, mentre $L_{bol} = 10^{38}W\sim10^{12}L_\odot$.
+
+Concentrandoci sullo spettro solare, ci saranno due curve, una misurata in orbita e che approssimerà meglio l'andamento di un corpo nero ideale, mentre una misurata da terra, la quale è notevolmente diversa, sia più schiacciata per via della schermatura data dai vari strati dell'atmosfera sia frastagliata di righe di assorbimento corrispondenti alle righe di assorbimento delle molecole presenti in atmosfera. Integrando la curva dello spettro di irradiazione al di fuori dell'atmosfera si ottiene la citata costante solare pari a $1366W/m^2$, mentre integrando quella ricevuta a terra si trova circa $1kW/m^2$. Chiaramente questo valore non è sempre costante così come non lo è il sole, la cui superficie è contraddistinta dalle sue macchie solari che sono zone di depressione magnetica in cui il gas è più freddo, dando valori di potenza in emissione oscillanti nel tempo, sia su scale annue che giornaliere, e il cui valore medio è la costante trovata.
+
+\subsection*{Sorgenti estese}
+Passando alle sorgenti estese, il concetto di flusso spettrale va esteso ad un elemento della superficie emittente, introducendo il concetto di \textbf{intensità specifica} $I_\nu (\theta,\phi)$, definita come la densità di flusso ricevuta per unità di angolo solido $d\Omega$ nella direzione $\theta,\phi$ (l'angolo può essere espresso in steradianti come in arcosecondi), dove nell'integrazione dell'area bisogna considerare l'area normale alla direzione di emissione ed è stato introdotto un sistema di riferimento solidale all'osservatore.
+\begin{equation*}
+	S(\nu)=\int_{\theta}^{}\int_{\phi}^{} I(\theta,\phi,\nu)\cos\theta d\Omega
+\end{equation*}
+Questa specificità deriva anche dal fatto che un corpo esteso ammette la possibilità di emettere in maniera non isotropa. Da questa definizione deriva quella di \textbf{brillanza superficiale osservata} $B_{obs}$, ossia la densità di flusso misurata in una certa banda per unità di angolo solido di osservazione:
+\begin{equation*}
+	B_{obs} = \frac{F}{\Delta\Omega} = \frac{L}{4\pi R^2}\frac{R^2}{\Delta S} =
+	\frac{L}{4\pi\Delta S}
+\end{equation*}
+La cui caratteristica più interessante sia come questa quantità non dipende dalla distanza a cui si trova il corpo rispetto l'osservatore. Un'altra unità basata invece sulle caratteristiche della fonte più che sulla sua osservazione è la \textbf{brillanza superficiale emessa} $B_{em,\nu}(\theta,\phi)$, definita come la potenza irradiata per unità di superficie emittente e unità di frequenza e di angolo solido $d\Omega$ nella direzione $(\theta,\phi)$. Un esempio tipico di quest'ultima quantità e di come la si possa usare per calcolare il flusso emesso è considerare la superficie di una stella, in cui ogni sezione della sua superficie emetterà come un corpo nero, da cui il flusso emesso sarà dato da:
+\begin{equation*}
+	F_\nu = \int_{\Omega}^{} B_{em,\nu} \cos\theta d\Omega =
+	\int_{0}^{2\pi} \int_{0}^{\frac{\pi}{2}} B_{em,\nu} \cos\theta\sin\theta d\theta d\phi =
+	\pi B_{em,\nu}
+\end{equation*}
+Dove per gli estremi di integrazione si considera necessariamente un solo emisfero alla volta, in quanto una stella irradia chiaramente solo in uscita, e in cui è considerata la sezione di superficie ortogonale la direzione di emissione. Trattandosi di un corpo nero, la sua brillanza superficiale emessa avrà la seguente forma:
+\begin{equation*}
+	B_{em,\nu} (T) = \frac{2h\nu^3}{c}\frac{1}{e^{h\nu/kT}-1}
+\end{equation*}
+La densità di flusso $F_\nu$ trovata è però in unità di frequenza, integrando su tutte le frequenze troviamo quella che è la luminosità per unità di area emittente:
+\begin{equation*}
+	\frac{dL}{dA} = \int_{0}^{\infty} F_\nu d\nu =
+	\frac{2\pi}{c^2}h \biggl( \frac{kT}{h} \biggr)^4 \int_{0}^{\infty} \frac{x^3 dx}{e^x-1} =
+	\sigma T^4 \qquad \text{dove} \quad
+	\sigma = \frac{2\pi^5k^4}{15c^2h^3} = 5.67\e{-8}W/m^2/K^4
+\end{equation*}
+Che altri non è che la \textbf{legge di Stefan-Boltzmann}, dove $\sigma$ è la costante di nome analogo (per lo svolgimento si ricorda che l'integrale in $dx$ da $\pi^4/15$). Ne consegue che per un oggetto sferico come una stella, considerando $R$ il suo raggio, la potenza totale emessa sarà data da:
+\begin{equation}
+	\label{eq:Stef-Boltz}
+	L = 4\pi R^2 \sigma T^4
+\end{equation}
+
+\subsection*{Magnitudine e colore}
+Dal flusso si introduce una scala storica di utilizzo molto diffuso in astronomia e risalente nella sua prima definizione a Ipparco, introdotta in modo da risultare più comoda e lineare rispetto alla sensibilità dell'occhio umano, che risponde in maniera logaritmica alla sollecitazione luminosa, dovendosi adattare ad un vastissimo range di luminosità, passando dal buio della notte fonda alle giornate più soleggiate. Da Ipparco è stato poi esteso da Pogson nella seconda metà del diciannovesimo secolo ed è una scala inversa, in cui una magnitudine minore significa un flusso, e quindi una luminosità, maggiore (in una certa banda), in cui una differenza di 5 magnitudini corrisponde a una differenza di flusso di un fattore 100, ossia due ordini di grandezza maggiore o minore:
+\begin{equation*}
+	m_1-m_2 = -2.5log_{10}\frac{F_1}{F_2} \quad \longrightarrow \quad \frac{F_1}{F_2} = 10^{0.4(m_2-m_1)}
+\end{equation*}
+Dove i flussi $F$ sono quelli rivelati in una certa banda (isolata tramite filtro), pesati per la funzione di risposta $\psi(\nu)$ del mezzo di rivelazione e del telescopio (inclusa l'estinzione atmosferica). Questi filtri classicamente dividono in tre gruppi le bande di studio di maggiore interesse e sono le UBV, U sta per ultravioletto, B per il blu e V per il visibile.
+In tempi moderni, è stato necessario definire una magnitudine zero di riferimento, da sostituire al posto di $m_2$ in modo da avere un riferimento standard, e questo compito è stato assegnato alla stella Vega, per cui la magnitudine di un oggetto diventa:
+\begin{equation*}
+	m = -2.5\log\frac{F}{F_{Vega}} + 0 \qquad \text{dove} \quad
+	m_{Vega} = -2.5 \biggl[ \log\int R(\lambda)f(\lambda)d\lambda - \log\int R(\lambda)f_{Vega}(\lambda)d\lambda \biggr]
+\end{equation*}
+Che è l'integrale dello spettro della stella Vega, particolarmente calda, che nel sistema UBV ha magnitudine $m=0.03$ in tutte e tre le bande. Con diversi telescopi, di grandi dimensioni con raggi di $8m$, riusciamo ad arrivare ad osservare oggetti a magnitudini molto alte, ad esempio riusciamo a rivelare con un'ora di esposizione oggetti a magnitudine 25, aumentando l'esposizione a dieci ore anche oggetti a magnitudine 27, fino a telescopi spaziali che con un paio di settimane di integrazione arrivano a magnitudine 30. Per passare da magnitudini a flussi per ogni banda tra le varie unità di misura ci sono tabelle apposite molto comode. Vedendo le tabelle delle varie magnitudini in banda da osservatori a terra ed osservatori in orbita, si nota come la luminosità del cielo sia minore per un osservatore in orbita, per via dell'effetto dell'atmosfera, particolarmente efficace nella schermatura nel vicino infrarosso, motivo per cui, come anticipato, in orbita è molto conveniente e vengono rivelazioni molto più pulite nella banda del vicino infrarosso, a differenza della situazione a terra che è totalmente opposta per questa stessa banda. Nello spazio la brillanza superficiale del cielo è perciò data essenzialmente dalla luce zodiacale.
+
+Si introduce il concetto di colore, definito come la differenza di magnitudine di un corpo in due filtri, o bande, successive, questo da appunto un'indicazione del colore della stella tratta, nel caso la differenza tra il filtro U e B sia positiva, vorrà dire che la magnitudine in B sarà minore e la stella avrà quindi un colore tendente più al blu.
+
+INSERISCI IMMAGINE GRAFICO COLORE DI QUASAR E STELLE
+
+Un'applicazione interessante di questo parametro è il suo utilizzo nella classificazione delle galassie e sorgenti cosmiche, come i quasar, particolarmente blu per la loro emissione tipica (non di natura termica come può essere quella del Sole), mentre stelle e galassie si collocano più sul rosso. Questo dato, molto utile per capire la temperatura di una stella, può essere anche usato in relazione alla luminosità delle sorgenti stesse, dando il famoso e molto utilizzato diagramma HR (Hertzsprung-Russell):
+
+INSERISCI DIAGRAMMA HR
+
+Dove il colore B-V è posto in ascissa e la luminosità in ordinata, in cui si vede un andamento ben preciso lungo una diagonale della maggior parte delle stelle presenti nel grafico, andamento dovuto alla fusione dell'Idrogeno in Elio nelle stelle e descritta dalle equazioni della struttura stellare, che tracciano questa curva come evoluzione temporale di ogni stella.
+
+Trattando le sorgenti astrofisiche, quando si parla di estinzione si deve distinguere tra l'estinzione "spaziale" che avviene nei mezzi intergalattico e interstellare prima che i fotoni arrivino, e quella che invece è dovuta all'atmosfera e di grande impatto nei siti di rivelazione posti a terra. Il fenomeno dell'estinzione atmosferica è una cosa di cui abbiamo esperienza tutti i giorni quando la luce solare deve attraversare grandi strati dell'atmosfera, come succede ad esempio al tramonto, mentre allo Zenit il fenomeno è minimizzato.
+
+INSERISCI IMMAGINE ESTINZIONE ATMOSFERICA
+
+Il fenomeno prende questo nome dal fenomeno stesso, ossia dall'estinzione vera e propria del flusso incidente, dovuto al ripetuto assorbimento e scattering dei fotoni spaziali incidenti sulle molecole atmosferiche, che sarà quantificabile in modo proporzionale alla distanza zenitale e conseguentemente alla porzione di atmosfera che il fascio deve attraversare, data $m_0$ la magnitudine di una stella fuori l'atmosfera:
+\begin{equation*}
+	m(\zeta) = m_0 + \Delta m \sec \zeta
+\end{equation*}
+Dove $\sec\zeta$ è detta \textit{massa d'aria} ed è la costante di proporzionalità dell'estinzione, e rappresenta quanta massa d'aria aggiuntiva debba attraversare il fascio rispetto a $dz$ (vedere grafico per capire), dove $\zeta$ è l'angolo che esprime la distanza zenitale. Essendo che lo scattering a cui si assiste è di tipo elastico si sta trattando uno scattering di Rayleigh, il cui fascio diffuso ha intensità $I \propto I_0 \lambda^{-4}$ rispetto all'intensità $I_0$ del fascio incidente con lunghezza d'onda $\lambda$, ciò significa che questo tipo di scattering interessa di più le bande a frequenza maggiore come il blu, di fatti il sole al tramonto tende di più al rosso. Di questa cosa si tiene conto tramite il parametro introdotto in formula che ha valori $\Delta m = 0.6, 0.3, 0.2$ rispettivamente per U, B e V; per cui l'andamento lineare dell'estinzione da pendenze diverse per bande diverse, infatti andando nel vicino infrarosso l'estinzione è quasi trascurabile a meno che non faccia una rivelazione a distanze zenitali particolarmente grandi.
+
+Fin'ora si è trattata la magnitudine "apparente" dei corpi celesti, essendo che queste non tenevano conto della distanza a cui l'oggetto rivelato si trovi, definendo la magnitudine come rapporto dei flussi ricevuti. Chiaramente aumentando la distanza, per i fattori trattati, il flusso ricevuto sarebbe minore e conseguentemente la magnitudine di quel corpo aumenterebbe, per questo motivo si introduce il concetto di \textbf{magnitudine assoluta} $M$, volta ad essere una misura direttamente proporzionale la luminosità e definita come la magnitudine che avrebbe la stella tratta se fosse posta ad una distanza standard di $10pc$ (parsec) rispetto l'osservatore:
+\begin{equation}
+	\label{def:mag-abs}
+	\mu \Def m-M = -2.5 \log_{10} \frac{F}{F_{10pc}} =
+	-2.5 \log_{10} \frac{10}{d_{pc}} =
+	5\log d_{pc}-5 \quad \longrightarrow \quad
+	d = 10^{0.2(m-M)} \cdot 10pc
+\end{equation}
+Questo appena introdotto è detto \textit{modulo di distanza} e si è definito nell'ipotesi di assorbimento nullo, di fatti è un parametro che dipende dal filtro utilizzato e dovrebbe includere l'effetto dell'assorbimento interstellare per essere considerabile una misura della distanza vera a cui si trova la stella, nel caso del sole $M_{\odot,V}=4.82$. Invertendo la formula, si ha uno strumento molto utile di classificazione delle stelle osservate e di calcolo della distanza a cui esse si trovino, isolando ad esempio una stella nella galassia di Andromeda con lo Space Telescope, nota la distanza esprimibile tramite il modulo di distanza e misurata la magnitudine apparente si trova la magnitudine assoluta $M=m-\mu=4.6$, molto simile a quella solare! Lo stesso è possibile fare con le galassie, prendendone una simile alla nostra, composta da $10^{11}$ stelle e partendo dalla sua luminosità $L_B=10^{10}L_\odot$:
+\begin{equation*}
+	M_B = -2.5 \log \biggl( \frac{10^{10}L_\odot}{L_\odot} \biggr) + M_{\odot,R} = -25 +5.5 =-19.5
+\end{equation*}
+Si conclude deducendo il concetto di \textbf{magnitudine bolometrica} come estensione a tutto lo spettro del concetto di magnitudine assoluta:
+\begin{equation*}
+	M_{bol}=M_V+BC
+\end{equation*}
+Dove il termine additivo $BC$ è la cosiddetta \textit{correzione bolometrica}, sapendo che $M_{\odot,bol}=4.74$, si deduce che
+\begin{equation*}
+	M_{bol} = -2.5 \log \biggl( \frac{L}{L_\odot} \biggr) + 4.74 \qquad
+	\text{con} \quad L_\odot=3.845\e{26}W
+\end{equation*}
+
+\section{Misure e scale delle distanze}
+Fintanto che si tratta il sistema solare, di dimensioni decisamente ridotte rispetto all'universo nella sua interessa, si definisce \textit{l'unità astronomica} come la distanza media tra la Terra e il Sole: $1AU=1.5\e{11}m$. Un'altra unità di distanza introdotta, di dimensioni decisamente maggiori rispetto l'unità astronomica, è il \textit{parsec}: $1pc=206265AU=3\e{16}=3.6ly$. Definendo il sistema solare come la zona dello spazio fino a cui il Sole, con i propri venti, riesce ad avere un'influenza dinamica sui corpi al suo interno, allora si trova l'eliosfera, non perfettamente sferica e di raggio pari a circa $100AU$, distanza a cui si sono spinti i telescopi lanciati negli anni settanta Voyager 1 e 2, i quali dovranno arrivare a un milione di unità astronomiche prima di incontrare la prossima stella.
+
+Si ridefinisce il parsec e si introduce il concetto di \textbf{parallasse trigonometrica}, metodo matematico di indagine che svelò per primo le scale della nostra galassia, introdotto da E. Bessel nella prima metà del diciannovesimo secolo. Prima di questo metodo si supponeva che le stelle fossero luminose tanto quanto il Sole, per cui sarebbe bastato misurarne il flusso e tramite la magnitudine assoluta ricavare la distanza, metodo chiaramente errato in quanto le stelle nell'universo possono essere anche estremamente più luminose della nostra.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	%figura presa dal bradt - astronomy methods
+	\vspace{-10pt} %toglie lo spazio bianco in eccesso che figure e centering mettono
+	\centering
+	\includegraphics[width=0.49\textwidth]{./Immagini/parallasse.png}
+	\caption*{Visualizzazione della tecnica di parallasse}
+	\vspace{-10pt}
+\end{wrapfigure}
+
+Questo metodo geometrico, particolarmente utile per le stelle più vicine al nostro sistema, si basa sul moto circolare apparente che esse compiono rispetto ad un osservatore a terra per via del moto di rivoluzione terrestre, infatti ruotando la Terra attorno al Sole, la stella sembrerà compiere nel cielo una rotazione sul piano ortogonale e centrato nella congiungente tra lei e il Sole. Essendo il periodo di rivoluzione del nostro pianeta annuo, prendere misure della posizione della stella a distanza di sei mesi l'una dall'altra permette di calcolare la distanza a cui essa si trova secondo la seguente:
+\begin{equation}
+	\label{def:parallasse}
+	\tan\theta_{par} \simeq \theta_{par} = \frac{a}{r}
+\end{equation}
+Da cui deriva la definizione formale di parsec, come la distanza alla quale la stella ha parallasse di un arcosecondo, ne deriva che:
+\begin{equation*}
+	D(pc) = \frac{1}{\theta(arcsec)} \qquad \text{dove} \quad
+	1rad = \frac{180}{\pi} \cdot 3600 = 206265 arcsec
+\end{equation*}
+
+
+\end{document}
