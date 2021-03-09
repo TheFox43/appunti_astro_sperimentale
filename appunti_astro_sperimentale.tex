@@ -206,7 +206,12 @@ INSERISCI IMMAGINE GRAFICO COLORE DI QUASAR E STELLE
 
 Un'applicazione interessante di questo parametro è il suo utilizzo nella classificazione delle galassie e sorgenti cosmiche, come i quasar, particolarmente blu per la loro emissione tipica (non di natura termica come può essere quella del Sole), mentre stelle e galassie si collocano più sul rosso. Questo dato, molto utile per capire la temperatura di una stella, può essere anche usato in relazione alla luminosità delle sorgenti stesse, dando il famoso e molto utilizzato diagramma HR (Hertzsprung-Russell):
 
-INSERISCI DIAGRAMMA HR
+\begin{figure}[h]
+	%figura presa da Wikipedia
+	\centering
+	\includegraphics[width=0.6\textwidth]{./Immagini/Diagramma_HR.png}
+	\caption*{Diagramma Hertzsprung-Russell}
+\end{figure}
 
 Dove il colore B-V è posto in ascissa e la luminosità in ordinata, in cui si vede un andamento ben preciso lungo una diagonale della maggior parte delle stelle presenti nel grafico, andamento dovuto alla fusione dell'Idrogeno in Elio nelle stelle e descritta dalle equazioni della struttura stellare, che tracciano questa curva come evoluzione temporale di ogni stella.
 
@@ -270,6 +275,27 @@ Dove la seconda rappresenta il rapporto di conversione da arcosecondi ($1\,arcse
 \begin{equation*}
 	D(pc) = \frac{1}{\theta(arcsec)}
 \end{equation*}
-Le applicazioni di questa tecnica hanno dato la possibilità di fare osservazioni a distanze inimagginabili all'epoca, oggi abbiamo osservatori che arrivano ad avere una risoluzione del decimo di milliparsec che permettono di fare sondaggi (surveys) estremamente precisi che danno poi frutto ad immagini
+Le applicazioni di questa tecnica hanno dato la possibilità di fare osservazioni a distanze inimagginabili all'epoca, oggi abbiamo macchine che arrivano ad avere una risoluzione del decimo di milliparsec che permettono di fare sondaggi (surveys) estremamente precisi su ampia scala.
+
+\begin{wrapfigure}{l}{0.5\textwidth}
+	\vspace{-10pt} %toglie lo spazio bianco in eccesso che figure e centering mettono
+	\centering
+	\includegraphics[width=0.49\textwidth]{./Immagini/Via_Lattea_Gaia.jpg}
+	\caption*{Mappa della Via Lattea dal satellite Gaia}
+	\vspace{-10pt}
+\end{wrapfigure}
+
+Questa immagine è frutto di un survey osservativo da parte del satellite Gaia su tutta la Via Lattea basato sulla tecnica della parallasse, avvenuto nel corso di dieci anni, con più passaggi su ogni stella, di cui abbiamo quindi misurazioni sia di posizione che di velocità trasversale. Questa immagine è infatti data pixel per pixel dall'osservazione di una stella e dalla misurazione del suo flusso, l'unione dei dati è riuscita a dare vita a questa mappa, in cui si sono potuti risolvere anche oggetti molto complessi come le nebulose. Questo telescopio ha inoltre strumenti di surveys spettroscopici sugli effetti di redshift, ossia sull'effetto Doppler subito dalla radiazione misurata per via del suo allontanamento o avvicinamento relativamente al telescopio, che da quindi uno strumento di misura della velocità radiale di ogni stella presente in questa immagine. Avere sia la componente radiale che trasversale della velocità, unitamente alla posizione, da la possibilità di fare studi evolutivi e strutturali dei gruppi di stelle e delle proprietà di raggrupamento e sviluppo della galassia notevoli, che stanno riscuotendo un successo enorme negli ultimi anni. Dal punto di vista più tecnico, la missione Gaia della ESA compie misure astrometriche e spettrofotometriche su oltre un miliardio di oggetti, di cui riesce a calcolarne la velocità radiale per oltre cento milioni, possiede una risoluzione angolare di un decimo di secondo d'arco (la risoluzione angolare verrà definita più avanti, per ora basti sapere intuitivamente che significa che le stelle hanno uno spettro gaussiano di larghezza pari a un secondo d'arco, da cui riusciamo con un buon rapporto segnale-rumorea determinare il centroide della gaussiana con accuratezza del millisecondo d'arco). Chiaramente, il fatto di fare le stesse acquisizionipiù volte nel tempo conduce ad una riduzione dell'errore sempre maggiore, aumentando la qualità dell'astrometria riducendone l'incertezza. Questo telescopio possiede inoltre $62$ CCD sul piano focale, conferendogli la capacità di risolvere stelle in un grande range di magnitudini e, che va da $6$ a $20.6$ circa (espresso in magnitudine assoluta, come faremo da questo punto in avanti senza specificarlo di volta in volta), e di prendere misurazioni estremamente accurate di parametri come la temperatura, lo spettro e così via. Tutte queste informazioni di misure astrometriche e astrofisiche come la distribuzione spettrale dell'energia, la posizione, la parallasse e il moto proprio, contribuiscono a determinare completamente le informazioni sullo spazio delle fasi per ogni oggetto trattato. Come sistema di riferimento su cui misurare questa tela fitta di moti si prendono i quasar, estremamente lontani (a distanze cosmologiche) tanto da apparire ferme nel cielo e dei quali siamo in grado di determinare in modo molto preciso la posizione, anche grazie al fatto che emettono principalmente nel radio, banda in cui risulta più facile prendere misure astrometriche accurate. I quasar presenti in questa regione sono circa mezzo milione e sono quindi perfetti per costituire una griglia fotometrica a cui fare riferimento.
+
+\begin{wrapfigure}{l}{0.5\textwidth}
+	%immagine presa dal Bradt - Astronomy Methods
+	\vspace{-10pt}
+	\centering
+	\includegraphics[width=0.49\textwidth]{./Immagini/Via_Lattea_distr.png}
+	\caption*{Distribuzione della massa nella Via Lattea}
+	\vspace{-10pt}
+\end{wrapfigure}
+
+Parlando della nostra galassia, la Via Lattea, noi ci troviamo a circa $8.3\,kpc$ dal centro ed ha raggio di circa $30\,kpc$, è essenzialmente un disco molto piatto, per vederne il raggio e lo spessore è sufficiente plottare le luminosità acquisite nei survey in coordinate galattiche e studiare la distribuzione di massa in scala esponenziale con il raggio $r$ e lo spessore $h$, trovando la maggior concentrazione della massa entro i valori di $r_d=3.5\pm0.5\,kpc$ e $h_d\simeq160\,pc$. Vi sono poi ammassi globulari, ossia grappoli di stelle, distribuiti in modo approssimativamente sferico in un alone di materia oscura, quest'ultima fa da collante a questa distribuzione della materia nella galassia.
 
 \end{document}

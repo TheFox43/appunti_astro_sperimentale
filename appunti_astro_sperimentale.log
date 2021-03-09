@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.9.10)  8 MAR 2021 15:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.9.10)  8 MAR 2021 17:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -422,26 +422,47 @@ File: ./Immagini/brillanza_sup_cielo.png Graphic file (type png)
 <use ./Immagini/brillanza_sup_cielo.png>
 Package pdftex.def Info: ./Immagini/brillanza_sup_cielo.png  used on input line 113.
 (pdftex.def)             Requested size: 264.61333pt x 191.5798pt.
- [4 <./Immagini/brillanza_sup_cielo.PNG>] [5] [6] [7] [8]
-<./Immagini/parallasse.png, id=66, 435.42674pt x 333.04425pt>
+ [4 <./Immagini/brillanza_sup_cielo.PNG>] [5] [6]
+<./Immagini/Diagramma_HR.png, id=59, 722.7pt x 823.075pt>
+File: ./Immagini/Diagramma_HR.png Graphic file (type png)
+<use ./Immagini/Diagramma_HR.png>
+Package pdftex.def Info: ./Immagini/Diagramma_HR.png  used on input line 212.
+(pdftex.def)             Requested size: 264.61333pt x 301.36809pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7] [8 <./Immagini/Diagramma_HR.png>]
+<./Immagini/parallasse.png, id=67, 435.42674pt x 333.04425pt>
 File: ./Immagini/parallasse.png Graphic file (type png)
 <use ./Immagini/parallasse.png>
-Package pdftex.def Info: ./Immagini/parallasse.png  used on input line 254.
+Package pdftex.def Info: ./Immagini/parallasse.png  used on input line 259.
 (pdftex.def)             Requested size: 216.1011pt x 165.28682pt.
- [9 <./Immagini/parallasse.PNG>] (c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.aux) ) 
+ [9 <./Immagini/parallasse.PNG>]
+<./Immagini/Via_Lattea_Gaia.jpg, id=74, 1626.075pt x 813.0375pt>
+File: ./Immagini/Via_Lattea_Gaia.jpg Graphic file (type jpg)
+<use ./Immagini/Via_Lattea_Gaia.jpg>
+Package pdftex.def Info: ./Immagini/Via_Lattea_Gaia.jpg  used on input line 283.
+(pdftex.def)             Requested size: 216.1011pt x 108.0433pt.
+<./Immagini/Via_Lattea_distr.png, id=75, 501.67426pt x 246.9225pt>
+File: ./Immagini/Via_Lattea_distr.png Graphic file (type png)
+<use ./Immagini/Via_Lattea_distr.png>
+Package pdftex.def Info: ./Immagini/Via_Lattea_distr.png  used on input line 294.
+(pdftex.def)             Requested size: 216.1011pt x 106.36298pt.
+ [10 <./Immagini/Via_Lattea_Gaia.jpg>] [11 <./Immagini/Via_Lattea_distr.PNG>] (c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.aux) ) 
 Here is how much of TeX's memory you used:
- 5865 strings out of 492609
- 84108 string characters out of 6132818
- 176391 words of memory out of 5000000
- 9641 multiletter control sequences out of 15000+600000
+ 5881 strings out of 492609
+ 84576 string characters out of 6132818
+ 179392 words of memory out of 5000000
+ 9653 multiletter control sequences out of 15000+600000
  21734 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,39p,3137b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,6n,39p,3321b,271s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.pdf" (13 pages, 929903 bytes).
+Output written on "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.pdf" (15 pages, 2418903 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 144 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
