@@ -209,7 +209,7 @@ Un'applicazione interessante di questo parametro è il suo utilizzo nella classi
 \begin{figure}[h]
 	%figura presa da Wikipedia
 	\centering
-	\includegraphics[width=0.6\textwidth]{./Immagini/Diagramma_HR.png}
+	\includegraphics[width=0.5\textwidth]{./Immagini/Diagramma_HR.png}
 	\caption*{Diagramma Hertzsprung-Russell}
 \end{figure}
 
@@ -217,7 +217,14 @@ Dove il colore B-V è posto in ascissa e la luminosità in ordinata, in cui si v
 
 Trattando le sorgenti astrofisiche, quando si parla di estinzione si deve distinguere tra l'estinzione "spaziale" che avviene nei mezzi intergalattico e interstellare prima che i fotoni arrivino, e quella che invece è dovuta all'atmosfera e di grande impatto nei siti di rivelazione posti a terra. Il fenomeno dell'estinzione atmosferica è una cosa di cui abbiamo esperienza tutti i giorni quando la luce solare deve attraversare grandi strati dell'atmosfera, come succede ad esempio al tramonto, mentre allo Zenit il fenomeno è minimizzato.
 
-INSERISCI IMMAGINE ESTINZIONE ATMOSFERICA
+\begin{wrapfigure}{l}{0.5\textwidth}
+	%Immagine presa da slide
+	\vspace{-10pt}
+	\centering
+	\includegraphics[width=0.49\textwidth]{./Immagini/Estinzione_atm_sole.png}
+	\vspace{-10pt}
+	\caption*{Estinzione atmosferica solare}
+\end{wrapfigure}
 
 Il fenomeno prende questo nome dal fenomeno stesso, ossia dall'estinzione vera e propria del flusso incidente, dovuto al ripetuto assorbimento e scattering dei fotoni spaziali incidenti sulle molecole atmosferiche, che sarà quantificabile in modo proporzionale alla distanza zenitale e conseguentemente alla porzione di atmosfera che il fascio deve attraversare, data $m_0$ la magnitudine di una stella fuori l'atmosfera:
 \begin{equation*}
@@ -278,7 +285,7 @@ Dove la seconda rappresenta il rapporto di conversione da arcosecondi ($1\,arcse
 Le applicazioni di questa tecnica hanno dato la possibilità di fare osservazioni a distanze inimagginabili all'epoca, oggi abbiamo macchine che arrivano ad avere una risoluzione del decimo di milliparsec che permettono di fare sondaggi (surveys) estremamente precisi su ampia scala.
 
 \begin{wrapfigure}{l}{0.5\textwidth}
-	\vspace{-10pt} %toglie lo spazio bianco in eccesso che figure e centering mettono
+	\vspace{-5pt} %toglie lo spazio bianco in eccesso che figure e centering mettono
 	\centering
 	\includegraphics[width=0.49\textwidth]{./Immagini/Via_Lattea_Gaia.jpg}
 	\caption*{Mappa della Via Lattea dal satellite Gaia}
@@ -296,6 +303,38 @@ Questa immagine è frutto di un survey osservativo da parte del satellite Gaia s
 	\vspace{-10pt}
 \end{wrapfigure}
 
-Parlando della nostra galassia, la Via Lattea, noi ci troviamo a circa $8.3\,kpc$ dal centro ed ha raggio di circa $30\,kpc$, è essenzialmente un disco molto piatto, per vederne il raggio e lo spessore è sufficiente plottare le luminosità acquisite nei survey in coordinate galattiche e studiare la distribuzione di massa in scala esponenziale con il raggio $r$ e lo spessore $h$, trovando la maggior concentrazione della massa entro i valori di $r_d=3.5\pm0.5\,kpc$ e $h_d\simeq160\,pc$. Vi sono poi ammassi globulari, ossia grappoli di stelle, distribuiti in modo approssimativamente sferico in un alone di materia oscura, quest'ultima fa da collante a questa distribuzione della materia nella galassia.
+Parlando della nostra galassia, la Via Lattea, noi ci troviamo a circa $8.3\,kpc$ dal centro ed ha raggio di circa $30\,kpc$, è essenzialmente un disco molto piatto, per vederne il raggio e lo spessore è sufficiente plottare le luminosità acquisite nei survey in coordinate galattiche e studiare la distribuzione di massa in scala esponenziale con il raggio $r$ e lo spessore $h$, trovando la maggior concentrazione della massa entro i valori di $r_d=3.5\pm0.5\,kpc$ e $h_d\simeq160\,pc$.
+\begin{equation*}
+	\rho(r,z) = e^{ -\frac{r}{r_d}} e^{-\frac{|z|}{h_d}}
+\end{equation*}
+Vi sono poi ammassi globulari, ossia grappoli di stelle, distribuiti in modo approssimativamente sferico in un alone di materia oscura, quest'ultima fa da collante a questa distribuzione della materia nella galassia ed è facilmente rivelabile facendo una misura dinamica della massa, ossia misurando la velocità circolare di stelle a diversi raggi. La traiettoria terrestre nel piano galattico è in prima approssimazione circolare, con velocità lineare di $220\,km/s$ e periodo di rivoluzione attorno al centro galattico di $250$ milioni di anni, ma per avere queste velocità alla distanza $r_\odot=8\,kpc$ a cui noi ci troviamo, è necessario avere una massa dinamica di:
+\begin{equation*}
+	M(r<r_\odot) \simeq \frac{r_\odot v_\odot^2}{G} \simeq 10^{11}M_\odot
+\end{equation*}
+Mentre quella che è la massa stellare e delle polveri misurata è solo la metà di questo valore, si tiene conto infatti che la massa media delle stelle nella galassia è $<M>=0.5M_\odot$ e che le $10^{11}$ stelle che compongono la nostra galassia costituiscono il $90\%$ della massa misurabile, che è per tutto il disco galattico $M_{disk}=10^{10}M_\odot$.
+
+INSERIRE IMMAGINE GRAFICO LOCALE
+%\begin{wrapfigure}{r}{0.5\widthtext}
+	%ImmaginE tratta da
+	%\vspace{-10pt}
+	%\includegraphics[width=0.49\witdhtext]{./Immagini/Gruppo_Locale}
+	%\vspace{-10pt}
+	%\caption*{Gruppo Locale}
+%\end{wrapfigure}
+
+Per funzionamento "gerarchico" della gravità, anche le galassie si raccolgono in gruppi ed ammassi esattamente come le stelle, costruendo strutture, la nostra facendo parte del \textit{Gruppo Locale}, costituito da una sessantina di galassie gravitazionalmente legate tra loro. La famosa galassia Andromeda M31, una delle poche con dimensioni simili alla nostra e situata a circa $700\,kpc$ da noi, è all'estremo opposto del nostro gruppo, mentre circa la metà delle galassie del nostro gruppo sono a forma irregolare, altre sono sferoidali e solo tre hanno simmetria a spirale come la nostra. Allontanandoci di svariati $Mpc$, si va incontro ad altri gruppi ed agglomerati di galassie, superati la distanza di circa $100\,Mpc$, l'universo comincia ad essere abbastanza isotropo e ad avere un aspetto omogeneo, nel senso che questa tendenza al clustering (raggrupamento, granulosità) di stelle e poi galassie inizia a venire meno. Questa proprietà è fondamentale per comprendere l'universo tramite gli occhiali della relatività generale, teoria fondata sull'omogeneità dell'universo e grazie alla quale riusciamo a porre una descrizione analitica alle nostre osservazioni. Per parlare della scalla dell'universo, dobbiamo introdurre la legge di Hubble, tornando indietro di cento anni nella storia. All'epoca, le altre galassie venivano catalogate a centinaia sotto il termine di nebule (o nebulose), chiedendosi se fossero parte della nostra galassia o fossero sistemi esterni. La svolta venne dalle osservazioni di Hubble ed i suoi collaboratori, tramite un telescopio di $2\,m$ di diametro e svolgendo studi di spettroscopia, analizzando una ventina di queste nebulose (galassie), di cui si aveva già una stimma della distanza da misurazioni indipendenti, e anallizando i loro effetti di redshift. Si ricorda che il redshift è interpretato tramite l'effetto Doppler, per cui:
+\begin{equation*}
+	z=\frac{\lambda_{obs}-\lambda_{em}}{\lambda_{em}}
+\end{equation*}
+Nel caso non relatistico $v \ll c$, il rapporto tra la differenza di lunghezza d'onda e la lunghezza d'onda originaria è data dal rapporto tra la velocità radiale di allontanamento della sorgente rispetto l'osservatore e la velocità della luce:
+\begin{equation*}
+	1+z = \frac{\lambda_{obs}}{\lambda_{em}} \overset{v \ll c}{=} 1+\frac{v}{c}
+\end{equation*}
+Quello che notò Hubble fu la correlazione lineare tra la velocità di recessione di queste galassie e la distanza a cui esse si trovano, dove la relazione osservativa si basa sulla costante di proporzione detta \textbf{costante di Hubble $H_0$}:
+\begin{equation}
+	\label{eq:Hubble}
+	v_r=cz=H_0d
+\end{equation}
+Detta legge di Hubble (1930), risultato previsto teoricamente da Laimatre, tramite la risoluzione delle equazioni della relatività generale, e prova incisiva dell'espansione dell'universo, non più concepibile in modo statico come era diffusamente creduto all'epoca, anche dallo stesso Einstein. La legge deve subire chiaramente correzioni nelle applicazioni specifiche, per incontrare le influenze gravitazionali che le altre galassie del gruppo apportano a quella presa in considerazione, basti pensare alla citata Andromeda M31, la quale si avvicina alla nostra gallassia invece di recedere con velocità $v_r$. Nasce da questa legge, in una prima ipotesi abbozzata da Laimatre, il fatto che tornando a ritroso nel tempo, l'Universo si debba necessariamente contrarre, fino ad arrivare ad un punto in un tempo finito in cui la densità è inifinita, ossia la teoria del Big Bang. Queste tempo è calcolato come l'inverso di $H_0$, chiaramente solo una stima, ma da l'idea dell'importanza di questa costante, in grado di dare sia la scala di espansione (e dimensionale) che la scala temporale dell'Universo, e la cui misura ha ricoperto una parte fondamentale nella fisica recente. Si accenna il fatto, per ragioni cosmologiche che non tratteremo, che da questa costante deriva anche la geometria dell'Universo.
 
 \end{document}
