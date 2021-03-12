@@ -87,7 +87,7 @@ Le sonde di informazione principali fino a circa il 2015 erano le onde elettroma
 \begin{figure}[h]
 	%figura presa dalle slide
 	\centering
-	\includegraphics[width=0.8\textwidth]{./Immagini/trasparenza_atm.png}
+	\includegraphics[width=0.8\textwidth]{./Immagini/Capitolo1/trasparenza_atm.png}
 	\caption*{Trasparenza atmosferica in funzione della radiazione incidente}
 \end{figure}
 
@@ -97,7 +97,7 @@ Vedendo un classico diagramma delle frazioni di atmosfera in funzione delle lung
 	%figura presa dalle slide
 	\vspace{-8pt} %toglie lo spazio bianco in eccesso che figure e centering mettono
 	\centering
-	\includegraphics[width=0.4\textwidth]{./Immagini/trasparenza_atm_IR.png}
+	\includegraphics[width=0.4\textwidth]{./Immagini/Capitolo1/trasparenza_atm_IR.png}
 	\vspace{-5pt}
 	\caption*{Trasparenza atmosferica nell'infrarosso e vicino infrarosso}
 	\vspace{-8pt}
@@ -110,7 +110,7 @@ Un fattore molto importante è quello della luminosità del cielo, soprattutto p
 \begin{figure}[h]
 	%figura presa dalle slide
 	\centering
-	\includegraphics[width=0.6\textwidth]{./Immagini/brillanza_sup_cielo.png}
+	\includegraphics[width=0.6\textwidth]{./Immagini/Capitolo1/brillanza_sup_cielo.png}
 	\caption*{Fonti della brillanza superficiale del cielo}
 \end{figure}
 
@@ -119,6 +119,7 @@ Questa polvere si trova tra i $250K$ e i $300K$ e viene illuminata dai raggi sol
 Un secondo contributo alla brillanza superficiale del cielo è dato dai fattori di origine terrestre: air glow, aurora boreale (frutto dell'attività solare), emissione termica del pianeta, luce lunare diffusa, inquinamento luminoso dato dalle attività umane (di grande disturbo, per questo i siti di osservazione sono molto isolati), nano-satelliti in orbita (ad esempio di Google, Space X ecc, che vanno a mettersi in mezzo alla linea di osservazione durante le misurazioni e sono in aumento giornaliero vertiginoso). Il primo fattore riguarda le molecole e gli atomi presenti in atmosfera, soprattutto negli strati più alti, e si tratta dell'emissione a righe (secondo i vari spettri atomici) a seguito dell'irraggiamento che subiscono dai fotoni in arrivo dallo spazio, questa componente è particolarmente di disturbo da terra e possiede sia una componente spettrale a righe che una parte continua di fondo. L'emissione termica è la semplice emissione del pianeta in quanto corpo nero, il cui picco di emissione, data la temperatura, si attesta su qualche micron, i prossimi satelliti verranno per questo inviati a milioni di km dalla Terra, poiché fonte di grande rumore di fondo per le osservazioni oltre il vicino infrarosso, come è stato osservato dalle acquisizioni del telescopio spaziale Hubble.
 
 \section{Misure fotometriche}
+
 \subsection*{Sorgenti puntiformi}
 Prendiamo una sorgente puntiforme con emissione elettromagnetica isotropa, si definisce \textbf{densità spettrale di flusso} l'energia raccolta per unità di superficie collettrice, di tempo e di banda di frequenza passante, essendo che sarà un'emissione a spettro si deve distinguere per le varie bande analizzate:
 \begin{equation*}
@@ -200,16 +201,22 @@ In tempi moderni, è stato necessario definire una magnitudine zero di riferimen
 \end{equation*}
 Che è l'integrale dello spettro della stella Vega, particolarmente calda, che nel sistema UBV ha magnitudine $m=0.03$ in tutte e tre le bande. Con diversi telescopi, di grandi dimensioni con raggi di $8m$, riusciamo ad arrivare ad osservare oggetti a magnitudini molto alte, ad esempio riusciamo a rivelare con un'ora di esposizione oggetti a magnitudine 25, aumentando l'esposizione a dieci ore anche oggetti a magnitudine 27, fino a telescopi spaziali che con un paio di settimane di integrazione arrivano a magnitudine 30. Per passare da magnitudini a flussi per ogni banda tra le varie unità di misura ci sono tabelle apposite molto comode. Vedendo le tabelle delle varie magnitudini in banda da osservatori a terra ed osservatori in orbita, si nota come la luminosità del cielo sia minore per un osservatore in orbita, per via dell'effetto dell'atmosfera, particolarmente efficace nella schermatura nel vicino infrarosso, motivo per cui, come anticipato, in orbita è molto conveniente e vengono rivelazioni molto più pulite nella banda del vicino infrarosso, a differenza della situazione a terra che è totalmente opposta per questa stessa banda. Nello spazio la brillanza superficiale del cielo è perciò data essenzialmente dalla luce zodiacale.
 
-Si introduce il concetto di colore, definito come la differenza di magnitudine di un corpo in due filtri, o bande, successive, questo da appunto un'indicazione del colore della stella tratta, nel caso la differenza tra il filtro U e B sia positiva, vorrà dire che la magnitudine in B sarà minore e la stella avrà quindi un colore tendente più al blu.
+\begin{wrapfigure}{r}{0.4\textwidth}
+	%figura presa dalle slide
+	\vspace{-15pt}
+	\centering
+	\includegraphics[width=0.39\textwidth]{./Immagini/Capitolo1/diag_col-col_quasar_stelle.PNG}
+	\vspace{-5pt}
+	\caption*{Diagramma colore-colore di Quasar e stelle}
+	\vspace{-15pt}
+\end{wrapfigure}
 
-INSERISCI IMMAGINE GRAFICO COLORE DI QUASAR E STELLE
-
-Un'applicazione interessante di questo parametro è il suo utilizzo nella classificazione delle galassie e sorgenti cosmiche, come i quasar, particolarmente blu per la loro emissione tipica (non di natura termica come può essere quella del Sole), mentre stelle e galassie si collocano più sul rosso. Questo dato, molto utile per capire la temperatura di una stella, può essere anche usato in relazione alla luminosità delle sorgenti stesse, dando il famoso e molto utilizzato diagramma HR (Hertzsprung-Russell):
+Si introduce il concetto di colore, definito come la differenza di magnitudine di un corpo in due filtri, o bande, successive, questo da appunto un'indicazione del colore della stella tratta, nel caso la differenza tra il filtro U e B sia positiva, vorrà dire che la magnitudine in B sarà minore e la stella avrà quindi un colore tendente più al blu. Un'applicazione interessante di questo parametro è il suo utilizzo nella classificazione delle galassie e sorgenti cosmiche, come i quasar, particolarmente blu per la loro emissione tipica (non di natura termica come può essere quella del Sole), mentre stelle e galassie si collocano più sul rosso. Questo dato, molto utile per capire la temperatura di una stella, può essere anche usato in relazione alla luminosità delle sorgenti stesse, dando il famoso e molto utilizzato diagramma HR (Hertzsprung-Russell):
 
 \begin{figure}[h]
 	%figura presa da Wikipedia
 	\centering
-	\includegraphics[width=0.5\textwidth]{./Immagini/Diagramma_HR.png}
+	\includegraphics[width=0.6\textwidth]{./Immagini/Capitolo1/Diagramma_HR.png}
 	\caption*{Diagramma Hertzsprung-Russell}
 \end{figure}
 
@@ -221,7 +228,7 @@ Trattando le sorgenti astrofisiche, quando si parla di estinzione si deve distin
 	%Immagine presa da slide
 	\vspace{-10pt}
 	\centering
-	\includegraphics[width=0.49\textwidth]{./Immagini/Estinzione_atm_sole.png}
+	\includegraphics[width=0.49\textwidth]{./Immagini/Capitolo1/Estinzione_atm_sole.png}
 	\vspace{-10pt}
 	\caption*{Estinzione atmosferica solare}
 \end{wrapfigure}
@@ -255,15 +262,16 @@ Dove il termine additivo $BC$ è la cosiddetta \textit{correzione bolometrica}, 
 \end{equation*}
 
 \section{Misure e scale delle distanze}
+
 Fintanto che si tratta il sistema solare, di dimensioni decisamente ridotte rispetto all'universo nella sua interessa, si definisce \textit{l'unità astronomica} come la distanza media tra la Terra e il Sole: $1AU=1.5\e{11}m$. Un'altra unità di distanza introdotta, di dimensioni decisamente maggiori rispetto l'unità astronomica, è il \textit{parsec}: $1pc=206265AU=3\e{16}=3.6ly$. Definendo il sistema solare come la zona dello spazio fino a cui il Sole, con i propri venti, riesce ad avere un'influenza dinamica sui corpi al suo interno, allora si trova l'eliosfera, non perfettamente sferica e di raggio pari a circa $100AU$, distanza a cui si sono spinti i telescopi lanciati negli anni settanta Voyager 1 e 2, i quali dovranno arrivare a un milione di unità astronomiche prima di incontrare la prossima stella.
 
 Si ridefinisce il parsec e si introduce il concetto di \textbf{parallasse trigonometrica}, metodo matematico di indagine che svelò per primo le scale della nostra galassia, introdotto da E. Bessel nella prima metà del diciannovesimo secolo. Prima di questo metodo si supponeva che le stelle fossero luminose tanto quanto il Sole, per cui sarebbe bastato misurarne il flusso e tramite la magnitudine assoluta ricavare la distanza, metodo chiaramente errato in quanto le stelle nell'universo possono essere anche estremamente più luminose della nostra.
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{l}{0.5\textwidth}
 	%figura presa dal bradt - astronomy methods
-	\vspace{-10pt} %toglie lo spazio bianco in eccesso che figure e centering mettono
+	\vspace{-10pt}
 	\centering
-	\includegraphics[width=0.49\textwidth]{./Immagini/parallasse.png}
+	\includegraphics[width=0.49\textwidth]{./Immagini/Capitolo1/parallasse.png}
 	\caption*{Visualizzazione della tecnica di parallasse}
 	\vspace{-10pt}
 \end{wrapfigure}
@@ -285,22 +293,22 @@ Dove la seconda rappresenta il rapporto di conversione da arcosecondi ($1\,arcse
 Le applicazioni di questa tecnica hanno dato la possibilità di fare osservazioni a distanze inimagginabili all'epoca, oggi abbiamo macchine che arrivano ad avere una risoluzione del decimo di milliparsec che permettono di fare sondaggi (surveys) estremamente precisi su ampia scala.
 
 \begin{wrapfigure}{l}{0.5\textwidth}
-	\vspace{-5pt} %toglie lo spazio bianco in eccesso che figure e centering mettono
+	\vspace{-5pt}
 	\centering
-	\includegraphics[width=0.49\textwidth]{./Immagini/Via_Lattea_Gaia.jpg}
+	\includegraphics[width=0.49\textwidth]{./Immagini/Capitolo1/Via_Lattea_Gaia.jpg}
 	\caption*{Mappa della Via Lattea dal satellite Gaia}
 	\vspace{-10pt}
 \end{wrapfigure}
 
 Questa immagine è frutto di un survey osservativo da parte del satellite Gaia su tutta la Via Lattea basato sulla tecnica della parallasse, avvenuto nel corso di dieci anni, con più passaggi su ogni stella, di cui abbiamo quindi misurazioni sia di posizione che di velocità trasversale. Questa immagine è infatti data pixel per pixel dall'osservazione di una stella e dalla misurazione del suo flusso, l'unione dei dati è riuscita a dare vita a questa mappa, in cui si sono potuti risolvere anche oggetti molto complessi come le nebulose. Questo telescopio ha inoltre strumenti di surveys spettroscopici sugli effetti di redshift, ossia sull'effetto Doppler subito dalla radiazione misurata per via del suo allontanamento o avvicinamento relativamente al telescopio, che da quindi uno strumento di misura della velocità radiale di ogni stella presente in questa immagine. Avere sia la componente radiale che trasversale della velocità, unitamente alla posizione, da la possibilità di fare studi evolutivi e strutturali dei gruppi di stelle e delle proprietà di raggrupamento e sviluppo della galassia notevoli, che stanno riscuotendo un successo enorme negli ultimi anni. Dal punto di vista più tecnico, la missione Gaia della ESA compie misure astrometriche e spettrofotometriche su oltre un miliardio di oggetti, di cui riesce a calcolarne la velocità radiale per oltre cento milioni, possiede una risoluzione angolare di un decimo di secondo d'arco (la risoluzione angolare verrà definita più avanti, per ora basti sapere intuitivamente che significa che le stelle hanno uno spettro gaussiano di larghezza pari a un secondo d'arco, da cui riusciamo con un buon rapporto segnale-rumorea determinare il centroide della gaussiana con accuratezza del millisecondo d'arco). Chiaramente, il fatto di fare le stesse acquisizionipiù volte nel tempo conduce ad una riduzione dell'errore sempre maggiore, aumentando la qualità dell'astrometria riducendone l'incertezza. Questo telescopio possiede inoltre $62$ CCD sul piano focale, conferendogli la capacità di risolvere stelle in un grande range di magnitudini e, che va da $6$ a $20.6$ circa (espresso in magnitudine assoluta, come faremo da questo punto in avanti senza specificarlo di volta in volta), e di prendere misurazioni estremamente accurate di parametri come la temperatura, lo spettro e così via. Tutte queste informazioni di misure astrometriche e astrofisiche come la distribuzione spettrale dell'energia, la posizione, la parallasse e il moto proprio, contribuiscono a determinare completamente le informazioni sullo spazio delle fasi per ogni oggetto trattato. Come sistema di riferimento su cui misurare questa tela fitta di moti si prendono i quasar, estremamente lontani (a distanze cosmologiche) tanto da apparire ferme nel cielo e dei quali siamo in grado di determinare in modo molto preciso la posizione, anche grazie al fatto che emettono principalmente nel radio, banda in cui risulta più facile prendere misure astrometriche accurate. I quasar presenti in questa regione sono circa mezzo milione e sono quindi perfetti per costituire una griglia fotometrica a cui fare riferimento.
 
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
 	%immagine presa dal Bradt - Astronomy Methods
-	\vspace{-10pt}
+	\vspace{-5pt}
 	\centering
-	\includegraphics[width=0.49\textwidth]{./Immagini/Via_Lattea_distr.png}
+	\includegraphics[width=0.49\textwidth]{./Immagini/Capitolo1/Via_Lattea_distr.png}
 	\caption*{Distribuzione della massa nella Via Lattea}
-	\vspace{-10pt}
+	\vspace{-15pt}
 \end{wrapfigure}
 
 Parlando della nostra galassia, la Via Lattea, noi ci troviamo a circa $8.3\,kpc$ dal centro ed ha raggio di circa $30\,kpc$, è essenzialmente un disco molto piatto, per vederne il raggio e lo spessore è sufficiente plottare le luminosità acquisite nei survey in coordinate galattiche e studiare la distribuzione di massa in scala esponenziale con il raggio $r$ e lo spessore $h$, trovando la maggior concentrazione della massa entro i valori di $r_d=3.5\pm0.5\,kpc$ e $h_d\simeq160\,pc$.
@@ -313,14 +321,21 @@ Vi sono poi ammassi globulari, ossia grappoli di stelle, distribuiti in modo app
 \end{equation*}
 Mentre quella che è la massa stellare e delle polveri misurata è solo la metà di questo valore, si tiene conto infatti che la massa media delle stelle nella galassia è $<M>=0.5M_\odot$ e che le $10^{11}$ stelle che compongono la nostra galassia costituiscono il $90\%$ della massa misurabile, che è per tutto il disco galattico $M_{disk}=10^{10}M_\odot$.
 
-INSERIRE IMMAGINE GRUPPO LOCALE
-%\begin{wrapfigure}{r}{0.5\widthtext}
-	%ImmaginE tratta da
-	%\vspace{-10pt}
-	%\includegraphics[width=0.49\witdhtext]{./Immagini/Gruppo_Locale}
-	%\vspace{-10pt}
-	%\caption*{Gruppo Locale}
-%\end{wrapfigure}
+\begin{wrapfigure}{r}{0.5\textwidth}
+	%immagine presa dal Bradt - Astronomy Methods
+	\vspace{-10pt}
+	\centering
+	\includegraphics[width=0.49\textwidth]{./Immagini/Capitolo1/Gruppo_locale.PNG}
+	\caption*{Distribuzione della massa nella Via Lattea}
+	\vspace{-10pt}
+\end{wrapfigure}
+
+%\begin{figure}[h]
+	%Immagine presa da slide
+	%\centering
+	%\includegraphics[width=0.4\textdiwth]{./Immagini/Capitolo1/Gruppo_locale.jpg}
+	%\caption*{Gruppo locale}
+%\end{figure}
 
 Per funzionamento "gerarchico" della gravità, anche le galassie si raccolgono in gruppi ed ammassi esattamente come le stelle, costruendo strutture, la nostra facendo parte del \textit{Gruppo Locale}, costituito da una sessantina di galassie gravitazionalmente legate tra loro. La famosa galassia Andromeda M31, una delle poche con dimensioni simili alla nostra e situata a circa $700\,kpc$ da noi, è all'estremo opposto del nostro gruppo, mentre circa la metà delle galassie del nostro gruppo sono a forma irregolare, altre sono sferoidali e solo tre hanno simmetria a spirale come la nostra. Allontanandoci di svariati $Mpc$, si va incontro ad altri gruppi ed agglomerati di galassie, superati la distanza di circa $100\,Mpc$, l'universo comincia ad essere abbastanza isotropo e ad avere un aspetto omogeneo, nel senso che questa tendenza al clustering (raggrupamento, granulosità) di stelle e poi galassie inizia a venire meno. Questa proprietà è fondamentale per comprendere l'universo tramite gli occhiali della relatività generale, teoria fondata sull'omogeneità dell'universo e grazie alla quale riusciamo a porre una descrizione analitica alle nostre osservazioni. 
 
@@ -352,7 +367,9 @@ SPIEGAZIONE TECNICA, RECUPERARE DA APPUNTI POICHE' LA LEZIONE E' STATA MESSA A R
 
 Noi oggi siamo arrivati ad una misurazione di oggetti con redshift dieci, ossia nati cinquecento di milioni di anni dopo il Big Bang, dove già a redshift sei vediamo sorgenti nate dopo un miliardo di anni, mentre a redshift pari a uno quelle con età pari alla metà di quella dell'universo. Il limite superiore, come si vede dal grafico, è di redshift venti, a cui si teorizza corrispondere la nascita delle prime stelle a duecento milioni di anni dal Big Bang. Le prime strutture più complesse, come i raggruppamenti stellari e successivamente le galassie, si formarono già verso redshift tre, mentre arrivando a uno l'universo era già molto simile a quello che è tutt'ora.
 
-Test modifica con .gitignore
+\chapter{Introduzione ai telescopi}
+
+Le caratteristiche di
 
 
 \end{document}
