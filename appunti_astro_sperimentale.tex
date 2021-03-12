@@ -16,9 +16,14 @@
 \usepackage{blindtext} %boh
 \usepackage{isotope} %scrittura isotopi
 \usepackage{url} %scrittura di link
+\usepackage{hyperref} %collegamenti ipertestuali e link web
 
 %Per l'inserimento immagini la guida molto utile di wikipedia:
 %https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+
+%Definizione comando email e settaggio del pacchetto hyperref
+\newcommand{\mail}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+\hypersetup{hidelinks}
 
 %Definizione comando per notazione vettoriale e simbolo definizione
 \renewcommand{\vec}{\boldsymbol}
@@ -59,6 +64,7 @@
 \frontmatter
 \author{Volpe Francesco}
 \title{Appunti di Astrofisica sperimentale}
+%\mail{francesco.volpe1998@gmail.com}
 \date{}
 \maketitle
 
