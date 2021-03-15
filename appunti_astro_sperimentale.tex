@@ -373,7 +373,9 @@ Dove abbiamo sfruttato la \ref{eq:Hubble} per la seconda uguaglianza, ma sfrutta
 \end{equation*}
 Questa misurazione necessita comunque di correzioni relativistiche e cosmologiche per una stima più precisa, come già si era anticipato precedentemente. Noi oggi siamo arrivati ad una misurazione di oggetti con redshift dieci, ossia nati cinquecento di milioni di anni dopo il Big Bang, dove già a redshift sei vediamo sorgenti nate dopo un miliardo di anni, mentre a redshift pari a uno quelle con età pari alla metà di quella dell'universo. Il limite superiore, come si vede dal grafico, è di redshift venti, a cui si teorizza corrispondere la nascita delle prime stelle a duecento milioni di anni dal Big Bang. Le prime strutture più complesse, come i raggruppamenti stellari e successivamente le galassie, si formarono già verso redshift tre, mentre arrivando a uno l'universo era già molto simile a quello che è tutt'ora.
 
-\chapter{Introduzione ai telescopi}
+\chapter{Telescopi}
+
+\section{Strutture dei telescopi e grandezze ottiche}
 
 Per ora ci limiteremo a trattare i telescopi nella banda dell'ottico, anche se il discorso rimane molto simile anche per altre bande, essendo comunque basati sulla collezione di fotoni ad una certa lunghezza d'onda tramite riflessione su una superficie curva (processo di riflessione che risulta impossibile già con i raggi X). Le caratteristiche principali di un telescopio sono: sensibilità della misura (o flusso limite), potere risolutivo (ossia risoluzione angolare), campo di vista (o fov), larghezza di banda (determinata essenzialmente dallo strumento stesso), risoluzione spettrale.
 
@@ -387,8 +389,6 @@ Per ora ci limiteremo a trattare i telescopi nella banda dell'ottico, anche se i
 \end{wrapfigure}
 
 Dal punto di vista storico, sin dai tempi di Galileo i primi telescopi funzionavano a rifrazione, è necessario aspettare Newton per vedere i primi telescopi a riflessione, inizialmente basati su specchi sferici poi cambiati in parabolici per ridurre le aberrazioni generate dai primi. Di quest'ultima tipologia di telescopi, il più semplice e immediato è quello in cui il focus primario è messo immediatamente sopra lo specchio principale. Un altro modello che venne adottato frequentemente è quello di \textbf{Cassegrain}, in cui il fascio è ridirezione da uno specchio secondario, posto nello stesso punto in cui si trova il focus nel modello precedente, con riflessione del fascio in un buco dello specchio primario, un altro modello è quello a focus laterale e così via. Il motivo per cui si sono superati i telescopi rifrattori, è perchè necessariamente il telescopio dovrebbe essere lungo almeno quanto la lunghezza focale della lente, creando una strumentazione particolarmente ingombrante e scomoda. Un altro fattore non trascurabile è quello per cui questo tipo di lenti portano a un'aberrazione non trascurabile, inoltre questo tipo di telescopio deve essere necessariamente chiuso, contenendo la lente, ma il fascio focalizzato deve quindi attraversare una zona chiusa che per gradienti termici può creare moti convettivi che vanno a intaccare la bontà dell'osservazione, evitabili con una struttura aperta possibile solo con telescopi riflettivi. Si ricorda che per proprietà delle lenti, la \textbf{aberrazione cromatica} è il fenomeno per cui una lente ha indici di rifrazione diversi per lunghezze d'onda diverse, ciò genera un gradiente di colore, il che significa che a lunghezze focali sufficientemente grandi si ottengono punti di focus diversi a seconda della lunghezza d'onda osservata, anche nella stessa banda. Il problema è risolvibile aggiungendo sistemi di lenti correttrici il cui compito è proprio di rimuovere questo effetto di aberrazione, tecnica adoperabile ma che comporta costi aggiuntivi non indifferenti, anche per il fatto che a lenti sempre più grandi corrispondono costi e sistemi di correzione più grandi, possedendo questo un campo di vista maggiore ma anche effettivi di aberrazione maggiori.
-
-\newpage
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{-10pt}
@@ -426,7 +426,25 @@ Questo esprime che una lente con rapporto focale $f$ di piccole dimensioni, avr�
 	\vspace{-10pt}
 \end{wrapfigure}
 
-Un'altra proprietà collegato al rapporto focale è il \textit{campo di vista}, o \textit{fov} (field of view), proporzionale anch'esso a $f$. Di fatti, oltre che la scala sul piano focale e il tempo di esposizione, il rapporto determina per ragioni geometriche facilmente intuibili il campo di vista in modo inversamente proporzionale, per cui a un grande valore di $f$ corrisponde un piccolo campo visivo, mentre per un valore minore un campo maggiore. Correlandolo con la velocità, un lente veloce (f piccolo) avrà un campo di vista più grande, viceversa un più lenta (f grande) avrà campo di vista minore. Questo implica che le prime sono più adatte ad un'osservazione meno dettagliata ma di porzioni di cielo maggiori, mentre le seconde sono particolarmente apprezzate nella risoluzione di porzioni di cielo ed oggetti specifici.
+Un'altra proprietà collegato al rapporto focale è il \textit{campo di vista}, o \textit{fov} (field of view), proporzionale anch'esso a $f$. Di fatti, oltre che la scala sul piano focale e il tempo di esposizione, il rapporto determina per ragioni geometriche facilmente intuibili il campo di vista in modo inversamente proporzionale, per cui a un grande valore di $f$ corrisponde un piccolo campo visivo, mentre per un valore minore un campo maggiore. Correlandolo con la velocità, una lente veloce (f piccolo) avrà un campo di vista più grande, viceversa un più lenta (f grande) avrà campo di vista minore. Questo implica che le prime sono più adatte ad un'osservazione meno dettagliata ma di porzioni di cielo maggiori, mentre le seconde sono particolarmente apprezzate nella risoluzione di porzioni di cielo ed oggetti specifici. Parlando di telescopi esistenti e futuri, il telescopio POSS è stata la principale fonte di informazione per i surveys in tutto il cielo stellato fino agli anni '60, possiede $f/2.5$ e lenti correttrici, ossia è una telescopio molto veloce e ad ampio fov. Un altro esempio più recente, di inizio millennio, è il telescopio SDSS con $f/5$, per cui più lenta e precisa, che ha permesso un grande numero di scoperte nell'interstellare fino alle scale cosmologico, coprendo cinque bande nell'ottico. Attualmente in uso c'è il telescopio VISTA in Cile per il vicino infrarosso con $f/3.3$, che errà presto sostituito dal LSST entro il 2021, con $f/1.25$ (estremamente veloce e ad ampio fov). Un parametro che stima l'efficienza nella velocità di acquisizione sempre maggiore di queste macchine è il "grasp" (o "etendue" dal francese), che è l'efficienza della macchina a osservare una certa zona di cielo entro un certo flusso limite ed è definita come:
+\begin{equation*}
+	Grasp = D^2 \cdot FoV \, (m^2 \cdot deg^2)
+\end{equation*}
+Maggiore è questo parametro maggiore sarà la velocità con cui è capace di effetture osservazioni il telescopio in oggetto. Chiaramente è direttamente proporzionale al fov in quanto si tratta di un parametro osservativo, mentre tiene conto del flusso limite tramite il termine $D^2$.
+
+\subsection*{Aberrazioni ottiche}
+
+Sia la lente che le camere poste davanti il punto focale che costituiscono il telescopio sono fortemente influenzate degli effetti di aberrazione accennati precedentemente e che ora accenneremo più in dettaglio.
+
+\begin{wrapfigure}{l}{0.5\textwidth}
+	\vspace{-10pt}
+	\centering
+	\includegraphics[width=0.49\textwidth]{Immagini/Capitolo2/Aberrazioni.png}
+	\caption*{Tipologie di aberrazioni ottiche}
+	\vspace{-10pt}
+\end{wrapfigure}
+
+Le principali tipologie di aberrazioni ottiche, riassunte in figura, sono il coma, l'aberrazione sferica, l'astigmatismo, la distorsione di campo e la curvatura di campo. La prima riguarda i raggi del fascio incidente più fuori asse rispetto a quelli centrali, per cui succede che per conformazione della lente convergente i corrispettivi raggi rifratti non vadano a convergere nello stesso punto, creando una piccola coda. L'aberrazione sferica riguarda la forma della lente, per cui i raggi più distanti dall'asse ottico vengono rifratti ad angoli diversi andando a convergere in punti diversi rispetto quello focale (dove comunque confluiscono tutti i raggi che in incidenza erano più vicini l'asse). L'astigmatismo consiste nella perdita di simmetria assiale, per cui raggi incidenti ad angoli diversi convergono a distanze focali diverse. Altri tipo di aberrazione, come quella della curvatura di campo, procudono effetti distortivi per cui il piano focale diventa curvo, problema tipico dei telescopi a fov molto grandi e risolvibile con le moderne tecnologie creando appositi CCD curvi. Questo effetto si ritrova similmente nella distorsione di campo, effetto che fa perdere la scala di misure del piano focale sull'intero campo di vista, come è facilmente dall'immagine, e per cui si ottengono pixel equivalenti che non hanno le stesse dimensioni costanti in tutto il campo di vista.
 
 
 \end{document}
