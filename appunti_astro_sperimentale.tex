@@ -444,9 +444,25 @@ Sia la lente che le camere poste davanti il punto focale che costituiscono il te
 	\vspace{-10pt}
 \end{wrapfigure}
 
-Le principali tipologie di aberrazioni ottiche, riassunte in figura, sono il coma, l'aberrazione sferica, l'astigmatismo, la distorsione di campo e la curvatura di campo. La prima riguarda i raggi del fascio incidente più fuori asse rispetto a quelli centrali, per cui succede che per conformazione della lente convergente i corrispettivi raggi rifratti non vadano a convergere nello stesso punto, creando una piccola coda. L'aberrazione sferica riguarda la forma della lente, per cui i raggi più distanti dall'asse ottico vengono rifratti ad angoli diversi andando a convergere in punti diversi rispetto quello focale (dove comunque confluiscono tutti i raggi che in incidenza erano più vicini l'asse). L'astigmatismo consiste nella perdita di simmetria assiale, per cui raggi incidenti ad angoli diversi convergono a distanze focali diverse. Altri tipo di aberrazione, come quella della curvatura di campo, procudono effetti distortivi per cui il piano focale diventa curvo, problema tipico dei telescopi a fov molto grandi e risolvibile con le moderne tecnologie creando appositi CCD curvi. Questo effetto si ritrova similmente nella distorsione di campo, effetto che fa perdere la scala di misure del piano focale sull'intero campo di vista, come è facilmente dall'immagine, e per cui si ottengono pixel equivalenti che non hanno le stesse dimensioni costanti in tutto il campo di vista.
+Le principali tipologie di aberrazioni ottiche, riassunte in figura, sono il coma, l'aberrazione sferica, l'astigmatismo, la distorsione di campo e la curvatura di campo. La prima riguarda i raggi del fascio incidente più fuori asse rispetto a quelli centrali, per cui succede che per conformazione della lente convergente i corrispettivi raggi rifratti non vadano a convergere nello stesso punto, creando una piccola coda. L'aberrazione sferica riguarda la forma della lente, per cui i raggi più distanti dall'asse ottico vengono rifratti ad angoli diversi andando a convergere in punti diversi rispetto quello focale (dove comunque confluiscono tutti i raggi che in incidenza erano più vicini l'asse). L'astigmatismo consiste nella perdita di simmetria assiale, per cui raggi incidenti ad angoli diversi convergono a distanze focali diverse. Altri tipo di aberrazione, come quella della curvatura di campo, procudono effetti distortivi per cui il piano focale diventa curvo, problema tipico dei telescopi a fov molto grandi e risolvibile con le moderne tecnologie creando appositi CCD curvi. Questo effetto si ritrova similmente nella distorsione di campo, effetto che fa perdere la scala di misure del piano focale sull'intero campo di vista, come è facilmente dall'immagine, e per cui si ottengono pixel equivalenti che non hanno le stesse dimensioni costanti in tutto il campo di vista. Questi effetti possono essere limitati in principio creando strumentazioni apposite, ad esempio usando specchi parabolici anzichè sferici nei telescopi riflessivi. In generale, si parla di fov corretto per i indicare il fov di un telescopio una volta aggiunte le strumentazioni e applicate tutte quelle correzioni che puntano a ridurre gli effetti di queste aberrazioni.
 
 % ragiona se rifare i paragrafi o mettere la prossima parte (struttura di cassegrain e telescopi riflessivi) nella parte prima delle aberrazioni o boh
+
+\subsection{Telescopi riflessivi}
+
+Il più comune dei telescopi riflessivi è il Cassegrain, citato prima, dove il fascio viene riflesso da uno specchio principale su un secondario convesso, il quale riflette a sua volta i raggi sul piano focale attraversando un buco nello specchio primario. Combinando gli effetti riflessivi dei due specchi, si può ricavare la correlazione tra le distanze focali tramite la seguente:
+\begin{equation*}
+	\frac{1}{F_p-d}=\frac{1}{d}+\frac{1}{F_s}
+\end{equation*}
+Dove $F_p$ è la distanza focale dello specchio primario, $F_s$ del secondario e $d$ la distanza a cui è interposto il secondo specchio convesso rispetto al punto focale del primo.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.30\textwidth]{Immagini/Capitolo2/Cassegrain.PNG}
+	\caption*{Schema del modello Cassegrain}
+\end{figure}
+
+Come accennato al paragrafo precedente, gli specchi sono parabolici per favorire la convergenza di tutti i raggi nello stesso punto focale, anche quelli maggiormente fuori asse. Lo svantaggio di questa struttura sta nell'ingombro che lo specchio secondario comporta, riducendo notevolmente il campo visivo. Un design di questa tipologia di telescopi particolarmente diffusa è quella di \textbf{Ritchey-Chrétien}, basato su strutture iperboliche per entrambi gli specchi che annullano l'aberrazione sferica e il coma, riducendo al tempo stesso l'astigmatismo e la curvatura di campo, mantenendo un fov corretto abbastanza ampio. Un altro vantaggio di questa struttura è la sua compattezza, riducendo i costi di costruzione e di sviluppo della meccanica atta a mantenerne la stabilità e a muoverlo per coprire varie parti di cielo. Il prezzo principale di questo modello è uno specchio secondario maggiore, che arriva a coprire anche il $20\%$ del campo di vista rispetto ad altri.
 
 
 \end{document}
