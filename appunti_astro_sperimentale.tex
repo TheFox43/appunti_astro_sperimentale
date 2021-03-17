@@ -126,7 +126,7 @@ Un secondo contributo alla brillanza superficiale del cielo è dato dai fattori 
 
 \section{Misure fotometriche}
 
-\subsection*{Sorgenti puntiformi}
+\subsubsection*{Sorgenti puntiformi}
 Prendiamo una sorgente puntiforme con emissione elettromagnetica isotropa, si definisce \textbf{densità spettrale di flusso} l'energia raccolta per unità di superficie collettrice, di tempo e di banda di frequenza passante, essendo che sarà un'emissione a spettro si deve distinguere per le varie bande analizzate:
 \begin{equation*}
 	dE=S_\nu dAdtd\nu
@@ -161,7 +161,7 @@ Una costante importante nel nostro sistema è la \textit{costante solare}, che �
 
 Concentrandoci sullo spettro solare, ci saranno due curve, una misurata in orbita e che approssimerà meglio l'andamento di un corpo nero ideale, mentre una misurata da terra, la quale è notevolmente diversa, sia più schiacciata per via della schermatura data dai vari strati dell'atmosfera sia frastagliata di righe di assorbimento corrispondenti alle righe di assorbimento delle molecole presenti in atmosfera. Integrando la curva dello spettro di irradiazione al di fuori dell'atmosfera si ottiene la citata costante solare pari a $1366W/m^2$, mentre integrando quella ricevuta a terra si trova circa $1kW/m^2$. Chiaramente questo valore non è sempre costante così come non lo è il sole, la cui superficie è contraddistinta dalle sue macchie solari che sono zone di depressione magnetica in cui il gas è più freddo, dando valori di potenza in emissione oscillanti nel tempo, sia su scale annue che giornaliere, e il cui valore medio è la costante trovata.
 
-\subsection*{Sorgenti estese}
+\subsubsection*{Sorgenti estese}
 Passando alle sorgenti estese, il concetto di flusso spettrale va esteso ad un elemento della superficie emittente, introducendo il concetto di \textbf{intensità specifica} $I_\nu (\theta,\phi)$, definita come la densità di flusso ricevuta per unità di angolo solido $d\Omega$ nella direzione $\theta,\phi$ (l'angolo può essere espresso in steradianti come in arcosecondi), dove nell'integrazione dell'area bisogna considerare l'area normale alla direzione di emissione ed è stato introdotto un sistema di riferimento solidale all'osservatore.
 \begin{equation*}
 	S(\nu)=\int_{\theta}^{}\int_{\phi}^{} I(\theta,\phi,\nu)\cos\theta d\Omega
@@ -194,7 +194,7 @@ Che altri non è che la \textbf{legge di Stefan-Boltzmann}, dove $\sigma$ è la 
 	L = 4\pi R^2 \sigma T^4
 \end{equation}
 
-\subsection*{Magnitudine e colore}
+\subsubsection*{Magnitudine e colore}
 Dal flusso si introduce una scala storica di utilizzo molto diffuso in astronomia e risalente nella sua prima definizione a Ipparco, introdotta in modo da risultare più comoda e lineare rispetto alla sensibilità dell'occhio umano, che risponde in maniera logaritmica alla sollecitazione luminosa, dovendosi adattare ad un vastissimo range di luminosità, passando dal buio della notte fonda alle giornate più soleggiate. Da Ipparco è stato poi esteso da Pogson nella seconda metà del diciannovesimo secolo ed è una scala inversa, in cui una magnitudine minore significa un flusso, e quindi una luminosità, maggiore (in una certa banda), in cui una differenza di 5 magnitudini corrisponde a una differenza di flusso di un fattore 100, ossia due ordini di grandezza maggiore o minore:
 \begin{equation*}
 	m_1-m_2 = -2.5log_{10}\frac{F_1}{F_2} \quad \longrightarrow \quad \frac{F_1}{F_2} = 10^{0.4(m_2-m_1)}
@@ -338,7 +338,7 @@ Mentre quella che è la massa stellare e delle polveri misurata è solo la metà
 
 Per funzionamento "gerarchico" della gravità, anche le galassie si raccolgono in gruppi ed ammassi esattamente come le stelle, costruendo strutture, la nostra facendo parte del \textit{Gruppo Locale}, costituito da una sessantina di galassie gravitazionalmente legate tra loro. La famosa galassia Andromeda M31, una delle poche con dimensioni simili alla nostra e situata a circa $700\,kpc$ da noi, è all'estremo opposto del nostro gruppo, mentre circa la metà delle galassie del nostro gruppo sono a forma irregolare, altre sono sferoidali e solo tre hanno simmetria a spirale come la nostra. Allontanandoci di svariati $Mpc$, si va incontro ad altri gruppi ed agglomerati di galassie, superati la distanza di circa $100\,Mpc$, l'universo comincia ad essere abbastanza isotropo e ad avere un aspetto omogeneo, nel senso che questa tendenza al clustering (raggrupamento, granulosità) di stelle e poi galassie inizia a venire meno. Questa proprietà è fondamentale per comprendere l'universo tramite gli occhiali della relatività generale, teoria fondata sull'omogeneità dell'universo e grazie alla quale riusciamo a porre una descrizione analitica alle nostre osservazioni. 
 
-\subsection*{Redshit e legge di Hubble}
+\subsubsection*{Redshit e legge di Hubble}
 Per parlare della scala dell'universo, dobbiamo introdurre la legge di Hubble, tornando indietro di cento anni nella storia. All'epoca, le altre galassie venivano catalogate a centinaia sotto il termine di nebule (o nebulose), chiedendosi se fossero parte della nostra galassia o fossero sistemi esterni. La svolta venne dalle osservazioni di Hubble ed i suoi collaboratori, tramite un telescopio di $2\,m$ di diametro e svolgendo studi di spettroscopia, analizzando una ventina di queste nebulose (galassie), di cui si aveva già una stimma della distanza da misurazioni indipendenti, e anallizando i loro effetti di \textbf{redshift}. Si ricorda che il redshift è interpretato tramite l'effetto Doppler, per cui:
 \begin{equation*}
 	z=\frac{\lambda_{obs}-\lambda_{em}}{\lambda_{em}}
@@ -432,7 +432,7 @@ Un'altra proprietà collegato al rapporto focale è il \textit{campo di vista}, 
 \end{equation*}
 Maggiore è questo parametro maggiore sarà la velocità con cui è capace di effetture osservazioni il telescopio in oggetto. Chiaramente è direttamente proporzionale al fov in quanto si tratta di un parametro osservativo, mentre tiene conto del flusso limite tramite il termine $D^2$.
 
-\subsection*{Aberrazioni ottiche}
+\subsubsection*{Aberrazioni ottiche}
 
 Sia la lente che le camere poste davanti il punto focale che costituiscono il telescopio sono fortemente influenzate degli effetti di aberrazione accennati precedentemente e che ora accenneremo più in dettaglio.
 
@@ -444,7 +444,7 @@ Sia la lente che le camere poste davanti il punto focale che costituiscono il te
 	\vspace{-10pt}
 \end{wrapfigure}
 
-Le principali tipologie di aberrazioni ottiche, riassunte in figura, sono il coma, l'aberrazione sferica, l'astigmatismo, la distorsione di campo e la curvatura di campo. La prima riguarda i raggi del fascio incidente più fuori asse rispetto a quelli centrali, per cui succede che per conformazione della lente convergente i corrispettivi raggi rifratti non vadano a convergere nello stesso punto, creando una piccola coda. L'aberrazione sferica riguarda la forma della lente, per cui i raggi più distanti dall'asse ottico vengono rifratti ad angoli diversi andando a convergere in punti diversi rispetto quello focale (dove comunque confluiscono tutti i raggi che in incidenza erano più vicini l'asse). L'astigmatismo consiste nella perdita di simmetria assiale, per cui raggi incidenti ad angoli diversi convergono a distanze focali diverse. Altri tipo di aberrazione, come quella della curvatura di campo, procudono effetti distortivi per cui il piano focale diventa curvo, problema tipico dei telescopi a fov molto grandi e risolvibile con le moderne tecnologie creando appositi CCD curvi. Questo effetto si ritrova similmente nella distorsione di campo, effetto che fa perdere la scala di misure del piano focale sull'intero campo di vista, come è facilmente dall'immagine, e per cui si ottengono pixel equivalenti che non hanno le stesse dimensioni costanti in tutto il campo di vista. Questi effetti possono essere limitati in principio creando strumentazioni apposite, ad esempio usando specchi parabolici anzichè sferici nei telescopi riflessivi. In generale, si parla di fov corretto per i indicare il fov di un telescopio una volta aggiunte le strumentazioni e applicate tutte quelle correzioni che puntano a ridurre gli effetti di queste aberrazioni.
+Le principali tipologie di aberrazioni ottiche, riassunte in figura, sono il \textit{coma}, l'aberrazione sferica, l'astigmatismo, la distorsione di campo e la curvatura di campo. La prima riguarda i raggi del fascio incidente più fuori asse rispetto a quelli centrali, per cui succede che per conformazione della lente convergente i corrispettivi raggi rifratti non vadano a convergere nello stesso punto, creando una piccola coda. L'\textit{aberrazione sferica} riguarda la forma della lente, per cui i raggi più distanti dall'asse ottico vengono rifratti ad angoli diversi andando a convergere in punti diversi rispetto quello focale (dove comunque confluiscono tutti i raggi che in incidenza erano più vicini l'asse). L'\textit{astigmatismo} consiste nella perdita di simmetria assiale, per cui raggi incidenti ad angoli diversi convergono a distanze focali diverse. Altri tipi di aberrazione, come quella della \textit{curvatura di campo}, procudono effetti distortivi per cui il piano focale diventa curvo, problema tipico dei telescopi a fov molto grandi e risolvibile con le moderne tecnologie creando appositi CCD curvi. Questo effetto si ritrova similmente nella \textit{distorsione di campo}, effetto che fa perdere la scala di misure del piano focale sull'intero campo di vista, come è facilmente dall'immagine, e per cui si ottengono pixel equivalenti che non hanno le stesse dimensioni costanti in tutto il campo di vista. Questi effetti possono essere limitati in principio creando strumentazioni apposite, ad esempio usando specchi parabolici anzichè sferici nei telescopi riflessivi. In generale, si parla di fov corretto per i indicare il fov di un telescopio una volta aggiunte le strumentazioni e applicate tutte quelle correzioni che puntano a ridurre gli effetti di queste aberrazioni.
 
 % ragiona se rifare i paragrafi o mettere la prossima parte (struttura di cassegrain e telescopi riflessivi) nella parte prima delle aberrazioni o boh
 
@@ -463,6 +463,20 @@ Dove $F_p$ è la distanza focale dello specchio primario, $F_s$ del secondario e
 \end{figure}
 
 Come accennato al paragrafo precedente, gli specchi sono parabolici per favorire la convergenza di tutti i raggi nello stesso punto focale, anche quelli maggiormente fuori asse. Lo svantaggio di questa struttura sta nell'ingombro che lo specchio secondario comporta, riducendo notevolmente il campo visivo. Un design di questa tipologia di telescopi particolarmente diffusa è quella di \textbf{Ritchey-Chrétien}, basato su strutture iperboliche per entrambi gli specchi che annullano l'aberrazione sferica e il coma, riducendo al tempo stesso l'astigmatismo e la curvatura di campo, mantenendo un fov corretto abbastanza ampio. Un altro vantaggio di questa struttura è la sua compattezza, riducendo i costi di costruzione e di sviluppo della meccanica atta a mantenerne la stabilità e a muoverlo per coprire varie parti di cielo. Il prezzo principale di questo modello è uno specchio secondario maggiore, che arriva a coprire anche il $20\%$ del campo di vista rispetto ad altri.
+
+\subsubsection*{Risoluzione angolare e funzione di risposta}
+
+Per definire il concetto di risoluzione angolare di un telescopio, è necessario fare ulteriori richiami di ottica. Un fenomeno importante ai fini della definizione di questo parametro è la \textit{diffrazione di Fraunhofer}, storicamente adoperata per la comprensione della natura della luce, se questa fosse corpuscolare o ondulatoria, il cui scopo è quello di indagare gli effetti che ha una fenditura su un fronte d'onda piano. Innanzitutto, per fronte d'onda si intendono dei punti nello spazio ugualmente distanziati in cui l'onda si trova nella stessa fase, ad esempio i fronti di picco sono quelli in cui l'onda si ritrova periodicamente ad avere dei picchi in punti ben definiti dello spazio. Una volta che questi fronti d'onda colpiscono una fenditura, quello che si osserva è la generazione di frange di interferenza costruttive e distruttive, interpretato da Fraunhofer come effetto di interferenza tra le onde che vengono generate in ogni punto della fenditura, che diventa quindi sorgente.
+
+%\begin{wrapfigure}{r}{0.4\textwidth}
+	%\vsapce{-10pt}
+	%\centering
+	%\includegraphics[width=0.39\textwidth]{Immagini/Capitolo2/Fraunhofer.PNG}
+	%\caption*{Diffrazione di Fraunhofer}
+	%\vspace{-10pt}
+%\end{wrapfigure}
+
+kdnfjdivnfdsjkn
 
 
 \end{document}
