@@ -478,7 +478,34 @@ Per definire il concetto di risoluzione angolare di un telescopio, è necessario
 	\vspace{-10pt}
 \end{wrapfigure}
 
-kdnfjdivnfdsjkn
+Nel caso i fronti incidano perpendicolarmente la fenditura, le onde generate in asse saranno speculari a quelle incidenti, per cui avremmo frange ad interferenza costruttiva nelle proiezioni sul piano focale, come mostrato in figura. Nel caso la sorgente non sia in asse con la fenditura bisogna calcolare lo sfasamento di ogni fronte generato nei diversi punti di essa. Per fare questa misura bisogna considerare la differenza di cammino $\Delta s$ all'inizio della propagazione, come mostrato nella (b), tra le due onde prese in considerazione e prendendo in riferimento la congiungente ortogonale la direzione di propagazione rispetto a cui si vuole trovare l'interferenza risultante. Dalla trigonometria sappiamo che la differenza di cammino generante lo sfasamento è:
+\begin{equation*}
+	\Delta s = \frac{a}{2}\sin\theta
+\end{equation*}
+Dove abbiamo considerato le due onde come distanti metà fenditura l'una dall'altra, come nella (b), e dove $a$ è la grandezza della fenditura, $\theta$ l'angolo sotteso tra la normale alla fenditura e l'asse scelto in direzione del piano focale. Nel caso di interferenza distruttiva, le onde dovranno essere perfettamente in antifase, ossia avere una differenza di fase di $\pi$, ma essendo che le onde sono descritte da funzioni periodiche con periodo $t=2\pi$, per avere tale sfasamento dovremmo misurare una differenza di cammino pari a $\lambda/2$. Il risultato è un picco centrale luminoso seguito da zone di buio e poi nuovamente a interferenza costruttiva di dimensioni e intensità via via minori, quello che si trova per l'andamento dell'intensità di luce è:
+\begin{equation*}
+	I(\beta) = \frac{\sin^2(\beta)}{\beta^2} \qquad \text{dove} \,
+	\beta = \frac{\pi d}{\lambda}\sin\theta
+\end{equation*}
+Dove chiaramente per $\theta$ nullo si ha il primo e maggiore picco, mentre per $\beta=\pi$, ossia $\sin\theta=\lambda/d$, si ha il primo minimo. Essendo i telescopi, così come anche le antenne radio e altri rivelatori, costituiti da fenditure circolari che fanno ostruzione e originano diffrazione con il segnale entrante, questo fenomeno è cruciale nella definizione di risoluzione angolare. Le sorgenti talmente vicine da avere separazione angolare vicina al rapporto tra la lunghezza d'onda del fascio incidente e il diametro del telescopio, produrranno uno sfasamento da una parte all'altra dell'entrata del telescopio (causante ostruzione). Nel caso questa differenza di percorso $\Delta s$ diventi più piccola della lunghezza d'onda stessa, non saremo più in grado di distinguere i due segnali, essendo i loro picchi di diffrazione troppo sovrapposti per essere distinguibili.
+
+\begin{wrapfigure}{l}{0.3\textwidth}
+	\vspace{-10pt}
+	\centering
+	\includegraphics[width=0.29\textwidth]{Immagini/Capitolo2/Disco_Airy.PNG}
+	\caption*{Disco di Airy}
+	\vspace{-10pt}
+\end{wrapfigure}
+
+Risolvendo gli integrali di Wessel relativi alla fenditura circolare (caso proprio dei telescopi) viene fuori un rapporto numericamente la relazione tra l'angolo a cui si forma il primo minimo di diffrazione con il rapporto $\lambda/d$ tramite il fattore di forma:
+\begin{equation*}
+	\alpha_{min}=1.22\frac{\lambda}{d}
+\end{equation*}
+Dove chiaramente il pattern di diffrazione ha simmetria circolare, piuttosto che la disposizione a bande analizzata prima, creando il cosiddetto \textit{Disco di Airy}. Da ciò, si introduce il concetto di \textbf{risoluzione angolare} tramite il criterio di Rayleigh, secondo cui un telescopio con apertura $d$ è in grado di risolvere due sorgenti di emissione a lunghezza d'onda $\lambda$ se esse si trovano non più vicine tra loro della distanza a cui si trova il primo minimo di diffrazione, in formula se la loro separazione angolare $\Delta\alpha$ è al massimo:
+\begin{equation*}
+	\Delta\alpha = \alpha_{min} = 1.22\frac{\lambda}{d}
+\end{equation*}
+
 
 
 \end{document}
