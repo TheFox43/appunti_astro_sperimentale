@@ -9,8 +9,8 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{booktabs}
-\usepackage{caption} %per inserire immagini
-\usepackage{sidecap} %per inserire immagini con descrizione laterale
+\usepackage{caption} %per inserire descrizione immagini
+%\usepackage{sidecap} %per inserire descrizioni laterali alle immagini
 \usepackage{wrapfig} %per inserire immagini a lato pagina, wrappando il testo intorno
 \usepackage{graphicx} %impaginazione
 \usepackage{blindtext} %boh
@@ -20,6 +20,10 @@
 
 %Per l'inserimento immagini la guida molto utile di wikipedia:
 %https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+
+%Settaggio comandi grafici
+%\renewcommand{\caption*}[1]{\begin{center}{\caption*{#1}}}%inserimento testo centrato sotto immagini
+\captionsetup{justification=centering}
 
 %Definizione comando email e settaggio del pacchetto hyperref
 \newcommand{\mail}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
@@ -54,6 +58,10 @@
 \newtheorem*{definizionenn}{Definizione}
 \newtheorem*{principio}{Principio}
 \newtheorem*{postulato}{Postulato}
+\newtheorem*{exmp}{Esempio}
+\newtheorem{exrc}{Esercizio}
+\newtheorem{sol}{Soluzione}
+
 \theoremstyle{plain}
 \newtheorem{teorema}{Teorema}
 \newtheorem*{teoremann}{Teorema}
@@ -490,22 +498,63 @@ Dove abbiamo considerato le due onde come distanti metà fenditura l'una dall'al
 Dove chiaramente per $\theta$ nullo si ha il primo e maggiore picco, mentre per $\beta=\pi$, ossia $\sin\theta=\lambda/d$, si ha il primo minimo. Essendo i telescopi, così come anche le antenne radio e altri rivelatori, costituiti da fenditure circolari che fanno ostruzione e originano diffrazione con il segnale entrante, questo fenomeno è cruciale nella definizione di risoluzione angolare. Le sorgenti talmente vicine da avere separazione angolare vicina al rapporto tra la lunghezza d'onda del fascio incidente e il diametro del telescopio, produrranno uno sfasamento da una parte all'altra dell'entrata del telescopio (causante ostruzione). Nel caso questa differenza di percorso $\Delta s$ diventi più piccola della lunghezza d'onda stessa, non saremo più in grado di distinguere i due segnali, essendo i loro picchi di diffrazione troppo sovrapposti per essere distinguibili.
 
 \begin{wrapfigure}{l}{0.3\textwidth}
-	\vspace{-10pt}
+	\vspace{-5pt}
 	\centering
 	\includegraphics[width=0.29\textwidth]{Immagini/Capitolo2/Disco_Airy.PNG}
 	\caption*{Disco di Airy}
-	\vspace{-10pt}
+	\vspace{-12pt}
 \end{wrapfigure}
 
-Risolvendo gli integrali di Wessel relativi alla fenditura circolare (caso proprio dei telescopi) viene fuori un rapporto numericamente la relazione tra l'angolo a cui si forma il primo minimo di diffrazione con il rapporto $\lambda/d$ tramite il fattore di forma:
+Risolvendo gli integrali di Wessel relativi alla fenditura circolare (caso proprio dei telescopi) viene fuori un rapporto numerico che relaziona l'angolo a cui si forma il primo minimo di diffrazione con il rapporto $\lambda/d$ tramite il fattore di forma:
 \begin{equation*}
 	\alpha_{min}=1.22\frac{\lambda}{d}
 \end{equation*}
-Dove chiaramente il pattern di diffrazione ha simmetria circolare, piuttosto che la disposizione a bande analizzata prima, creando il cosiddetto \textit{Disco di Airy}. Da ciò, si introduce il concetto di \textbf{risoluzione angolare} tramite il criterio di Rayleigh, secondo cui un telescopio con apertura $d$ è in grado di risolvere due sorgenti di emissione a lunghezza d'onda $\lambda$ se esse si trovano non più vicine tra loro della distanza a cui si trova il primo minimo di diffrazione, in formula se la loro separazione angolare $\Delta\alpha$ è al massimo:
+Dove chiaramente il pattern di diffrazione ha simmetria circolare, anzichè la disposizione a bande analizzata prima, creando il cosiddetto \textit{Disco di Airy}. Da ciò, si introduce il concetto di \textbf{risoluzione angolare} tramite il criterio di Rayleigh, secondo cui un telescopio con apertura $d$ è in grado di risolvere due sorgenti di lunghezza d'onda $\lambda$ se esse si trovano non più vicine tra loro della distanza a cui si trova il primo minimo di diffrazione, in formula se la loro separazione angolare $\Delta\alpha$ è al massimo:
 \begin{equation*}
 	\Delta\alpha = \alpha_{min} = 1.22\frac{\lambda}{d}
 \end{equation*}
+Considerato anche il rumore di fondo presente nelle osservazioni, di norma è difficile visualizzare il secondo disco di massimo a meno che la fonte non sia particolarmente luminosa. Questo secondo picco può essere particolarmente fastidioso nel caso la rivelazione punti all'osservazione di un pianeta legato a una stella, che se posto abbastanza vicino la stella rischia di essere oscurato, in tal caso si aggiunge anche il fatto che mediamente il contrasto tra un pianeta e la propria stella è di circa un fattore dieci. 
 
+\begin{wrapfigure}{l}{0.4\textwidth}
+	\vspace{-10pt}
+	\centering
+	\includegraphics[width=0.39\textwidth]{Immagini/Capitolo2/Risoluzione_angolare.PNG}
+	\caption*{RIsoluzione angolare in termini del pattern di diffrazione}
+	\vspace{-5pt}
+\end{wrapfigure}
+
+Come parametro della risoluzione angolare ma anche del fit gaussiano del profilo di luminosità di una stella si usa la $FWHM$ (full width half maximum) del primo massimo di interferenza. Il discorso è più complesso per i telescopi da terra, particolarmente limitati dalla turbolenza atmosferica, mentre per quelli posti in orbita il discorso di esaurisce proprio in questi termini, dove si ricorda che la deviazione standard $\sigma$ di una gaussiana è correlata alla $FWHM$ secondo la relazione $\sigma=2.355\, FWHM$. Per capire la sua importanza basta vedere il plot del pattern di diffrazione (intensità percepita sul piano focale in funzione della distanza), in cui viene rappresentato il caso limite in cui il picco della seconda sorgente cade esattamente dove si trova il primo minimo di diffrazione della prima sorgente, in questo caso le sorgenti si sovrappongono proprio nel punto di FWHM citato prima.
+
+\begin{exrc}[Sonda Cassini e Saturno]
+	La sonda Cassini, in orbita attorno Saturno da diversi anni, è finita due volte nelle condizioni geometriche tali da avere un'eclissi totale del Sole da parte del pianeta, in tal modo si sono potute fare osservazioni della lontana Terra, avendo la principale sorgente di luce del nostro sistema oscurata. Su questa sonda sono posti due telescopi, uno angolo ampio molto veloce (WAC - wide angle camera), e uno a focale maggiore e campo di vista minore (NAC - narrow angle camera), che hanno rispettivamente $F=20\, cm$ e $f/3.5$, $F=2\, cm$ e $f/10.5$, mentre i CCD danno pixel di $12\, \mu m$. Ora la distanza di Saturno in quell'istante era $d=1.44\e{12}m$, mentre la distanza tra la Terra e la Luna media è $T-L=3.84\e{8}m$. Si chiede di trovare:
+	\begin{enumerate}
+		\item Qual è la scala in arcsec/pixel in WAC e NAC?
+		\item Quanti arcsec (e pixel) separano la Terra dalla Luna nelle immagini WAC e NAC?
+		\item Risoluzione angolare di WAC e NAC
+		\item La Terra e’ risolta nelle immagini ?
+	\end{enumerate}
+\end{exrc}
+\begin{sol}
+	Suddividiamo la soluzione nei rispettivi punti posti nell'esercizio:
+	\begin{enumerate}
+		\item Scala in arcsec/pixel in WAC e NAC:
+		\begin{itemize}
+			\item Scala WAC: $\frac{206265}{200mm}=1031"/mm=12.4"/pixel$
+			\item Scala NAC: $\frac{206265}{2000mm}=103.1"/mm=1.2"/pixel$
+		\end{itemize}
+		\item Separazione Terra-Luna nei due telescopi:
+		\begin{itemize}
+			\item WAC:
+			\item Scala NAC:
+		\end{itemize}
+		\item Risoluzioni angolari di WAC e NAC:
+		\begin{itemize}
+			\item WAC:
+			\item Scala NAC:
+		\end{itemize}
+		\item La Terra?
+	\end{enumerate}
+\end{sol}
 
 
 \end{document}
