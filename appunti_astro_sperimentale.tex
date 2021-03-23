@@ -416,9 +416,10 @@ In cui si può approsimare la tangente con l'angolo stesso per piccoli angoli. C
 	\frac{\Delta\alpha}{\Delta s} = \frac{1}{F}
 \end{equation*}
 Espressa in arcosecondi su millimetro (o su pixel), detto in inglese \textit{plate scale}(si ricordi che $\alpha$ è espresso in radianti e va convertito in arcosecondi). Si può definire una focale equivalente nota la distanza focale $F$ facendo semplicamente il rapporto tra un radiante (espresso in arcosecondi) e questa lunghezza. Un rapporto molto importante è il \textit{rapporto focale} $f$ definito come:
-\begin{equation*}
-	f=\frac{F}{D}
-\end{equation*}
+\begin{equation}
+	\label{def:f-ratio}
+	f \Def \frac{F}{D}
+\end{equation}
 Dove $D$ è il diametro della lente focalizzante. Questa grandezza è particolarmente importante in quanto il suo inverso $\/f$ determina la "velocità" della lente, di fatti una lente con lunghezza focale maggiore focalizzerà l'immagine su un numero di pixel $s$ maggiore a parità di angolo $\alpha$ di deviazione dall'asse, essendo le due in proporzionalità diretta. Nei tempi di esposizione, un'immagine e quindi un flusso distribuito su più pixel necessiterà di un'esposizione maggiore per avere un buono rapporto segnale-rumore, questo significa che una lente con rapporto $1/f$ piccolo, avrà lunghezza focale $F$ grande, e perciò sarà più lenta. Nel caso reale entra in gioco anche l'area collettrice, ossia le dimensioni del telescopio, le quali determinano la quantità di flusso a cui è esposto il rivelatore su cui mette a fuoco al lente. Questo significa che se un'immagine ha dimensioni lineari $s$, avrà area proporzionale a $s^2$, per cui l'energia del fotone focalizzato per ogni pixel sarà proporzionale al rapporto tra le dimensioni dell'apertura che permette il passaggio del fotone e quelle dell'immagine su cui questo fotone va a "distribuirsi":
 \begin{equation*}
 	E_{ph} \propto \frac{D^2}{s^2} \propto \frac{D^2}{F^2} = f^{-2}
@@ -526,7 +527,7 @@ Considerato anche il rumore di fondo presente nelle osservazioni, di norma è di
 Come parametro della risoluzione angolare ma anche del fit gaussiano del profilo di luminosità di una stella si usa la $FWHM$ (full width half maximum) del primo massimo di interferenza. Il discorso è più complesso per i telescopi da terra, particolarmente limitati dalla turbolenza atmosferica, mentre per quelli posti in orbita il discorso di esaurisce proprio in questi termini, dove si ricorda che la deviazione standard $\sigma$ di una gaussiana è correlata alla $FWHM$ secondo la relazione $\sigma=2.355\, FWHM$. Per capire la sua importanza basta vedere il plot del pattern di diffrazione (intensità percepita sul piano focale in funzione della distanza), in cui viene rappresentato il caso limite in cui il picco della seconda sorgente cade esattamente dove si trova il primo minimo di diffrazione della prima sorgente, in questo caso le sorgenti si sovrappongono proprio nel punto di FWHM citato prima.
 
 \begin{exrc}[Sonda Cassini e Saturno]
-	La sonda Cassini, in orbita attorno Saturno da diversi anni, è finita due volte nelle condizioni geometriche tali da avere un'eclissi totale del Sole da parte del pianeta, in tal modo si sono potute fare osservazioni della lontana Terra, avendo la principale sorgente di luce del nostro sistema oscurata. Su questa sonda sono posti due telescopi, uno angolo ampio molto veloce (WAC - wide angle camera), e uno a focale maggiore e campo di vista minore (NAC - narrow angle camera), che hanno rispettivamente $F=20\, cm$ e $f/3.5$, $F=2\, cm$ e $f/10.5$, mentre i CCD danno pixel di $12\, \mu m$. Ora la distanza di Saturno in quell'istante era $d=1.44\e{12}m$, mentre la distanza tra la Terra e la Luna media è $T-L=3.84\e{8}m$. Si chiede di trovare:
+	La sonda Cassini, in orbita attorno Saturno da diversi anni, è finita due volte nelle condizioni geometriche tali da avere un'eclissi totale del Sole da parte del pianeta, in tal modo si sono potute fare osservazioni della lontana Terra, avendo la principale sorgente di luce del nostro sistema oscurata. Su questa sonda sono posti due telescopi, uno angolo ampio molto veloce (WAC - wide angle camera), e uno a focale maggiore e campo di vista minore (NAC - narrow angle camera), che hanno rispettivamente $F=20\, cm$ e $f/3.5$, $F=2\, m$ e $f/10.5$, mentre i CCD danno pixel di $12\, \mu m$. Ora la distanza di Saturno in quell'istante era $d=1.44\e{12}m$, mentre la distanza tra la Terra e la Luna media è $T-L=3.84\e{8}m$. Si chiede di trovare:
 	\begin{enumerate}
 		\item Qual è la scala in arcsec/pixel in WAC e NAC?
 		\item Quanti arcsec (e pixel) separano la Terra dalla Luna nelle immagini WAC e NAC?
@@ -535,24 +536,40 @@ Come parametro della risoluzione angolare ma anche del fit gaussiano del profilo
 	\end{enumerate}
 \end{exrc}
 \begin{sol}
-	Suddividiamo la soluzione nei rispettivi punti posti nell'esercizio:
+	Suddividiamo la soluzione nei rispettivi punti posti nell'esercizio, chiamando $C=206265$ il fattore di conversione tra arcosecondi e radianti:
 	\begin{enumerate}
-		\item Scala in arcsec/pixel in WAC e NAC:
+		\item Scala in arcsec/pixel in WAC e NAC (il fattore di conversione da millimetri a pixel è dato dalle dimensioni del CCD $1mm / 12\mu m = 83 \,pixel / mm$):
 		\begin{itemize}
-			\item Scala WAC: $\frac{206265}{200mm}=1031"/mm=12.4"/pixel$
-			\item Scala NAC: $\frac{206265}{2000mm}=103.1"/mm=1.2"/pixel$
+			\item Scala WAC: $\frac{C}{F}=\frac{206265}{200mm}=1031"/mm=12.4"/pxl$
+			\item Scala NAC: $\frac{C}{F}=\frac{206265}{2000mm}=103.1"/mm=1.2"/pxl$
 		\end{itemize}
 		\item Separazione Terra-Luna nei due telescopi:
 		\begin{itemize}
-			\item WAC:
-			\item Scala NAC:
+			\item $\theta(T-L)=\frac{T-L}{d}\cdot C=\frac{3.84\e{8}m}{1.446\e{12}m}\cdot 206265=54.8"=
+			\begin{cases}
+				4.4 \, pxl \quad \text{WAC} \\
+				45 \, pxl \quad \text{NAC}
+			\end{cases}
+			$
 		\end{itemize}
-		\item Risoluzioni angolari di WAC e NAC:
+		\item Risoluzioni angolari di WAC e NAC (si tralascia il calcolo di $D$ in quanto di derivazione diretta da $F$ e $f$ sfruttando la \ref{def:f-ratio}):
 		\begin{itemize}
-			\item WAC:
-			\item Scala NAC:
+			\item $\alpha=0.12"\frac{\lambda}{0.5\mu m}\frac{1m}{D(m)}=
+			\begin{cases}
+				0.12"\frac{1}{0.057}=2" \quad \text{WAC} \\
+				0.12"\frac{1}{0.19}=0.6"\quad \text{NAC}
+			\end{cases}
+			$
 		\end{itemize}
-		\item La Terra?
+		\item Affinchè la Terra venga risolta da entrambi i telescopi, è necessario che abbia dimensioni maggiori della risoluzione angolare:
+		\begin{itemize}
+			\item $\theta(Terra)=\frac{2R_T}{d}\cdot C=\frac{2\cdot 6.371\e{6}m}{1.446\e{12}m}\cdot 206265=1.8"
+			\begin{cases}
+				\text{WAC non risolve la Terra} \\
+				\text{NAC risolve la Terra}
+			\end{cases}
+			$
+		\end{itemize}
 	\end{enumerate}
 \end{sol}
 
