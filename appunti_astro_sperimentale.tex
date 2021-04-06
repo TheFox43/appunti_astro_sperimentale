@@ -457,7 +457,7 @@ Le principali tipologie di aberrazioni ottiche, riassunte in figura, sono il \te
 
 % ragiona se rifare i paragrafi o mettere la prossima parte (struttura di cassegrain e telescopi riflessivi) nella parte prima delle aberrazioni o boh
 
-\subsection{Telescopi riflessivi}
+\subsection*{Telescopi riflessivi}
 
 Il più comune dei telescopi riflessivi è il Cassegrain, citato prima, dove il fascio viene riflesso da uno specchio principale su un secondario convesso, il quale riflette a sua volta i raggi sul piano focale attraversando un buco nello specchio primario. Combinando gli effetti riflessivi dei due specchi, si può ricavare la correlazione tra le distanze focali tramite la seguente:
 \begin{equation*}
@@ -511,9 +511,11 @@ Risolvendo gli integrali di Wessel relativi alla fenditura circolare (caso propr
 	\alpha_{min}=1.22\frac{\lambda}{d}
 \end{equation*}
 Dove chiaramente il pattern di diffrazione ha simmetria circolare, anzichè la disposizione a bande analizzata prima, creando il cosiddetto \textit{Disco di Airy}. Da ciò, si introduce il concetto di \textbf{risoluzione angolare} tramite il criterio di Rayleigh, secondo cui un telescopio con apertura $d$ è in grado di risolvere due sorgenti di lunghezza d'onda $\lambda$ se esse si trovano non più vicine tra loro della distanza a cui si trova il primo minimo di diffrazione, in formula se la loro separazione angolare $\Delta\alpha$ è al massimo:
-\begin{equation*}
-	\Delta\alpha = \alpha_{min} = 1.22\frac{\lambda}{d}
-\end{equation*}
+\begin{equation}
+	\label{def:ris-ang}
+	\Delta\alpha \Def \alpha_{min} = 1.22\frac{\lambda}{d} =
+	0.12" \Bigl( \frac{\lambda}{0.5\mu m} \Bigr) \Bigl( \frac{1m}{d} \Bigr)
+\end{equation}
 Considerato anche il rumore di fondo presente nelle osservazioni, di norma è difficile visualizzare il secondo disco di massimo a meno che la fonte non sia particolarmente luminosa. Questo secondo picco può essere particolarmente fastidioso nel caso la rivelazione punti all'osservazione di un pianeta legato a una stella, che se posto abbastanza vicino la stella rischia di essere oscurato, in tal caso si aggiunge anche il fatto che mediamente il contrasto tra un pianeta e la propria stella è di circa un fattore dieci. 
 
 \begin{wrapfigure}{l}{0.4\textwidth}
@@ -545,41 +547,61 @@ Come parametro della risoluzione angolare ma anche del fit gaussiano del profilo
 			\item Scala NAC: $\frac{C}{F}=\frac{206265}{2000mm}=103.1"/mm=1.2"/pxl$
 		\end{itemize}
 		\item Separazione Terra-Luna nei due telescopi:
-		\begin{itemize}
-			\item $\theta(T-L)=\frac{T-L}{d}\cdot C=\frac{3.84\e{8}m}{1.446\e{12}m}\cdot 206265=54.8"=
-			\begin{cases}
-				4.4 \, pxl \quad \text{WAC} \\
-				45 \, pxl \quad \text{NAC}
-			\end{cases}
-			$
-		\end{itemize}
+		
+		$
+		\theta(T-L)=\frac{T-L}{d}\cdot C=\frac{3.84\e{8}m}{1.446\e{12}m}\cdot 206265=54.8"=
+		\begin{cases}
+			4.4 \, pxl \quad \text{WAC} \\
+			45 \, pxl \quad \text{NAC}
+		\end{cases}
+		$
 		\item Risoluzioni angolari di WAC e NAC (si tralascia il calcolo di $D$ in quanto di derivazione diretta da $F$ e $f$ sfruttando la \ref{def:f-ratio}):
-		\begin{itemize}
-			\item $\alpha=0.12"\frac{\lambda}{0.5\mu m}\frac{1m}{D(m)}=
-			\begin{cases}
-				0.12"\frac{1}{0.057}=2" \quad \text{WAC} \\
-				0.12"\frac{1}{0.19}=0.6"\quad \text{NAC}
-			\end{cases}
-			$
-		\end{itemize}
+		
+		$
+		\alpha=0.12"\frac{\lambda}{0.5\mu m}\frac{1m}{D(m)}=
+		\begin{cases}
+			0.12"\frac{1}{0.057}=2" \quad \text{WAC} \\
+			0.12"\frac{1}{0.19}=0.6"\quad \text{NAC}
+		\end{cases}
+		$
 		\item Affinchè la Terra venga risolta da entrambi i telescopi, è necessario che abbia dimensioni maggiori della risoluzione angolare:
-		\begin{itemize}
-			\item $\theta(Terra)=\frac{2R_T}{d}\cdot C=\frac{2\cdot 6.371\e{6}m}{1.446\e{12}m}\cdot 206265=1.8"
-			\begin{cases}
-				\text{WAC non risolve la Terra} \\
-				\text{NAC risolve la Terra}
-			\end{cases}
-			$
-		\end{itemize}
+		
+		$
+		\theta(Terra)=\frac{2R_T}{d}\cdot C=\frac{2\cdot 6.371\e{6}m}{1.446\e{12}m}\cdot 206265=1.8"
+		\begin{cases}
+			\text{WAC non risolve la Terra} \\
+			\text{NAC risolve la Terra}
+		\end{cases}
+		$
 	\end{enumerate}
 \end{sol}
 
 \begin{exrc}[Terra vista da Marte]
-	A bordo	della sonda Mars Reconnaissance Orbiter c'è una camera di nome HIRISE, con diametro $D=0.5\, m$ e lunghezza focale $F=12\, m$ e la cui grandezza dei pixel è $pxl=12\, \mu m$, il cui compito è l'osservazione del suolo marziano.
+	A bordo	della sonda Mars Reconnaissance Orbiter in orbita attorno a Marte c'è un piccolo telescopio di nome HIRISE, con diametro del riflettore $D=0.5\, m$, lunghezza focale $F=12\, m$ e la cui grandezza dei pixel è $pxl=12\, \mu m$, il cui compito è l'osservazione e la mappatura del suolo marziano. La camera venne disegnata affinchè ad ogni pixel corrispondesse un metro di suolo marziano in base alla distanza a cui questo telescopio orbitasse, e per fare osservazioni nella banda del visibile. Un giorno questa camera venne rivolta per curiosità verso la Terra e la Luna, per cui è come se fossimo nei panni di un osservatore amatoriale che rivolge il proprio sguardo verso Marte. Come riferimento, nell'istante in cui l'osservazione della Terra da parte di HIRISE venne fatta la distanza Terra-Marte (molto variabile) era $d=2.06\e{8}\, m$. Si chiede di calcolare:
+	\begin{enumerate}
+		\item Dimensioni angolari della Terra
+		\item Diametro necessario al telescopio per risolvere l'Italia
+	\end{enumerate}
 \end{exrc}
 
 \begin{sol}
+	Suddividiamo la soluzione nei rispettivi punti posti nell’esercizio, chiamandoC=206265il fattore di conversione tra arcosecondi e radianti:
+	\begin{enumerate}
+		\item Per il calcolo delle dimensioni angolari della Terra, è sufficiente prendere il suo diametro e rapportarlo con la distanza da cui viene osservato, per poi convertirlo in arcosecondi rispetto quell'osservatore:
+		\begin{itemize}
+			\item $\theta(Terra)=\frac{2R}{d}\cdot C=\frac{2\cdot 6.371\e{6}m}{2.06\e{8}m}\cdot 206265=10.6"$
+			\item  $\theta(Luna)=\frac{2R}{d}\cdot C=\frac{2\cdot 1.737\e{6}m}{2.06\e{8}m}\cdot 206265=3.5"$
+		\end{itemize}
+		\item L'Italia, essendo lunga all'incirca $2\e{6}m$, avrà un'estensione angolare di due arcosecondi, per risolverla sarà necessaria quindi una risoluzione doppia rispetto le sue dimensioni angolari per via della diffrazione (numericamente la metà della sua estensione - $1"$) e il telescopio necessiterà quindi di un diametro di apertura:
+		
+		$D=\frac{0.12"}{1"}=0.12m$
+		
+		Dove si è sfruttata la definizione di risoluzione angolare \ref{def:ris-ang} per il calcolo, adottando un segnale di lunghezza d'onda pari a mezzo micron, compatibile con il fatto che si stia facendo osservazioni nella banda del visibile. Ma essendo che HIRISE ha $D=0.5m$, ha risoluzione $0.12/0.5=0.2"$ e riesce quindi a risolvere bene i dettagli sulla Terra nel visibile. Si ricorda che per calcolare il pixel scale si usa:
 
+		$pixel \, scale = \frac{C}{F(mm)}\frac{1}{pxl/mm}$
+
+		Da cui otteniamo $206265/12\e{3}mm/83=0.2"$ per HIRISE.
+	\end{enumerate}
 \end{sol}
 
 
