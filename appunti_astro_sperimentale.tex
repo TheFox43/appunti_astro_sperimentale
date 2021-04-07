@@ -522,7 +522,7 @@ Considerato anche il rumore di fondo presente nelle osservazioni, di norma è di
 	\vspace{-10pt}
 	\centering
 	\includegraphics[width=0.39\textwidth]{Immagini/Capitolo2/Risoluzione_angolare.PNG}
-	\caption*{RIsoluzione angolare in termini del pattern di diffrazione}
+	\caption*{Risoluzione angolare in termini del pattern di diffrazione}
 	\vspace{-5pt}
 \end{wrapfigure}
 
@@ -603,6 +603,17 @@ Come parametro della risoluzione angolare ma anche del fit gaussiano del profilo
 		Da cui otteniamo $206265/12\e{3}mm/83=0.2"$ per HIRISE.
 	\end{enumerate}
 \end{sol}
+
+Pur avendo sorgenti puntiformi e ammettendo di avere risoluzione angolare inifinita come caso ideale, la fessura che il segnale deve attraversare nel telescopio crea shift di fase che portano ad un'immagine di dimensioni finite all'interno del pattern di diffrazione di Airy. Pur non trattandolo in modo rigoroso poichè servirebbero le trasformate di Fourier, otteneniamo una funzione di Bessel, che si traduce in una gaussiana smorzata. Questo discorso è importante perchè giustifica l'assunzione del valore di $\alpha_{min}$ come valore medio tipico della \textbf{point response function (PSF)}, la quale viene approssimata solo al primo massimo di interferenza con una gaussiana:
+\begin{equation}
+	\label{def:PSF}
+	PSF \Def I_0 \Bigl( \frac{J_1(x)}{x} \Bigr)^2 \qquad
+	\text{dove } x=\pi\theta \frac{D}{\lambda}
+\end{equation}
+Questa funzione risulta importante per fare la necessaria convoluzione del segnale in entrata dalla fenditura:
+\begin{equation}
+	I_{obs}(x,y)=\int_{-\infty}^{+\infty} I_{inf}(x',y')PSF(x-x',y-y')dx'dy'
+\end{equation}
 
 
 \end{document}
