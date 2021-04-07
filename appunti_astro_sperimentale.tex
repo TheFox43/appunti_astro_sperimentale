@@ -383,7 +383,7 @@ Questa misurazione necessita comunque di correzioni relativistiche e cosmologich
 
 \chapter{Telescopi}
 
-\section{Strutture dei telescopi e grandezze ottiche}
+\section{Introduzione alle strutture dei telescopi e ai fenomeni ottici}
 
 Per ora ci limiteremo a trattare i telescopi nella banda dell'ottico, anche se il discorso rimane molto simile anche per altre bande, essendo comunque basati sulla collezione di fotoni ad una certa lunghezza d'onda tramite riflessione su una superficie curva (processo di riflessione che risulta impossibile già con i raggi X). Le caratteristiche principali di un telescopio sono: sensibilità della misura (o flusso limite), potere risolutivo (ossia risoluzione angolare), campo di vista (o fov), larghezza di banda (determinata essenzialmente dallo strumento stesso), risoluzione spettrale.
 
@@ -457,7 +457,7 @@ Le principali tipologie di aberrazioni ottiche, riassunte in figura, sono il \te
 
 % ragiona se rifare i paragrafi o mettere la prossima parte (struttura di cassegrain e telescopi riflessivi) nella parte prima delle aberrazioni o boh
 
-\subsection*{Telescopi riflessivi}
+\section{Telescopi riflessivi e parametri osservativi}
 
 Il più comune dei telescopi riflessivi è il Cassegrain, citato prima, dove il fascio viene riflesso da uno specchio principale su un secondario convesso, il quale riflette a sua volta i raggi sul piano focale attraversando un buco nello specchio primario. Combinando gli effetti riflessivi dei due specchi, si può ricavare la correlazione tra le distanze focali tramite la seguente:
 \begin{equation*}
@@ -465,24 +465,24 @@ Il più comune dei telescopi riflessivi è il Cassegrain, citato prima, dove il 
 \end{equation*}
 Dove $F_p$ è la distanza focale dello specchio primario, $F_s$ del secondario e $d$ la distanza a cui è interposto il secondo specchio convesso rispetto al punto focale del primo.
 
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}{r}{0.35\textwidth}
 	\vspace{-10pt}
 	\centering
-	\includegraphics[width=0.35\textwidth]{Immagini/Capitolo2/Cassegrain.PNG}
+	\includegraphics[width=0.34\textwidth]{Immagini/Capitolo2/Cassegrain.PNG}
 	\caption*{Schema del modello Cassegrain}
-	\vspace{-20pt}
+	\vspace{-30pt}
 \end{wrapfigure}
 
 Come accennato al paragrafo precedente, gli specchi sono parabolici per favorire la convergenza di tutti i raggi nello stesso punto focale, anche quelli maggiormente fuori asse. Lo svantaggio di questa struttura sta nell'ingombro che lo specchio secondario comporta, riducendo notevolmente il campo visivo. Un design di questa tipologia di telescopi particolarmente diffusa è quella di \textbf{Ritchey-Chrétien}, basato su strutture iperboliche per entrambi gli specchi che annullano l'aberrazione sferica e il coma, riducendo al tempo stesso l'astigmatismo e la curvatura di campo, mantenendo un fov corretto abbastanza ampio. Un altro vantaggio di questa struttura è la sua compattezza, riducendo i costi di costruzione e di sviluppo della meccanica atta a mantenerne la stabilità e a muoverlo per coprire varie parti di cielo. Il prezzo principale di questo modello è uno specchio secondario maggiore, che arriva a coprire anche il $20\%$ del campo di vista rispetto ad altri.
 
-\subsubsection*{Risoluzione angolare e funzione di risposta}
+\subsubsection*{Risoluzione angolare}
 
 Per definire il concetto di risoluzione angolare di un telescopio, è necessario fare ulteriori richiami di ottica. Un fenomeno importante ai fini della definizione di questo parametro è la \textit{diffrazione di Fraunhofer}, storicamente adoperata per la comprensione della natura della luce, se questa fosse corpuscolare o ondulatoria, il cui scopo è quello di indagare gli effetti che ha una fenditura su un fronte d'onda piano. Innanzitutto, per fronte d'onda si intendono dei punti nello spazio ugualmente distanziati in cui l'onda si trova nella stessa fase, ad esempio i fronti di picco sono quelli in cui l'onda si ritrova periodicamente ad avere dei picchi in punti ben definiti dello spazio. Una volta che questi fronti d'onda colpiscono una fenditura, quello che si osserva è la generazione di frange di interferenza costruttive e distruttive, interpretato da Fraunhofer come effetto di interferenza tra le onde che vengono generate in ogni punto della fenditura, che diventa quindi sorgente.
 
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{wrapfigure}{l}{0.45\textwidth}
 	\vspace{-10pt}
 	\centering
-	\includegraphics[width=0.49\textwidth]{Immagini/Capitolo2/Fraunhofer.PNG}
+	\includegraphics[width=0.44\textwidth]{Immagini/Capitolo2/Fraunhofer.PNG}
 	\caption*{Diffrazione di Fraunhofer}
 	\vspace{-10pt}
 \end{wrapfigure}
@@ -507,9 +507,10 @@ Dove chiaramente per $\theta$ nullo si ha il primo e maggiore picco, mentre per 
 \end{wrapfigure}
 
 Risolvendo gli integrali di Wessel relativi alla fenditura circolare (caso proprio dei telescopi) viene fuori un rapporto numerico che relaziona l'angolo a cui si forma il primo minimo di diffrazione con il rapporto $\lambda/d$ tramite il fattore di forma:
-\begin{equation*}
+\begin{equation}
+	\label{eq:diff-Airy}
 	\alpha_{min}=1.22\frac{\lambda}{d}
-\end{equation*}
+\end{equation}
 Dove chiaramente il pattern di diffrazione ha simmetria circolare, anzichè la disposizione a bande analizzata prima, creando il cosiddetto \textit{Disco di Airy}. Da ciò, si introduce il concetto di \textbf{risoluzione angolare} tramite il criterio di Rayleigh, secondo cui un telescopio con apertura $d$ è in grado di risolvere due sorgenti di lunghezza d'onda $\lambda$ se esse si trovano non più vicine tra loro della distanza a cui si trova il primo minimo di diffrazione, in formula se la loro separazione angolare $\Delta\alpha$ è al massimo:
 \begin{equation}
 	\label{def:ris-ang}
@@ -526,7 +527,38 @@ Considerato anche il rumore di fondo presente nelle osservazioni, di norma è di
 	\vspace{-5pt}
 \end{wrapfigure}
 
-Come parametro della risoluzione angolare ma anche del fit gaussiano del profilo di luminosità di una stella si usa la $FWHM$ (full width half maximum) del primo massimo di interferenza. Il discorso è più complesso per i telescopi da terra, particolarmente limitati dalla turbolenza atmosferica, mentre per quelli posti in orbita il discorso di esaurisce proprio in questi termini, dove si ricorda che la deviazione standard $\sigma$ di una gaussiana è correlata alla $FWHM$ secondo la relazione $\sigma=2.355\, FWHM$. Per capire la sua importanza basta vedere il plot del pattern di diffrazione (intensità percepita sul piano focale in funzione della distanza), in cui viene rappresentato il caso limite in cui il picco della seconda sorgente cade esattamente dove si trova il primo minimo di diffrazione della prima sorgente, in questo caso le sorgenti si sovrappongono proprio nel punto di FWHM citato prima.
+Come parametro della risoluzione angolare ma anche del fit gaussiano del profilo di luminosità di una stella si usa la $FWHM$ (full width half maximum) del primo massimo di interferenza. Il discorso è più complesso per i telescopi da terra, particolarmente limitati dalla turbolenza atmosferica, mentre per quelli posti in orbita il discorso di esaurisce proprio in questi termini, dove si ricorda che la deviazione standard $\sigma$ di una gaussiana è correlata alla $FWHM$ secondo la relazione:
+\begin{equation}
+	\label{eq:FWHM}
+	FWHM=2.355\sigma
+\end{equation}
+Per capire la sua importanza basta vedere il plot del pattern di diffrazione (intensità percepita sul piano focale in funzione della distanza), in cui viene rappresentato il caso limite in cui il picco della seconda sorgente cade esattamente dove si trova il primo minimo di diffrazione della prima sorgente, in questo caso le sorgenti si sovrappongono proprio nel punto di FWHM citato prima.
+
+\subsubsection*{Funzione di risposta}
+
+Pur avendo sorgenti puntiformi e ammettendo di avere risoluzione angolare inifinita come caso ideale, la fessura che il segnale deve attraversare nel telescopio crea shift di fase che portano ad un'immagine di dimensioni finite all'interno del pattern di diffrazione di Airy. Pur non trattandolo in modo rigoroso poichè servirebbero le trasformate di Fourier, otteneniamo una funzione di Bessel, che si traduce in una gaussiana smorzata. Questo discorso è importante perchè giustifica l'assunzione del valore di $\alpha_{min}$ come valore medio tipico della \textbf{point response function (PSF)}, la quale viene approssimata solo al primo massimo di interferenza con una gaussiana, mentre i secondari risultano importanti solo nella trattazione di sorgenti particolarmente luminose:
+\begin{equation}
+	\label{def:PSF}
+	PSF \Def I_0 \Bigl( \frac{J_1(x)}{x} \Bigr)^2 \qquad
+	\text{dove } x=\pi\theta \frac{D}{\lambda}
+\end{equation}
+Questa funzione risulta importante per fare la necessaria convoluzione del segnale in entrata dalla fenditura:
+\begin{equation}
+	I_{obs}(x,y)=\int_{-\infty}^{+\infty} I_{inf}(x',y')PSF(x-x',y-y')dx'dy'
+\end{equation}
+Empiricamente, quello che si fa è fittare una gaussiana nell'osservazione bidimensionale di una sorgente:
+\begin{equation}
+	PSF(r)=I(r)=I_0e^{-\frac{r^2}{2\sigma^"}}
+\end{equation}
+Dove la deviazione è trovata tramite la FWHM a cui è legata secondo la \ref{eq:FWHM}.
+
+\subsubsection*{Seeing}
+Andando ad osservare una stella, il suo profilo di luce non corrisponderà al pattern di diffrazione di Airy ma avrà FWHM della gaussiana molto più larga rispetto alle dimensioni prefissate nella \ref{eq:diff-Airy}. Questo effetto è dato dalla turbolenza atmosferica ed è detto \textbf{seeing}, che affligge chiaramente i telescopi posti a terra e non quelli in orbita. Le ripercussioni dei moti convettivi atmosferici sono la creazione di bolle d'aria a temperatura e densità diverse, le quali avranno quindi indici di rifrazione diversi e il cui attraversamento da parte del segnale in arrivo dallo spazio comporta una distorsione, facendo passare i fronti d'onda originariamente piani a fronti corrugati una volta arrivati a terra. Questo comporta un effetto ottico di "danza" della sorgente attorno all'asse ottico, che si traduce in uno sfocamento dell'immagine, la quale avrà quindi una gaussiana percepita molto più larga. Per caratterizzare questo effetto si introduce il \textit{parametro di Fried} $r_0$, espresso in unità di lunghezza (tipicamente in $cm$), viene definito come il diametro della corona circolare che rende l'immagine limitata dai soli effetti di diffrazione e l'immagine limitata di soli effetti di seeing di pari risoluzione. Alternativamente, può essere definito come il diametro dell'anello circolare su cui la radice quadratica media delle aberrazioni sul fronte d'onda dovuti al passaggio nell'atmosfera è pari a un radiante.
+
+\newpage
+
+\section*{Esercizi}
+\addcontentsline{toc}{section}{Esercizi}
 
 \begin{exrc}[Sonda Cassini e Saturno]
 	La sonda Cassini, in orbita attorno Saturno da diversi anni, è finita due volte nelle condizioni geometriche tali da avere un'eclissi totale del Sole da parte del pianeta, in tal modo si sono potute fare osservazioni della lontana Terra, avendo la principale sorgente di luce del nostro sistema oscurata. Su questa sonda sono posti due telescopi, uno angolo ampio molto veloce (WAC - wide angle camera), e uno a focale maggiore e campo di vista minore (NAC - narrow angle camera), che hanno rispettivamente $F=20\, cm$ e $f/3.5$, $F=2\, m$ e $f/10.5$, mentre i CCD danno pixel di $12\, \mu m$. Ora la distanza di Saturno in quell'istante era $d=1.44\e{12}m$, mentre la distanza tra la Terra e la Luna media è $T-L=3.84\e{8}m$. Si chiede di trovare:
@@ -603,17 +635,6 @@ Come parametro della risoluzione angolare ma anche del fit gaussiano del profilo
 		Da cui otteniamo $206265/12\e{3}mm/83=0.2"$ per HIRISE.
 	\end{enumerate}
 \end{sol}
-
-Pur avendo sorgenti puntiformi e ammettendo di avere risoluzione angolare inifinita come caso ideale, la fessura che il segnale deve attraversare nel telescopio crea shift di fase che portano ad un'immagine di dimensioni finite all'interno del pattern di diffrazione di Airy. Pur non trattandolo in modo rigoroso poichè servirebbero le trasformate di Fourier, otteneniamo una funzione di Bessel, che si traduce in una gaussiana smorzata. Questo discorso è importante perchè giustifica l'assunzione del valore di $\alpha_{min}$ come valore medio tipico della \textbf{point response function (PSF)}, la quale viene approssimata solo al primo massimo di interferenza con una gaussiana:
-\begin{equation}
-	\label{def:PSF}
-	PSF \Def I_0 \Bigl( \frac{J_1(x)}{x} \Bigr)^2 \qquad
-	\text{dove } x=\pi\theta \frac{D}{\lambda}
-\end{equation}
-Questa funzione risulta importante per fare la necessaria convoluzione del segnale in entrata dalla fenditura:
-\begin{equation}
-	I_{obs}(x,y)=\int_{-\infty}^{+\infty} I_{inf}(x',y')PSF(x-x',y-y')dx'dy'
-\end{equation}
 
 
 \end{document}

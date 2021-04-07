@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1617786807 "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.tex" "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.pdf" "appunti_astro_sperimentale" 1617787113
+["pdflatex"] 1617808525 "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.tex" "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.pdf" "appunti_astro_sperimentale" 1617808531
   "Immagini/Capitolo1/Diagramma_HR.png" 1615225485 19148 232fa5cd4ac068a43d0a540824d56229 ""
   "Immagini/Capitolo1/Estinzione_atm_sole.PNG" 1615284061 116250 5ed9fba57fef69a0ea38d1f23b9c977b ""
   "Immagini/Capitolo1/Estinzione_atm_sole.png" 1615284061 116250 5ed9fba57fef69a0ea38d1f23b9c977b ""
@@ -28,12 +28,12 @@
   "Immagini/Capitolo2/Telescopi_classici.png" 1615628723 446183 1ae1c934e36f610052cda86c584382b7 ""
   "Immagini/Capitolo2/fov.PNG" 1615654749 295751 81d30c288f480c1f95904db340817b28 ""
   "Immagini/Capitolo2/fov.png" 1615654749 295751 81d30c288f480c1f95904db340817b28 ""
-  "appunti_astro_sperimentale.aux" 1617786813 2570 725f6149a6b069b22f12aef7321fb230 "pdflatex"
-  "appunti_astro_sperimentale.out" 1617786813 471 26d61765f6d12e9b726b4de306a547de "pdflatex"
-  "appunti_astro_sperimentale.tex" 1617787111 75344 e9875fc1084af31e02113dbae5e63ca8 ""
-  "appunti_astro_sperimentale.toc" 1617786813 626 d575a9c5ef9c0506d81be6086dcce611 "pdflatex"
-  "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.aux" 1617786813 2570 725f6149a6b069b22f12aef7321fb230 ""
-  "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.tex" 1617787111 75344 e9875fc1084af31e02113dbae5e63ca8 ""
+  "appunti_astro_sperimentale.aux" 1617808531 2946 3dced6ebe59090d37a054f7bc05eb669 "pdflatex"
+  "appunti_astro_sperimentale.out" 1617808531 634 b9b8e0ceef1d310c2a15fcba018630f1 "pdflatex"
+  "appunti_astro_sperimentale.tex" 1617808516 77424 8118c452f903a42054dd955001209ffb ""
+  "appunti_astro_sperimentale.toc" 1617808531 804 94b1e42822eeae07a5f5ecee99d1b446 "pdflatex"
+  "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.aux" 1617808531 2946 3dced6ebe59090d37a054f7bc05eb669 ""
+  "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.tex" 1617808516 77424 8118c452f903a42054dd955001209ffb ""
   "c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1568123062 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1568123825 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1568123548 3584 2d666ecf6d466d8b007246bc2f94d9da ""
@@ -152,9 +152,9 @@
   "c:/texlive/2019/texmf.cnf" 1568126788 673 4ae7b2f49cee444c5343a45b5d0f169c ""
   (generated)
   "appunti_astro_sperimentale.aux"
-  "appunti_astro_sperimentale.log"
-  "appunti_astro_sperimentale.toc"
-  "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.pdf"
   "appunti_astro_sperimentale.out"
+  "appunti_astro_sperimentale.log"
   "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.log"
+  "appunti_astro_sperimentale.toc"
   "appunti_astro_sperimentale.pdf"
+  "c:/Users/franc/OneDrive - re-contextualize efficient channels/LaTex_created_doc/appunti_astro_sperimentale/appunti_astro_sperimentale.pdf"
