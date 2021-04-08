@@ -553,12 +553,24 @@ Empiricamente, quello che si fa è fittare una gaussiana nell'osservazione bidim
 Dove la deviazione è trovata tramite la FWHM a cui è legata secondo la \ref{eq:FWHM}.
 
 \subsubsection*{Seeing}
-Andando ad osservare una stella, il suo profilo di luce non corrisponderà al pattern di diffrazione di Airy ma avrà FWHM della gaussiana molto più larga rispetto alle dimensioni prefissate nella \ref{eq:diff-Airy}. Questo effetto è dato dalla turbolenza atmosferica ed è detto \textbf{seeing}, che affligge chiaramente i telescopi posti a terra e non quelli in orbita. Le ripercussioni dei moti convettivi atmosferici sono la creazione di bolle d'aria a temperatura e densità diverse, le quali avranno quindi indici di rifrazione diversi e il cui attraversamento da parte del segnale in arrivo dallo spazio comporta una distorsione, facendo passare i fronti d'onda originariamente piani a fronti corrugati una volta arrivati a terra. Questo comporta un effetto ottico di "danza" della sorgente attorno all'asse ottico, che si traduce in uno sfocamento dell'immagine, la quale avrà quindi una gaussiana percepita molto più larga. Per caratterizzare questo effetto si introduce il \textit{parametro di Fried} $r_0$, espresso in unità di lunghezza (tipicamente in $cm$), viene definito come il diametro della corona circolare che rende l'immagine limitata dai soli effetti di diffrazione e l'immagine limitata di soli effetti di seeing di pari risoluzione. Alternativamente, può essere definito come il diametro dell'anello circolare su cui la radice quadratica media delle aberrazioni sul fronte d'onda dovuti al passaggio nell'atmosfera è pari a un radiante.
 
-\newpage
+\begin{wrapfigure}{r}{0.30\textwidth}
+	\vspace{-25pt}
+	\centering
+	\includegraphics[width=0.29\textwidth]{Immagini/Capitolo2/Seeing.PNG}
+	\caption*{Effetto di seeing}
+	\vspace{-10pt}
+\end{wrapfigure}
 
-\section*{Esercizi}
-\addcontentsline{toc}{section}{Esercizi}
+Andando ad osservare una stella, il suo profilo di luce non corrisponderà al pattern di diffrazione di Airy ma avrà FWHM della gaussiana molto più larga rispetto alle dimensioni prefissate nella \ref{eq:diff-Airy}. Questo effetto è dato dalla turbolenza atmosferica ed è detto \textbf{seeing}, che affligge chiaramente i telescopi posti a terra e non quelli in orbita. Le ripercussioni dei moti convettivi atmosferici sono la creazione di bolle d'aria a temperatura e densità diverse, le quali avranno quindi indici di rifrazione diversi e il cui attraversamento da parte del segnale in arrivo dallo spazio comporta una distorsione, facendo passare i fronti d'onda originariamente piani a fronti corrugati una volta arrivati a terra. Questo comporta un effetto ottico di "danza" della sorgente attorno all'asse ottico, che si traduce in uno sfocamento dell'immagine, la quale avrà quindi una gaussiana percepita molto più larga. Per caratterizzare questo effetto si introduce il \textit{parametro di Fried} $r_0$, espresso in unità di lunghezza (tipicamente in $cm$), viene definito come il diametro della corona circolare che rende l'immagine limitata dai soli effetti di diffrazione e l'immagine limitata di soli effetti di seeing di pari risoluzione. Alternativamente, può essere definito come il diametro dell'anello circolare su cui la radice quadratica media delle aberrazioni sul fronte d'onda dovuti al passaggio nell'atmosfera è pari a un radiante. Un valore ottimale di questo parametro è dell'ordine delle decine di centimetri, essendo che l'immagine disturbata avrà dimensioni $d_s$:
+\begin{equation*}
+	d_s \propto \frac{\lambda}{r_0}
+\end{equation*}
+Perciò tanto più questo valore sarà piccolo, maggiore sarà l'effetto di disturbo dovuta dal seeing, essendo che bolle d'aria minori danno maggiori effetti nella scala della microturbazioni. Mentre nelle immagini limitate dal solo pattern di diffrazione, le dimensioni sono date dall'apertura $D$:
+\begin{equation*}
+	d_s \propto \frac{\lambda}{D}
+\end{equation*}
+Per cui il seeing diventa dominante in caso di $r_0<D$. Si accenna che, essendo dimostrabile che $r_0\sim \lambda^{6/5}$, gli effetti di questo disturbo aumentano con l'aumentare della lunghezza d'onda, per cui in uno stesso sito gli effetti saranno maggiore al passare, ad esempio, dalla banda U alla banda K.
 
 \begin{exrc}[Sonda Cassini e Saturno]
 	La sonda Cassini, in orbita attorno Saturno da diversi anni, è finita due volte nelle condizioni geometriche tali da avere un'eclissi totale del Sole da parte del pianeta, in tal modo si sono potute fare osservazioni della lontana Terra, avendo la principale sorgente di luce del nostro sistema oscurata. Su questa sonda sono posti due telescopi, uno angolo ampio molto veloce (WAC - wide angle camera), e uno a focale maggiore e campo di vista minore (NAC - narrow angle camera), che hanno rispettivamente $F=20\, cm$ e $f/3.5$, $F=2\, m$ e $f/10.5$, mentre i CCD danno pixel di $12\, \mu m$. Ora la distanza di Saturno in quell'istante era $d=1.44\e{12}m$, mentre la distanza tra la Terra e la Luna media è $T-L=3.84\e{8}m$. Si chiede di trovare:
