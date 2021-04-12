@@ -172,11 +172,11 @@ Dove la deviazione è trovata tramite la FWHM a cui è legata secondo la \ref{eq
 \subsection*{Seeing}
 
 \begin{wrapfigure}{l}{0.30\textwidth}
-	\vspace{-40pt}
+	\vspace{-10pt}
 	\centering
 	\includegraphics[width=0.29\textwidth]{Immagini/Capitolo2/Seeing.PNG}
 	\caption{Effetto di seeing}
-	\vspace{-30pt}
+	\vspace{-10pt}
 \end{wrapfigure}
 
 Andando ad osservare una stella, il suo profilo di luce non corrisponderà al pattern di diffrazione di Airy ma avrà FWHM della gaussiana molto più larga rispetto alle dimensioni prefissate nella \ref{eq:diff-Airy}. Questo effetto è dato dalla turbolenza atmosferica ed è detto \textbf{seeing}, che affligge chiaramente i telescopi posti a terra e non quelli in orbita. Le ripercussioni dei moti convettivi atmosferici sono la creazione di bolle d'aria a temperatura e densità diverse, le quali avranno quindi indici di rifrazione diversi e il cui attraversamento da parte del segnale in arrivo dallo spazio comporta una distorsione, facendo passare i fronti d'onda originariamente piani a fronti corrugati una volta arrivati a terra. Questo comporta un effetto ottico di "danza" della sorgente attorno all'asse ottico, che si traduce in uno sfocamento dell'immagine, la quale avrà quindi una gaussiana percepita molto più larga. Per caratterizzare questo effetto si introduce il \textit{parametro di Fried} $r_0$, espresso in unità di lunghezza (tipicamente in $cm$), viene definito come il diametro dello specchio (o della lente) che rende l'immagine limitata dai soli effetti di diffrazione e l'immagine limitata di soli effetti di seeing di pari risoluzione (ossia il limite di diffrazione è equivalente a quello dato dal seeing in quello specifico sito). Alternativamente, può essere definito come il diametro dell'anello circolare su cui la radice quadratica media delle aberrazioni sul fronte d'onda dovuti al passaggio nell'atmosfera è pari a un radiante. Un valore ottimale di questo parametro è dell'ordine delle decine di centimetri, essendo che l'immagine disturbata (o meglio la gaussiana) avrà dimensioni $d_s$:
@@ -187,7 +187,16 @@ Perciò tanto più questo valore sarà piccolo, maggiore sarà l'effetto di dist
 \begin{equation*}
 	d_s \propto \frac{\lambda}{D}
 \end{equation*}
-Per cui il seeing diventa dominante in caso di $r_0<D$. Si accenna che, essendo dimostrabile che $r_0\sim \lambda^{6/5}$, gli effetti di questo disturbo aumentano con l'aumentare della lunghezza d'onda, per cui in uno stesso sito gli effetti saranno maggiore al passare, ad esempio, dalla banda U alla banda K. Tutto questo discorso risulta invalidante anche per piccoli telescopi, tipicamente quelli amatoriali, per cui anche trovandosi in un ottimo sito, ma avendo un'apertura $D$ di circa mezzo metro, si trovano fortemente limitati dal disturbo atmosferico da terra. Un metodo di ricerca di siti buoni dal punto di vista del seeing, è quello di cercare posti che abbiano meno turbolenza atmosferica possibile, condizione che porta alla scelta di isole e altipiani a ovest dei continenti, essendo che l'oceano confinante funge da serbatoio a temperatura costante, che comporta l'assenza di gradienti termici e di conseguenza a un flusso laminare dei venti ad alta quota (il quale va tipicamente da ovest a est). Il caso opposto si otterrebbe scegliendo un sito su una costa orientale di un continente o un'isola, dove l'aria ha attraversato parte soprastante il suolo, il quale ha gradienti termici totalmente non costanti e per cui crea molta corrugazione nei fronti d'onda.
+Per cui il seeing diventa dominante in caso di $r_0<D$. Si accenna che, essendo dimostrabile che $r_0\sim \lambda^{6/5}$, gli effetti di questo disturbo aumentano con l'aumentare della lunghezza d'onda, per cui in uno stesso sito gli effetti saranno maggiore al passare, ad esempio, dalla banda U alla banda K.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Immagini/Capitolo2/Seeing_gauss_logscale.PNG}
+    \caption{Effetto di Seeing in scala logaritmica rispetto all'immagine limitata da diffrazione}
+    \label{im:seeing-logscale}
+\end{figure}
+
+Tutto questo discorso risulta invalidante anche per piccoli telescopi, tipicamente quelli amatoriali, per cui anche trovandosi in un ottimo sito, ma avendo un'apertura $D$ di circa mezzo metro, si trovano fortemente limitati dal disturbo atmosferico da terra. Un metodo di ricerca di siti buoni dal punto di vista del seeing, è quello di cercare posti che abbiano meno turbolenza atmosferica possibile, condizione che porta alla scelta di isole e altipiani a ovest dei continenti, essendo che l'oceano confinante funge da serbatoio a temperatura costante, che comporta l'assenza di gradienti termici e di conseguenza a un flusso laminare dei venti ad alta quota (il quale va tipicamente da ovest a est). Il caso opposto si otterrebbe scegliendo un sito su una costa orientale di un continente o un'isola, dove l'aria ha attraversato parte soprastante il suolo, il quale ha gradienti termici totalmente non costanti e per cui crea molta corrugazione nei fronti d'onda.
 
 \begin{exrc}[Sonda Cassini e Saturno]
 	La sonda Cassini, in orbita attorno Saturno da diversi anni, è finita due volte nelle condizioni geometriche tali da avere un'eclissi totale del Sole da parte del pianeta, in tal modo si sono potute fare osservazioni della lontana Terra, avendo la principale sorgente di luce del nostro sistema oscurata. Su questa sonda sono posti due telescopi, uno angolo ampio molto veloce (WAC - wide angle camera), e uno a focale maggiore e campo di vista minore (NAC - narrow angle camera), che hanno rispettivamente $F=20\, cm$ e $f/3.5$, $F=2\, m$ e $f/10.5$, mentre i CCD danno pixel di $12\, \mu m$. Ora la distanza di Saturno in quell'istante era $d=1.44\e{12}m$, mentre la distanza tra la Terra e la Luna media è $T-L=3.84\e{8}m$. Si chiede di trovare:
@@ -269,17 +278,16 @@ Per cui il seeing diventa dominante in caso di $r_0<D$. Si accenna che, essendo 
 
 Nel cercare di risolvere il problema della distorsione data dagli effetti di seeing si introducono mezzi in grado di analizzare il fronte d'onda ancora prima che esso venga convogliato sul piano focale, detti \textit{ottiche adattive}. Una di queste può essere quella rappresentata nella figura \ref{im:ottiche-adattive}, in cui un sistema di controllo possibile è dato da una serie di specchi, di cui uno adattivo, che cerca di rimodellare il fronte d'onda corrugato in entrata in modo tale da renderlo nuovamente piano. Lo specchio adattivo è costituito a sua volta da tanti piccoli specchi in grado di adattarsi al fronte d'onda corrugato. Il sensore di analisi dei fronti d'onda, il cui modello di riferimento è lo \textit{Shack-Hartmann}, è ciò che caratterizza il fronte entrante e applica correzioni alle distorsioni date dalla turbolenza atmosferica. Esso si costituisce di un sistema ottico composto di molte lenti di piccole dimensioni, attraverso il quale si lascia passare il segnale, e di un CCD posto oltre questo sistema; solitamente queste lenti sono sull'ordine della decina di centimetri in modo da essere paragonabili alle celle convettive che in atmosfera danno gli effetti di seeing. Nel caso il fronte incidente sia piano, le immagini focalizzate (limitate dalla sola diffrazione grazie alla scelta di lenti piccole) saranno disposte simmetricamente così come lo sono le lenti, come nel primo esempio riportato in figura \ref{im:sensore-Shack-Hartmann}.
 
-\begin{figure}
-	\vspace{-10pt}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Immagini/Capitolo2/ottiche_adattive.PNG}
 	\caption{Schematizzazione di ottiche adattive}
 	\label{im:ottiche-adattive}
-	\vspace{-10pt}
 \end{figure}
 
+Chiaramente nel caso reale il fronte è corrugato, ed ogni lente focalizza parte di questo fronte in un punto diverso rispetto quello tracciato dall'asse focale, in quanto una corrugazione è equivalente al ricevere un segnale inclinato rispetto il piano focale.
+
 \begin{wrapfigure}{r}{0.4\textwidth}
-	\vspace{-10pt}
 	\centering
 	\includegraphics[width=0.39\textwidth]{Immagini/Capitolo2/sensore_Shark_Hartmann.PNG}
 	\caption{Schema sensore Shark-Hartmann}
@@ -287,4 +295,15 @@ Nel cercare di risolvere il problema della distorsione data dagli effetti di see
 	\vspace{-10pt}
 \end{wrapfigure}
 
-Chiaramente nel caso reale il fronte è corrugato, ed ogni lente focalizza parte di questo fronte in un punto diverso rispetto quello tracciato dall'asse focale, in quanto una corrugazione è equivalente al ricevere un segnale inclinato rispetto il piano focale. La presenza del CCD permette di rilevare la traslazione che le immagini hanno rispetto alla griglia delle lenti, tramite elaborazione software di queste rilevazioni si è così in grado, tramite il sistema di controllo, di calcolare e attuare le necessarie correzioni allo specchio adattivo in modo che il fronte torni ad essere approssimativamente piano. Questo tipo di sensore ha come condizione limitante la necessità di un flusso entrante non indifferente, essendo che il segnale viene separato e focalizzato da diversi specchi. Grazie allo sviluppo recente in ambito software e hardware, queste rilevazioni e correzioni vengono attuate ogni decimo di secondo e coprono un arco di pochi millisecondi. Questa tecnica è utilizzabile con tutte le fonti osservate una volta determinato l'adattamento ottico da usare in una determinata zona di cielo, ma essendo che le stelle luminose necessarie a questo metodo di ricerca sono molto poche, per molte zone di cielo si ricorre a stelle artificiali. Queste vengono simulate da dei laser puntati da terra verso la direzione del campo di vista, i quali sono appositamente a lunghezze d'onda di emissione del sodio, come ad esempio a $\lambda=5890\angstrom$. Questa scelta deriva dal fatto che, essendo che a circa $80\, km$ da terra c'è un piccolo strato di sodio, eccitarlo tramite l'utilizzo di laser crea uno spot luminoso del cielo che funge da metro di calcolo dell'ottica adattiva, il quale non è perfetto in quanto non si trova a distanza infinita ma risulta comunque al di sopra di un'ottima fetta di atmosfera.
+La presenza del CCD permette di rilevare la traslazione che le immagini hanno rispetto alla griglia delle lenti, tramite elaborazione software di queste rilevazioni si è così in grado, tramite il sistema di controllo, di calcolare e attuare le necessarie correzioni allo specchio adattivo in modo che il fronte torni ad essere approssimativamente piano. Questo tipo di sensore ha come condizione limitante la necessità di un flusso entrante non indifferente, essendo che il segnale viene separato e focalizzato da diversi specchi. Grazie allo sviluppo recente in ambito software e hardware, queste rilevazioni e correzioni vengono attuate ogni decimo di secondo e coprono un arco di pochi millisecondi. Questa tecnica è utilizzabile con tutte le fonti osservate una volta determinato l'adattamento ottico da usare in una determinata zona di cielo, ma essendo che le stelle luminose necessarie a questo metodo di ricerca sono molto poche, per molte zone di cielo si ricorre a stelle artificiali. Queste vengono simulate da dei laser puntati da terra verso la direzione del campo di vista, i quali sono appositamente a lunghezze d'onda di emissione del sodio, come ad esempio a $\lambda=5890\angstrom$.
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+    \centering
+    \vspace{-10pt}
+    \includegraphics[width=0.39\textwidth]{Immagini/Capitolo2/Seeing_vs_Hubble.PNG}
+    \caption{Comparativa tra immagine corretta e immagine presa da telescopio in orbita (Hubble space telescope)}
+    \label{im:seeingvsHubble}
+    \vspace{-10pt}
+\end{wrapfigure}
+ 
+Questa scelta deriva dal fatto che a circa $80\, km$ da terra c'è un piccolo strato di sodio ed eccitarlo tramite l'utilizzo di laser crea uno spot luminoso nel cielo che funge da metro di calcolo dell'ottica adattiva. Questo non è un simulatore perfetto di una sorgente cosmica in quanto non si trova a distanza infinita, ma risulta comunque al di sopra di un'ottima fetta di atmosfera. Questa tecnica permette di recuperare una buona parte di risoluzione limitando notevolmente gli effetti atmosferici, ovviamente non tanto da tornare al caso in cui l'unica limitazione sia quella imposta da diffrazione, come si vede nella figura \ref{im:seeingvsHubble}, dove si propongono immagini dello stesso oggetto ma una presa da terra tramite ottiche adattive e una dal telescopio Hubble in orbita. Ciò che fanno queste ottiche adattive, pensando in senso più tecnico, è schiacciare il cerchio di interferenza del seeing al di sotto dei minimi di diffrazione, come si vede nell'immagine \ref{im:seeing-logscale}. Il caso reale corrisponderà a una gaussiana sufficientemente piccata di dimensioni $\sim \lambda/D$, che costituirà il nucleo fondamentale dell'immagine, circondata da un alone di interferenza di dimensioni date dal seeing $\sim \lambda/r_0$.
