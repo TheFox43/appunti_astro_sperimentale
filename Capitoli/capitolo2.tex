@@ -21,7 +21,7 @@ Dal punto di vista storico, sin dai tempi di Galileo i primi telescopi funzionav
 	\includegraphics[width=0.49\textwidth]{Immagini/Capitolo2/Richiami_ottica_piano_focale.PNG}
 	\vspace{-5pt}
 	\caption*{Esempi di fasci e piano focale da sorgenti puntiformi ed estese}
-	\vspace{-10pt}
+	\vspace{-5pt}
 \end{wrapfigure}
 
 Facendo qualche richiamo di ottica, una lente focalizza un fascio incidente in asse con essa su un piano focale a distanza pari la lunghezza focale $F$, un fascio fuori asse di un angolo $\alpha$ verrà focalizzato a una distanza $F$ dalla lente e a una distanza $s$ dall'asse, dove:
@@ -45,11 +45,11 @@ Questo esprime che una lente con rapporto focale $f$ di piccole dimensioni, avr�
 
 \begin{wrapfigure}{l}{0.5\textwidth}
 	%Immagine presa da slide
-	\vspace{-10pt}
+	\vspace{-5pt}
 	\centering
 	\includegraphics[width=0.49\textwidth]{Immagini/Capitolo2/fov.png}
 	\caption*{Esempi di fov correlati a $f$}
-	\vspace{-10pt}
+	\vspace{-5pt}
 \end{wrapfigure}
 
 Un'altra proprietà collegato al rapporto focale è il \textit{campo di vista}, o \textit{fov} (field of view), proporzionale anch'esso a $f$. Di fatti, oltre che la scala sul piano focale e il tempo di esposizione, il rapporto determina per ragioni geometriche facilmente intuibili il campo di vista in modo inversamente proporzionale, per cui a un grande valore di $f$ corrisponde un piccolo campo visivo, mentre per un valore minore un campo maggiore. Correlandolo con la velocità, una lente veloce (f piccolo) avrà un campo di vista più grande, viceversa un più lenta (f grande) avrà campo di vista minore. Questo implica che le prime sono più adatte ad un'osservazione meno dettagliata ma di porzioni di cielo maggiori, mentre le seconde sono particolarmente apprezzate nella risoluzione di porzioni di cielo ed oggetti specifici. Parlando di telescopi esistenti e futuri, il telescopio POSS è stata la principale fonte di informazione per i surveys in tutto il cielo stellato fino agli anni '60, possiede $f/2.5$ e lenti correttrici, ossia è una telescopio molto veloce e ad ampio fov. Un altro esempio più recente, di inizio millennio, è il telescopio SDSS con $f/5$, per cui più lenta e precisa, che ha permesso un grande numero di scoperte nell'interstellare fino alle scale cosmologico, coprendo cinque bande nell'ottico. Attualmente in uso c'è il telescopio VISTA in Cile per il vicino infrarosso con $f/3.3$, che errà presto sostituito dal LSST entro il 2021, con $f/1.25$ (estremamente veloce e ad ampio fov). Un parametro che stima l'efficienza nella velocità di acquisizione sempre maggiore di queste macchine è il "grasp" (o "etendue" dal francese), che è l'efficienza della macchina a osservare una certa zona di cielo entro un certo flusso limite ed è definita come:
@@ -100,7 +100,7 @@ Per definire il concetto di risoluzione angolare di un telescopio, è necessario
 	\vspace{-10pt}
 	\centering
 	\includegraphics[width=0.44\textwidth]{Immagini/Capitolo2/Fraunhofer.PNG}
-	\caption{Diffrazione di Fraunhofer}
+	\caption*{Diffrazione di Fraunhofer}
 	\vspace{-10pt}
 \end{wrapfigure}
 
@@ -140,7 +140,7 @@ Considerato anche il rumore di fondo presente nelle osservazioni, di norma è di
 	\vspace{-10pt}
 	\centering
 	\includegraphics[width=0.39\textwidth]{Immagini/Capitolo2/Risoluzione_angolare.PNG}
-	\caption*{Risoluzione angolare in termini del pattern di diffrazione}
+	\caption{Risoluzione angolare in termini del pattern di diffrazione}
 	\vspace{-5pt}
 \end{wrapfigure}
 
@@ -283,6 +283,7 @@ Nel cercare di risolvere il problema della distorsione data dagli effetti di see
 	\includegraphics[width=0.5\textwidth]{Immagini/Capitolo2/ottiche_adattive.PNG}
 	\caption{Schematizzazione di ottiche adattive}
 	\label{im:ottiche-adattive}
+    \vspace{-5pt}
 \end{figure}
 
 Il sensore di analisi dei fronti d'onda, il cui modello di riferimento è lo \textit{Shack-Hartmann}, è ciò che caratterizza il fronte entrante e applica correzioni alle distorsioni date dalla turbolenza atmosferica. Esso si costituisce di un sistema ottico composto di molte lenti di piccole dimensioni, attraverso il quale si lascia passare il segnale, e di un CCD posto oltre questo sistema; solitamente queste lenti sono sull'ordine della decina di centimetri in modo da essere paragonabili alle celle convettive che in atmosfera danno gli effetti di seeing. Nel caso il fronte incidente sia piano, le immagini focalizzate (limitate dalla sola diffrazione grazie alla scelta di lenti piccole) saranno disposte simmetricamente così come lo sono le lenti, come nel primo esempio riportato in figura \ref{im:sensore-Shack-Hartmann}. Chiaramente nel caso reale il fronte è corrugato, ed ogni lente focalizza parte di questo fronte in un punto diverso rispetto quello tracciato dall'asse focale, in quanto una corrugazione è equivalente al ricevere un segnale inclinato rispetto il piano focale.
@@ -310,4 +311,33 @@ Questa scelta deriva dal fatto che a circa $80\, km$ da terra c'è un piccolo st
 
 \subsection*{Telescopi moderni}
 
-I telescopi moderni, di dimensioni sempre maggiori, sono soggetti a un effetto di allontanamento dell'immagine dal piano focale, unitamente a una serie di distorsioni. Ciò è dovuto a diveri fattori, come la deformazione degli specchi sempre più grandi e pesanti sotto la forza peso, oppure la loro dilatazione termica dovuta al surriscaldamento dell'impianto.
+\begin{wrapfigure}{l}{0.35\textwidth}
+    \centering
+    \vspace{-10pt}
+    \includegraphics[width=0.34\textwidth]{Immagini/Capitolo2/Struttura_telescopio_ESO.PNG}
+    \caption{Struttura telescopi ESO}
+    \label{im:struttura-ESO}
+    \vspace{-10pt}
+\end{wrapfigure}
+
+I telescopi moderni, di dimensioni sempre maggiori, sono soggetti a un effetto di allontanamento dell'immagine dal piano focale, unitamente a una serie di distorsioni. Ciò è dovuto a diveri fattori, come la deformazione degli specchi sempre più grandi e pesanti sotto la forza peso, oppure la loro dilatazione termica dovuta al surriscaldamento dell'impianto. Per evitare questi effetti, si è iniziati a costruire specchi sempre più sottili e leggeri (oggigiorno sono spessi circa $20cm$), abbinati ad un sistema meccanico di pistoni che regolino l'inclinazione dello specchio principale (o meglio, della serie di specchi che lo costituisce), in modo da ridurre al minimo questo tipo di aberrazioni. Anche questo metodo può essere considerato di ottica adattiva, si differenzia per l'agire direttamente sullo specchio primario. Uno dei siti di osservazione più famosi al mondo ed estremamente usato dalla comunità scientifica europea è lo Euopean Southern Observatory (ESO), collocato in Chile a Cerro Paranal, dove sono situati 4 dei telescopi più costosi al mondo, la cui risoluzione angolare arriva fino a cinque centesimi di arcosecondo, riuscendo a rilevare oggetti fino a magnitudine $27$ in un'ora di integrazione (ossia esposizione). Questi telescopi hanno struttura Ritchey-Chrétien, con uno specchio semitrasparente inclinato di $45^{\circ}$ posto al centro tra lo specchio primario e quello secondario: in tal modo si possono ricavare due ulteriori fuochi oltre quello Cassegrain, detti \textit{fuochi di Nasmyth}, in cui poter allocare altri sensori al di fuori del principale, come mostrato nella \ref{im:struttura-ESO}. L'ESO include anche telescopi ausiliari di un paio di metri con il compito di tenere in fase i quattro telescopi più massivi in modo da creare un telescopio equivalente di $100\, m$, compito estremamente arduo. Oltre a questi ci sono anche altri telescopi di varia natura di cui uno di circa due metri e mezzo fatto completamente dall'Italia. Questa combinazione di telescopi è utile come complemento alle osservazioni in orbita, principalmente fornite dal celebre Hubble Space Telescope (HST), che campiona il cielo con operazioni di imaging molto accurate, mentre il lato di analisi spettroscopica viene lasciato più frequentemente ai telescopi a terra. Un altro telescopio che collabora in orbita con il HST è Andromeda, il cui nome tecnico è M31, anch'esso a struttura Ritchey-Chrétien con rateo focale molto alto e che fa imaging dall'ultravioletto fino al vicino infrarosso (banda H), oltre il NIR si avrebbe un rumore troppo grande nelle osservazioni per via dell'emissione termica terrestre(come corpo nero). Tutti questi telescopi danno poi, nella risoluzione dei singoli oggetti, un mosaico di immagini in grado di descrivere l'intera galassia. Un altro telescopio degno di nota è il Keck Telescope, di fine anni $'90$, che rappresenta lo stacco dalle strutture monolitiche degli specchi principali, i quali arrivano fino a $8\, m$, per intraprendere una tecnica a mosaico, questo in particolare è un telescopio di $10\, m$ costituito da $36$ specchi esagonali opportunamente orientati.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \centering
+    \vspace{-10pt}
+    \includegraphics[width=0.49\textwidth]{Immagini/Capitolo2/Jamews_Webb_ST.PNG}
+    \caption*{Rappresentazione del James Webb Space Telescope}
+    \vspace{-10pt}
+\end{wrapfigure}
+
+Un altro esempio di struttura a composizione esagonale dello specchio primario è data dal futuro James Webb Space Telescope, il quale avrà un principale da $6.6\, m$ costituito da $18$ segmenti e che lo renderà il telescopio più grande in orbita attorno alla Terra (HST è $2.2\, m$), e che dovrebbe essere lanciato nell'estate del 2021. La difficoltà sta chiaramente nel compattare tutte le sue componenti, all'interno del razzo che verrà lanciato, tra le quali gli specchi e i vari strati laminari che comporrano la schermatura dei rivelatori rispetto al sole. Questo telescopio avrà due camere per l'imaging e uno spettrografo, più una camera dotato di entrambi, tutto abbastanza specifico all'indagine nel vicino infrarosso. Essendo che la banda interessata è il NIR, nonostante le grandi dimensioni del telescopio le misurazioni saranno fortemente limitate da diffrazione, essendo che per la definizione \ref{def:ris-ang} una lunghezza d'onda maggiore comporta una risoluzione minore, arrivando nello specifico ad avere una risoluzione teorica di $2\mu m$ (leggermente inferiore rispetto HST). Si ricorda inoltre che in quella banda c'è un rumore di fondo molto forte dato dall'emissione termica terrestre. Nonostante ciò, il telescopio è stato ideato appositamente per studiare quella banda, in quanto per via degli effetti di redshift è proprio in essa che ricadono i corpi celesti più distanti e antichi, che conferiscono per cui tutta questa importanza a queste lunghezze d'onda. Un alro telescopio che farà da riferimento per le successive strutture giganti è lo European Extremely Large Telescopes (E-ELT), un telescopio gigante da $39\, m$ a specchi segmentati, con $5\, m$ di specchio secondario e anche un terzo e quarto specchio adattivo per ottenere il massimo della risoluzione possibile. Questo sarà un po' un tuttofare delle rivelazioni (posto chiaramente a terra), includendo anche spettrografi in grado di analizzare anche corpi a grande distanza. Chiaramente, i telescopi in orbita richiedono manuntezione così come quelli a terra, per cui sono necessarie missioni periodiche che correggano eventuali errrori negli specchi tramite lenti correttrici (una sorta di occhiali), così come l'aggiornamento dei CCD delle camere o direttamente la sostituzione dei rivelatori con tecnologie più aggiornate dove necessario, come sistemi elettronici e giroscopi.
+
+\subsection*{Rapporto segnale-rumore}
+
+In qualsiasi ambito della fisica, ogni misura consiste nel rivelare una quantità che sia sufficientemente piccata rispetto alle fluttuazioni del rumore, il quale può essere di varia natura, cosa che si ritrova anche in ambito astrofisico. La miurazione in astrofisica sperimentale può essere anche di imaging, così come di spettroscopia o altro ancora, e il rumore può derivare, come visto, da sorgenti esterne non interressanti ai fini dell'osservazione, così come dall'elettronica stessa adoperata. Quest'ultima, con lo sviluppo tecnologico, è diventata man mano fonte di disturbo sempre minore, parallelamente all'aumento della precisione con cui svolge le misurazioni. Quando si parla di rumore di fondo si intende specificamente quello dato dal cielo, anch'esso è soggetto a fluttuazione come ogni tipo di rumore, che varia a seconda del sito e della regione in cui si fanno le osservazioni, ed è dato dalla luminosità del cielo, essendo che le misurazioni in questo ambito sono essenzialmente di cattura e assorbimento di fotoni in determinate bande.
+
+Chiamiamo $C$ il numero di fotoni del segnale raccolti in un certo tempo di integrazione, o per meglio dire il numero di conteggi dei fotoni una volta passati attraverso l'ottica e rivelati con una determinata efficienza dal CCD (una volta si adoperavano fotomoltiplicatori). Con lo stesso tipo di discorso si definisce anche il numero di fotoni $B$ dato dal background (o fondo) nel medesimo intervallo di tempo di acquisizione. Il segnale totale pervenuto sarà dato dalla somma dei due, mentre il background si può stimare tramite acquisizione in una regione del cielo "vuota", da cui riusciamo ad ottenere il segnale pulito facendo l'operazione che potremmo esprimere come $S=(C+B)-B_{est}$. Ora, il conteggio dei fotoni segue la statistica di Poisson, dove se $m$ è il numero medio di conteggio in un periodo di integrazione $T$, la probabilità di avere $x$ fotoni nell'intervallo $T$ è:
+\begin{equation}
+    P(x)=m^xe^{-\frac{m}{x^2}} \qquad \text{con } \sigma^2=m
+\end{equation}
+Dove $\sigma^2$ è la varianza è coincide con il conteggio medio.
