@@ -336,8 +336,33 @@ Un altro esempio di struttura a composizione esagonale dello specchio primario �
 
 In qualsiasi ambito della fisica, ogni misura consiste nel rivelare una quantità che sia sufficientemente piccata rispetto alle fluttuazioni del rumore, il quale può essere di varia natura, cosa che si ritrova anche in ambito astrofisico. La miurazione in astrofisica sperimentale può essere anche di imaging, così come di spettroscopia o altro ancora, e il rumore può derivare, come visto, da sorgenti esterne non interressanti ai fini dell'osservazione, così come dall'elettronica stessa adoperata. Quest'ultima, con lo sviluppo tecnologico, è diventata man mano fonte di disturbo sempre minore, parallelamente all'aumento della precisione con cui svolge le misurazioni. Quando si parla di rumore di fondo si intende specificamente quello dato dal cielo, anch'esso è soggetto a fluttuazione come ogni tipo di rumore, che varia a seconda del sito e della regione in cui si fanno le osservazioni, ed è dato dalla luminosità del cielo, essendo che le misurazioni in questo ambito sono essenzialmente di cattura e assorbimento di fotoni in determinate bande.
 
-Chiamiamo $C$ il numero di fotoni del segnale raccolti in un certo tempo di integrazione, o per meglio dire il numero di conteggi dei fotoni una volta passati attraverso l'ottica e rivelati con una determinata efficienza dal CCD (una volta si adoperavano fotomoltiplicatori). Con lo stesso tipo di discorso si definisce anche il numero di fotoni $B$ dato dal background (o fondo) nel medesimo intervallo di tempo di acquisizione. Il segnale totale pervenuto sarà dato dalla somma dei due, mentre il background si può stimare tramite acquisizione in una regione del cielo "vuota", da cui riusciamo ad ottenere il segnale pulito facendo l'operazione che potremmo esprimere come $S=(C+B)-B_{est}$. Ora, il conteggio dei fotoni segue la statistica di Poisson, dove se $m$ è il numero medio di conteggio in un periodo di integrazione $T$, la probabilità di avere $x$ fotoni nell'intervallo $T$ è:
+Chiamiamo $C$ il numero di fotoni del segnale raccolti in un certo tempo di integrazione, o per meglio dire il numero di conteggi dei fotoni una volta passati attraverso l'ottica e rivelati con una determinata efficienza dal CCD (una volta si adoperavano fotomoltiplicatori). Con lo stesso tipo di discorso si definisce anche il numero di fotoni $B$ dato dal background (o fondo) nel medesimo intervallo di tempo di acquisizione, per cui il segnale totale sarà dato dalla somma dei due. Ora, il conteggio dei fotoni segue la statistica di Poisson, dove se $m$ è il numero medio di conteggio in un periodo di integrazione $T$, la probabilità di avere $x$ fotoni nell'intervallo $T$ è:
 \begin{equation}
     P(x)=m^xe^{-\frac{m}{x^2}} \qquad \text{con } \sigma^2=m
 \end{equation}
-Dove $\sigma^2$ è la varianza è coincide con il conteggio medio.
+Dove $\sigma^2$ è la varianza e coincide con il conteggio medio. Questa statistica è tipica delle esperienze di conteggio e per questo descrive sia $C$ che $B$. Il problema ora si sposta nell'isolare e misurare separatamente queste due quantità, le quali chiaramente arrivano insieme e indistintamente al nostro telescopio. Un metodo può essere quello di acquisire in una regione del cielo "vuota", da cui riusciamo ad ottenere una stima del fondo $E_{est}$, per poi ottenere il segnale pulito sottraendolo ai conteggi: $S=(C+B)-B_{est}$. Chiaramente, il conteggio dei fotoni in un certo intervallo di tempo, come vedremo, sarà direttamente proporzionale al suo flusso emittente tramite costanti di proporzionalità come l'area collettrice di questi fotoni e la sua efficienza nel rivelarli. Essendo questa quantità una combinazione lineare di altre grandezze soggette tutte alla statistica poissoniana, la varianza di $S$ sarà data per propagazione dalla somma delle varianze, ponendo $B=B_{est}$ otteniamo l'errore tramite la radice quadrata della varianza:
+\begin{equation*}
+    \sigma_S=\sqrt{C+2B}
+\end{equation*}
+Grazie a questo definiamo il \textbf{rapporto segnale-rumore} (signal-noise) $S/N$ come il rapporto fra il segnale della sorgente rivelato e le fluttuazioni a cui è soggetto:
+\begin{equation}
+    \label{def:sig-noise}
+    \frac{S}{N} \Def \frac{C}{\sigma_S} = \frac{C}{\sqrt{C+2B}}
+\end{equation}
+Poste le quantità in unità di tempo come $c_s$ il rateo di conteggio del segnale e $c_b$ il rateo di conteggio del fondo, in un tempo di integrazione $T$ la \ref{def:sig-noise} diventa:
+\begin{equation*}
+    \frac{S}{N} = \frac{c_sT}{\sqrt{c_sT+2c_bT}} \propto
+    \begin{cases}
+        \sqrt{c_sT} & C \gg B \quad \text{caso limitato dal segnale}\\
+        \frac{c_s}{\sqrt{2c_b}}\sqrt{T} & C \ll B \quad \text{caso limitato dal rumore}
+    \end{cases}
+\end{equation*}
+Interessante è la proporzionalità diretta con il tempo di integrazione, questo rapporto sancisce che a parità di qualità del segnale si può ottenere un rapporto $S/N$ migliore con un tempo di integrazione maggiore. Si nota inoltre che i parametri di flusso $c_x$ hanno una dipendeza intrinseca con l'area collettrice $D^2$, poichè determina la quantità di flusso misurabile, da ciò si deduce una dipendenza lineare con l'apertura del telescopio $D$ (essendo che i parametri di flusso sono sotto radice).
+
+\subsection*{Flusso limite}
+
+Un concetto molto importante nell'astronomia moderna è quello di \textbf{flusso limite}, con cui si intende il flusso minimo per cui con un determinato sistema ottico e con un certo tempo di integrazione risulta ancora rivelabile una sorgente dal telescopio. L'importanza di questa grandezza risiede nell'interesse che si ha nell'osservare oggetti più deboli e lontani, e conseguentemente adattare i progetti e i telescopi a seconda degli obiettivi che si vogliono raggiungere. Questo parametro è anche detto \textbf{magnitudine limite}, dal momento che:
+\begin{equation*}
+    mag=-2.5\log{Counts}+ZeroPoint
+\end{equation*}
+Come flusso minimo associabile ad una sorgente si prende un rapporto $S/N=3$, il quale equivale a parlare di rivelazioni di $3\sigma$, sotto questo valore non possiamo affermare con buona probabilità che si tratti di una sorgente piuttosto che di una fluttuazione del rumore di fondo.
