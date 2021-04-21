@@ -361,8 +361,15 @@ Interessante è la proporzionalità diretta con il tempo di integrazione, questo
 
 \subsection*{Flusso limite}
 
-Un concetto molto importante nell'astronomia moderna è quello di \textbf{flusso limite}, con cui si intende il flusso minimo per cui con un determinato sistema ottico e con un certo tempo di integrazione risulta ancora rivelabile una sorgente dal telescopio. L'importanza di questa grandezza risiede nell'interesse che si ha nell'osservare oggetti più deboli e lontani, e conseguentemente adattare i progetti e i telescopi a seconda degli obiettivi che si vogliono raggiungere. Questo parametro è anche detto \textbf{magnitudine limite}, dal momento che:
+Un concetto molto importante nell'astronomia moderna è quello di \textbf{flusso limite}, con cui si intende il flusso minimo per cui con un determinato sistema ottico e con un certo tempo di integrazione risulta ancora rivelabile una sorgente dal telescopio. L'importanza di questa grandezza risiede nell'interesse che si ha nell'osservare gli oggetti più deboli e lontani, e conseguentemente adattare i progetti e i telescopi a seconda degli obiettivi che si vogliono raggiungere. Ricordando l'equivalenza tra parlare di flussi, magnitudini o conteggi (come si è fatto nel paragrafo precedente), questo parametro è anche detto \textbf{magnitudine limite}, dal momento che:
 \begin{equation*}
     mag=-2.5\log{Counts}+ZeroPoint
 \end{equation*}
-Come flusso minimo associabile ad una sorgente si prende un rapporto $S/N=3$, il quale equivale a parlare di rivelazioni di $3\sigma$, sotto questo valore non possiamo affermare con buona probabilità che si tratti di una sorgente piuttosto che di una fluttuazione del rumore di fondo.
+Si adoperano inizialmente sorgenti deboli e note vicino al sito che si vuole osservare, tramite di esse si operano delle correzioni di calibrazione che andranno poi nello $ZeroPoint$, grazie a queste sarà poi possibile effettuare una buona stima della magnitudine di un oggetto ignoto. Come flusso minimo associabile ad una sorgente si prende un rapporto $S/N=3$, il quale equivale a parlare di rivelazioni di $3\sigma$, sotto questo valore non possiamo affermare con buona probabilità che si tratti di una sorgente piuttosto che di una fluttuazione del rumore di fondo. Nel caso si tratti di una sorgente particolarmente luminosa o il tempo di esposizione sia sufficientemente elevato, quando il numero di conteggi tende a infinito la poissoniana è approssimabile da una gaussiana nella trattazione statistica. Cercando di tradurre tutto ciò in termini matematici, definendo il flusso limite rilevabile come $S/N=\gamma$, otteniamo dalla \ref{def:sig-noise}:
+\begin{equation*}
+    C^2-\gamma^2C-2\gamma^2B=0
+\end{equation*}
+Il flusso limite sarà propozionale al rateo di conteggi limite $c_{s,lim}$, dove ricordiamo che $c_s=C/T$, $c_b=B/T$:
+\begin{equation*}
+    c_{s,lim} = \frac{1}{T} \Biggl( \frac{\gamma^2}{2}+\gamma\sqrt{\frac{\gamma^2}{2} + 2c_bT} \Biggr)
+\end{equation*}
