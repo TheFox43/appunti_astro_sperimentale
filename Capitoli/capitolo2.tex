@@ -365,11 +365,26 @@ Un concetto molto importante nell'astronomia moderna è quello di \textbf{flusso
 \begin{equation*}
     mag=-2.5\log{Counts}+ZeroPoint
 \end{equation*}
-Si adoperano inizialmente sorgenti deboli e note vicino al sito che si vuole osservare, tramite di esse si operano delle correzioni di calibrazione che andranno poi nello $ZeroPoint$, grazie a queste sarà poi possibile effettuare una buona stima della magnitudine di un oggetto ignoto. Come flusso minimo associabile ad una sorgente si prende un rapporto $S/N=3$, il quale equivale a parlare di rivelazioni di $3\sigma$, sotto questo valore non possiamo affermare con buona probabilità che si tratti di una sorgente piuttosto che di una fluttuazione del rumore di fondo. Nel caso si tratti di una sorgente particolarmente luminosa o il tempo di esposizione sia sufficientemente elevato, quando il numero di conteggi tende a infinito la poissoniana è approssimabile da una gaussiana nella trattazione statistica. Cercando di tradurre tutto ciò in termini matematici, definendo il flusso limite rilevabile come $S/N=\gamma$, otteniamo dalla \ref{def:sig-noise}:
+Si adoperano inizialmente sorgenti deboli e note vicino al sito che si vuole osservare, tramite di esse si operano delle correzioni di calibrazione tramite lo $ZeroPoint$, grazie a queste sarà poi possibile effettuare una buona stima della magnitudine di un oggetto ignoto. Come misura minima affinchè si possa parlare di rivelazione di una sorgente si prende un rapporto $S/N=3$ (o equivalentemente si parla di rivelazioni di $3\sigma$), sotto questo valore, infatti, non possiamo affermare con buona probabilità che si tratti di una sorgente piuttosto che di una fluttuazione del rumore di fondo. Nel caso si tratti di una sorgente particolarmente luminosa o il tempo di esposizione sia sufficientemente elevato, il numero di conteggi tende a infinito e la poissoniana è approssimabile da una gaussiana nella trattazione statistica. Cercando di tradurre tutto ciò in termini matematici, definendo il flusso limite rilevabile come $S/N=\gamma$, otteniamo dalla \ref{def:sig-noise}:
 \begin{equation*}
     C^2-\gamma^2C-2\gamma^2B=0
 \end{equation*}
-Il flusso limite sarà propozionale al rateo di conteggi limite $c_{s,lim}$, dove ricordiamo che $c_s=C/T$, $c_b=B/T$:
+Dove ricordiamo che $c_s=C/T$, $c_b=B/T$, per cui il flusso limite sarà propozionale al rateo di conteggi limite $c_{s,lim}$, valore che ci interessa determinare in questa trattazione. Dalla precedente, il rateo di conteggi di una sorgente con flusso limite $\gamma$ in un tempo di esposizione $T$ è dato da:
 \begin{equation*}
     c_{s,lim} = \frac{1}{T} \Biggl( \frac{\gamma^2}{2}+\gamma\sqrt{\frac{\gamma^2}{2} + 2c_bT} \Biggr)
 \end{equation*}
+Si notano subito i rapporti di proporzionalità con il tempo a valori minori e maggiori. Per tempi di esposizione brevi, il valore di flusso minimo richiesto è particolarmente alto e ha andamento proporzionale all'inverso del tempo di esposizione $T$, questo è il caso di osservazioni limitate dal segnale. Nel caso contrario, per osservazioni limitate dal fondo, il tempo di esposizione necessario aumenta sempre di più e scala come l'inverso della radice di $T$, richiedendo tempi molto lunghi ma un flusso limite minore. Plottando l'equazione ottenuta:
+
+\begin{figure}[h]
+	\centering
+	\vspace{-5pt}
+	\includegraphics[width=0.5\textwidth]{Immagini/Capitolo2/Flusso_limite_plot_counttime.PNG}
+	\caption{Plot del flusso limite definito dai conteggi in funzione del tempo di esposizione}
+	\vspace{-5pt}
+\end{figure}
+
+La situazione peggiora nel caso si sorgente estesa, in quanto intrinsecamente il profilo di luce che traccia sarà una gaussiana molto più larga rispetto una sorgente puntiforme, a parità di flusso. La simulazione plottata nel grafico è ottenuta con lo stesso profilo gaussiano della sorgente puntiforme ma con una $FWHM$ doppia rispetto ad essa. Di fatti, a dimensioni doppie corrisponde un background quadruplo, poichè l'area da integrare è anch'essa quadrupla. In parole povere, l'estensione della sorgente comporta un peggioramento del rapporto $S/N$, per cui a parità di esso sarà necessario un valore maggiore di flusso limite, o equivalentemente una magnitudine limite minore. Manca solamente definire la costante di proporzionalità tra il rateo dei conteggi al flusso, queste due sono legate dalla seguente:
+\begin{equation*}
+	c_s = \int_{\lambda_1}^{\lambda_2} F_{\lambda} \cdot A_{eff}(\lambda) d\lambda
+\end{equation*}
+Dove nel termine $A_{eff}$ si tiene conto dell'area collettrice e dell'efficienza della strumentazione nell'effettuare i conteggi rispetto al flusso incidente, chiaramente il tutto relativo alla banda di interesse.
