@@ -75,6 +75,7 @@ Le principali tipologie di aberrazioni ottiche, riassunte in figura, sono il \te
 % ragiona se rifare i paragrafi o mettere la prossima parte (struttura di cassegrain e telescopi riflessivi) nella parte prima delle aberrazioni o boh
 
 \section{Telescopi riflessivi e parametri osservativi}
+\label{sec:telescopi-riflessivi-parametri}
 
 Il più comune dei telescopi riflessivi è il Cassegrain, citato prima, dove il fascio viene riflesso da uno specchio principale su un secondario convesso, il quale riflette a sua volta i raggi sul piano focale attraversando un buco nello specchio primario. Combinando gli effetti riflessivi dei due specchi, si può ricavare la correlazione tra le distanze focali tramite la seguente:
 \begin{equation*}
@@ -388,3 +389,11 @@ La situazione peggiora nel caso si sorgente estesa, in quanto intrinsecamente il
 	c_s = \int_{\lambda_1}^{\lambda_2} F_{\lambda} \cdot A_{eff}(\lambda) d\lambda
 \end{equation*}
 Dove nel termine $A_{eff}$ si tiene conto dell'area collettrice e dell'efficienza della strumentazione nell'effettuare i conteggi rispetto al flusso incidente, chiaramente il tutto relativo alla banda di interesse.
+
+\begin{exmp}[Camera avanzata per surveys (ACS) del HST]
+	Vediamo nella pratica come vengono adoperati questi concetti e parametri di efficienza in quella che è la fonte principale di molte delle immagini di sorgenti astronimiche ricavate negli ultimi anni: la camera avanzata epr surveys del HST. Questa camera venne introdotta nel 2002 per sostituzione della precedente e si occupa della banda del visibile, si costituisce di due CCD con risoluzione $2k \times 4k$ (per un totale di $4k \times 4k$), i cui pixel hanno dimensioni di $pxl size=0.05"$, con $FoV=200" \times 200"$. Queste caratteristiche tecniche sono ideali per una ricerca ad ampio raggio, senza lo scopo di un'indagine approfondità delle sorgenti, come si deduce dalla dimensione dei pixel, ricordando il concetto di risoluzione trattato nel paragrafo \ref{sec:telescopi-riflessivi-parametri}. Negli anni successivi con un'altra missione si è sostituita anche la camera dedita alle osservazioni nel vicino infrarosso, ottenendo risultati di gran lunga superiori e in grado di servire anche la camera avanzata per studi di spettroscopia combinati. Tornando alla prima delle due, anch'essa avrà uno $ZeroPoint$, il quale sarà nient'altro che il parametro di conversione tra il numero di conteggi di una sorgente e la sua magnitudine. Nel caso si scelga la banda del visibile tramite un filtro F606W, otteniamo:
+	\begin{equation*}
+		mag_{F606}=-2.5\log_{10}\frac{cts}{s}+ZP \qquad
+		\text{dove } ZP=26.4 \, \text{(Sistema di Vega)}
+	\end{equation*}
+\end{exmp}
