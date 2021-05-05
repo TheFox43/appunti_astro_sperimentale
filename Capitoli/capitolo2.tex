@@ -351,21 +351,23 @@ Grazie a questo definiamo il \textbf{rapporto segnale-rumore} (signal-noise) $S/
     \frac{S}{N} \Def \frac{C}{\sigma_S} = \frac{C}{\sqrt{C+2B}}
 \end{equation}
 Poste le quantità in unità di tempo come $c_s$ il rateo di conteggio del segnale e $c_b$ il rateo di conteggio del fondo, in un tempo di integrazione $T$ la \ref{def:sig-noise} diventa:
-\begin{equation*}
+\begin{equation}
+	\label{def:sig-noise-counts}
     \frac{S}{N} = \frac{c_sT}{\sqrt{c_sT+2c_bT}} \propto
     \begin{cases}
         \sqrt{c_sT} & C \gg B \quad \text{caso limitato dal segnale}\\
         \frac{c_s}{\sqrt{2c_b}}\sqrt{T} & C \ll B \quad \text{caso limitato dal rumore}
     \end{cases}
-\end{equation*}
+\end{equation}
 Interessante è la proporzionalità diretta con il tempo di integrazione, questo rapporto sancisce che a parità di qualità del segnale si può ottenere un rapporto $S/N$ migliore con un tempo di integrazione maggiore. Si nota inoltre che i parametri di flusso $c_x$ hanno una dipendeza intrinseca con l'area collettrice $D^2$, poichè determina la quantità di flusso misurabile, da ciò si deduce una dipendenza lineare con l'apertura del telescopio $D$ (essendo che i parametri di flusso sono sotto radice).
 
 \subsection*{Flusso limite}
 
 Un concetto molto importante nell'astronomia moderna è quello di \textbf{flusso limite}, con cui si intende il flusso minimo per cui con un determinato sistema ottico e con un certo tempo di integrazione risulta ancora rivelabile una sorgente dal telescopio. L'importanza di questa grandezza risiede nell'interesse che si ha nell'osservare gli oggetti più deboli e lontani, e conseguentemente adattare i progetti e i telescopi a seconda degli obiettivi che si vogliono raggiungere. Ricordando l'equivalenza tra parlare di flussi, magnitudini o conteggi (come si è fatto nel paragrafo precedente), questo parametro è anche detto \textbf{magnitudine limite}, dal momento che:
-\begin{equation*}
-    mag=-2.5\log{Counts}+ZeroPoint
-\end{equation*}
+\begin{equation}
+	\label{eq:lim-flux-conversione-cont-mag}
+    mag=-2.5\log_{10}{Counts}+ZeroPoint
+\end{equation}
 Si adoperano inizialmente sorgenti deboli e note vicino al sito che si vuole osservare, tramite di esse si operano delle correzioni di calibrazione tramite lo $ZeroPoint$, grazie a queste sarà poi possibile effettuare una buona stima della magnitudine di un oggetto ignoto. Come misura minima affinchè si possa parlare di rivelazione di una sorgente si prende un rapporto $S/N=3$ (o equivalentemente si parla di rivelazioni di $3\sigma$), sotto questo valore, infatti, non possiamo affermare con buona probabilità che si tratti di una sorgente piuttosto che di una fluttuazione del rumore di fondo. Nel caso si tratti di una sorgente particolarmente luminosa o il tempo di esposizione sia sufficientemente elevato, il numero di conteggi tende a infinito e la poissoniana è approssimabile da una gaussiana nella trattazione statistica. Cercando di tradurre tutto ciò in termini matematici, definendo il flusso limite rilevabile come $S/N=\gamma$, otteniamo dalla \ref{def:sig-noise}:
 \begin{equation*}
     C^2-\gamma^2C-2\gamma^2B=0
@@ -385,15 +387,31 @@ Si notano subito i rapporti di proporzionalità con il tempo a valori minori e m
 \end{figure}
 
 La situazione peggiora nel caso si sorgente estesa, in quanto intrinsecamente il profilo di luce che traccia sarà una gaussiana molto più larga rispetto una sorgente puntiforme, a parità di flusso. La simulazione plottata nel grafico è ottenuta con lo stesso profilo gaussiano della sorgente puntiforme ma con una $FWHM$ doppia rispetto ad essa. Di fatti, a dimensioni doppie corrisponde un background quadruplo, poichè l'area da integrare è anch'essa quadrupla. In parole povere, l'estensione della sorgente comporta un peggioramento del rapporto $S/N$, per cui a parità di esso sarà necessario un valore maggiore di flusso limite, o equivalentemente una magnitudine limite minore. Manca solamente definire la costante di proporzionalità tra il rateo dei conteggi al flusso, queste due sono legate dalla seguente:
-\begin{equation*}
-	c_s = \int_{\lambda_1}^{\lambda_2} F_{\lambda} \cdot A_{eff}(\lambda) d\lambda
-\end{equation*}
+\begin{equation}
+	\label{eq:lim-flux-conteggi}
+	c_s = \int_{\lambda_1}^{\lambda_2} F_{\lambda}\bigl( erg/cm^2/s/\angstrom \bigr) \cdot A_{eff}(\lambda) d\lambda
+\end{equation}
 Dove nel termine $A_{eff}$ si tiene conto dell'area collettrice e dell'efficienza della strumentazione nell'effettuare i conteggi rispetto al flusso incidente, chiaramente il tutto relativo alla banda di interesse.
 
+Ora, è interessante vedere come scala il rapporto segnale-rumore rispetto alle caratteristiche dell'osservazione, come ad esempio il tempo di esposizione, il flusso della sorgente, il diametro del telescopio e anche la luminosità del cielo. Questo ci permette di capire in che rapporto sono queste caratteristiche con il valore del flusso limite, essendo questo derivato dal minimo rapporto $S/N$. Vedendo la proporzionalità tra i conteggi e il flusso incidente $f$, l'area collettrice $A$ in grado di rivelarli, e tenendo comunque conto del background $B$, deduciamo dalla \ref{def:sig-noise-counts} che:
+\begin{equation*}
+	\frac{S}{N} \sim \frac{A}{\sqrt{A+A}} \overset{A \sim D^2}{\sim} D \longrightarrow
+	\frac{S}{N} \propto \sqrt{T} \cdot f \cdot D \cdot \frac{1}{\sqrt{B}}
+\end{equation*}
+Dove $D$ è il diametro del telescopio. Definite queste proporzionalità, possiamo indagare il caso in cui si passi da una sorgente di flusso $f_1$ a una sorgente di flusso $f_2$, dove $f_2>f_1$. Ricordando che il flusso limite si definisce da un valore costante $S/N=\gamma=3$, il rapporto di proporzionalità scritto in precedenza equivale a una costante, per cui si può dedurre che:
+\begin{equation*}
+	\frac{f_2}{f_1}=\frac{\sqrt{T_1}}{\sqrt{T_2}} = \frac{D_1}{D_2}
+\end{equation*}
+Dove a ogni equivalenza si tiene conto che le altre variabili rimangano costanti (nel caso del rapporto tra aperture diverse, si è assunto che il tempo di integrazione fosse il medesimo).
+
 \begin{exmp}[Camera avanzata per surveys (ACS) del HST]
-	Vediamo nella pratica come vengono adoperati questi concetti e parametri di efficienza in quella che è la fonte principale di molte delle immagini di sorgenti astronimiche ricavate negli ultimi anni: la camera avanzata epr surveys del HST. Questa camera venne introdotta nel 2002 per sostituzione della precedente e si occupa della banda del visibile, si costituisce di due CCD con risoluzione $2k \times 4k$ (per un totale di $4k \times 4k$), i cui pixel hanno dimensioni di $pxl size=0.05"$, con $FoV=200" \times 200"$. Queste caratteristiche tecniche sono ideali per una ricerca ad ampio raggio, senza lo scopo di un'indagine approfondità delle sorgenti, come si deduce dalla dimensione dei pixel, ricordando il concetto di risoluzione trattato nel paragrafo \ref{sec:telescopi-riflessivi-parametri}. Negli anni successivi con un'altra missione si è sostituita anche la camera dedita alle osservazioni nel vicino infrarosso, ottenendo risultati di gran lunga superiori e in grado di servire anche la camera avanzata per studi di spettroscopia combinati. Tornando alla prima delle due, anch'essa avrà uno $ZeroPoint$, il quale sarà nient'altro che il parametro di conversione tra il numero di conteggi di una sorgente e la sua magnitudine. Nel caso si scelga la banda del visibile tramite un filtro F606W, otteniamo:
+	Vediamo nella pratica come vengono adoperati questi concetti e parametri di efficienza in quella che è la fonte principale di molte delle immagini di sorgenti astronimiche ricavate negli ultimi anni: la camera avanzata epr surveys del HST. Questa camera venne introdotta nel 2002 per sostituzione della precedente e si occupa della banda del visibile, si costituisce di due CCD con risoluzione $2k \times 4k$ (per un totale di $4k \times 4k$), i cui pixel hanno dimensioni di $pxl size=0.05"$, con $FoV=200" \times 200"$. Queste caratteristiche tecniche sono ideali per una ricerca ad ampio raggio, senza lo scopo di un'indagine approfondità delle sorgenti, come si deduce dalla dimensione dei pixel, ricordando il concetto di risoluzione trattato nel paragrafo \ref{sec:telescopi-riflessivi-parametri}. Infatti, è possibile dedurre dalle trasformate di Fourier (dimostrazione che saltiamo) che affinchè la risoluzione di uno strumento venga campionata approfonditamente, questa deve avere dimensioni tali da essere coperta da almeno due o tre pixel, affinchè due sorgenti vicine siano effettivamente risolvibili da quella risoluzione. Negli anni successivi con un'altra missione si è sostituita anche la camera dedita alle osservazioni nel vicino infrarosso, ottenendo risultati di gran lunga superiori e in grado di servire anche la camera avanzata per studi di spettroscopia combinati. Tornando alla prima delle due, anch'essa avrà uno $ZeroPoint$, il quale sarà nient'altro che la costante additiva per la conversione tra il numero di conteggi di una sorgente e la sua magnitudine. Nel caso si scelga la banda del visibile tramite un filtro F606W (lunghezza centrale: $5917\angstrom$, larghezza banda: $1583\angstrom$), otteniamo:
 	\begin{equation*}
 		mag_{F606}=-2.5\log_{10}\frac{cts}{s}+ZP \qquad
 		\text{dove } ZP=26.4 \, \text{(Sistema di Vega)}
+	\end{equation*}
+	Dove la costante di calibrazione $ZeroPoint$ è data dalla \ref{eq:lim-flux-conteggi}, questa viene infatti indicizzata nella tabella dei flussi corrispondenti ad ogni magnitudine in ogni banda, tramite questa tabella del HST, si vede a che conteggi corrisponde una sorgente di magnitudine zero tramite cui effettuare la calibrazione ($f_\lambda(0)=3.64\e{-9}$ in banda $V$). Essendo che i sistemi di magnitudine assoluta, come definiti, adoperano la stella Vega come riferimento, su di essa viene effettuata questa calibrazione. Per vedere quanto sia affidabile la \ref{eq:lim-flux-conversione-cont-mag}, si adopera la formula per una sorgente che abbia magnitudine pari allo $ZeroPoint$, e dovrebbe uscire un rateo di conteggi di un conteggio al secondo in un tempo di integrazione di un secondo. Nello specifico, si passa dalla magnitudine ai conteggi ricavando dalla prima il rapporto tra il flusso della sorgente e quello di riferimento, moltiplicandolo poi in ordine per il flusso tabulato di riferimento, la banda passante ($1580\angstrom$), l'area collettrice, il tempo di integrazione, il parametro di efficienza totale del sistema telescopio-filtro-CCD ($0.45$). Infine, si divide rispettivamente per il fattore di conversione da $erg$ a $eV$ ($1eV=1.6\e{-12}erg$) e per l'energia del singolo fotone in quella banda in $eV$ ($E_{ph}=2.1eV(\lambda=0.592\mu m)$) in modo da ottenere il numero di fotoni (essendo che sono essi a dare il numero di conteggi, non il loro apporto energetico):
+	\begin{equation*}
+		cts=10^{-0.4 \cdot 26.4} \cdot 3.6\e{-9} \cdot 1580 \cdot \Bigl( \pi\frac{2.5 \cdot 10^2}{2} \Bigr)^2 \cdot 1s \cdot 0.45 \cdot \frac{1}{1.6\e{-12}} \frac{1}{2.1}=1
 	\end{equation*}
 \end{exmp}
