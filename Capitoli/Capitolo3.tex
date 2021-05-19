@@ -1,26 +1,27 @@
 \chapter{Spettroscopia}
 
+\section{Introduzione agli spettroscopi e alle quantità spettrali}
+
 Un pilastro informativo in astrofisica è l'analisi dei profili spettrali, noto come \textbf{sprettroscopia}, in grado di dare molte informazioni riguardo le sorgenti, in quanto ogni profilo è tipico di un certo tipo di processo di emissione ed è quindi utile per capire la fisica che sta dietro i segnali che riceviamo. L'incipit di questa analisi sta innanzitutto in un processo di isolamento e collimazione della luce proveniente dalla specifica sorgente che si vuole studiare, tipicamente svolto dal telescopio, dopo di che il fascio viene fatto espandere tramite una fenditura, posta solitamente nel fuoco stesso del telescopio, per poi passare attraverso un \textit{elemento dispersivo}, come ad esempio un prisma. L'elemento dispersore rende possibile l'analisi dello spettro spacchettando il fascio in arrivo in tutte le lunghezze d'onda, per rendere questo possibile è necessario che il fascio incidente arrivi parallelo, poichè la rifrazione è in funzione sia della lunghezza che dell'angolo incidente.
 
 \begin{figure}[h]
     \centering
-    \vspace{-5pt}
-    \includegraphics[width=0.5\textwidth]{Immagini/Capitolo3/Spettroscopia_schema.PNG}
-    \caption*{Rappresentazione schematica di uno spettroscopio a prisma}
-    \vspace{-5pt}
+    \includegraphics[width=0.55\textwidth]{Immagini/Capitolo3/Spettrografo_schema.PNG}
+    \caption{Rappresentazione schematica di uno spettroscopio a prisma}
+    \label{im:schema-spettroscopio-prisma}
 \end{figure}
 
-Per togliere quest'ultimo elemento e analizzare solo il percorso di rifrazione, si introducono delle lenti focalizzanti tra la fenditura e il prisma, ma anche tra il prisma e successivamente il piano focale, per cui il fascio incida da prima parallelamente, per poi essere reso ancora più separato a seguito della dispersione sul piano focale, in modo da rendere l'analisi più effettiva. I fasci uscenti, separati ulterioramente dal secondo specchio, andranno poi fuocheggiati da un secondo obiettivo, per fare ciò si regola il sistema ottico in modo da inviare lo spettro orientato lungo uno degli assi del CCD.
+Per togliere quest'ultimo elemento e analizzare solo il percorso di rifrazione, si introducono delle lenti focalizzanti tra la fenditura e il prisma, ma anche tra il prisma e successivamente il piano focale, per cui il fascio incida da prima parallelamente, per poi essere reso ancora più separato a seguito della dispersione sul piano focale, in modo da rendere l'analisi più effettiva. Quanto descritto è schematizzato nell'immagine \ref{im:schema-spettroscopio-prisma}.
 
-\begin{wrapfigure}{l}{0.35\textwidth}
+\begin{wrapfigure}{l}{0.3\textwidth}
     \centering
-    \vspace{-5pt}
-    \includegraphics[width=0.34\textwidth]{Immagini/Capitolo3/Spettro_cielo_generico.PNG}
-    \caption*{Spettro generico di una parte di cielo, direzione di dispersione orizzontale verso destra}
-    \vspace{-5pt}
+    \vspace{-10pt}
+    \includegraphics[width=0.29\textwidth]{Immagini/Capitolo3/Spettro_cielo_generico.PNG}
+    \caption*{Spettro di una parte di cielo, dispersione orizzontale verso destra}
+    \vspace{-15pt}
 \end{wrapfigure}
 
-Questa tecnica a prisma crea un'immagine a righe, le quali si estendono tutte in una direzione specifica, che è la \textit{direzione di dispersione}, come si vede in immagine, la quale è frutto di uno spettroscopio in cui si è osservato un pezzo di cielo, senza isolare una sorgente specifica, per cui ad ogni riga corrisponde una differente sorgente. Per passare ad una descrizione più formale, risulta necessario partire proprio dal concetto di \textit{dispersione angolare} $d\beta/d\lambda$, che consiste, come è facilmente intuibile, nella differenza di angolo di dispersione $d\beta$ rapportato alla differenza di lunghezza d'onda $d\lambda$ tra due onde adiacenti. A seguito della dispersione, le onde vengono poi focalizzate su un CCD, che una volta calibrato avrà la sua focale equivalente $f$. Ora, se i raggi arrivano paralleli opichè rifocalizzati, significa che ad ogni raggio disperso ad angolo $\beta$ corrisponderà una distanza diversa sul piano focale, chiamando $l$ la distanza dall'asse ottico e ricordando la correlazione diretta tra angolo di dispersione e distanza lineare sul piano focale, si ricava la dispersione lineare:
+I fasci uscenti, separati ulteriormente dal secondo specchio, andranno poi fuocheggiati da un secondo obiettivo, per fare ciò si regola il sistema ottico in modo da inviare lo spettro orientato lungo uno degli assi del CCD. Questa tecnica crea un'immagine a righe, le quali si estendono tutte in una direzione specifica, che è la \textit{direzione di dispersione}, come si vede in immagine, la quale è frutto di uno spettroscopio in cui si è osservato un pezzo di cielo, senza isolare una sorgente specifica, per cui ad ogni riga corrisponde una differente sorgente. Per passare ad una descrizione più formale, risulta necessario partire proprio dal concetto di \textit{dispersione angolare} $d\beta/d\lambda$, che consiste, come è facilmente intuibile, nella differenza di angolo di dispersione $d\beta$ rapportato alla differenza di lunghezza d'onda $d\lambda$ tra due onde adiacenti. A seguito della dispersione, le onde vengono poi focalizzate su un CCD, che una volta calibrato avrà la sua focale equivalente $f$. Ora, se i raggi arrivano paralleli opichè rifocalizzati, significa che ad ogni raggio disperso ad angolo $\beta$ corrisponderà una distanza diversa sul piano focale, chiamando $l$ la distanza dall'asse ottico e ricordando la correlazione diretta tra angolo di dispersione e distanza lineare sul piano focale, si ricava la dispersione lineare:
 \begin{equation}
     \frac{dl}{d\lambda} = f \frac{d\beta}{d\lambda}
 \end{equation}
@@ -39,3 +40,81 @@ Questa quantità viene spesso usata nel suo inverso, per motivi di pura comodit�
     \label{def:risoluzione-spettrale}
     R = \frac{\lambda}{\Delta\lambda}
 \end{equation}
+Intesa come capacità di risolvere due onde di cui una a lunghezza d'onda $\lambda$ e l'altra a lunghezza d'onda $\lambda+\Delta\lambda$. Dando una classificazione rapida, si intendono a bassa risoluzione gli spettrografi con $R\sim 100-600$, a risoluzione intermedia con $R\sim 1000-500$, e ad alta risoluzione con $R\sim 10^4-10^5$. Da questa quantità si arriva a definire il \textbf{range spettrale} $1/R$ come l'inverso della risoluzione spettrale, per cui si ha $1/R \sim \Delta\lambda/\lambda$, corrispondente alla definizione di redshift. Introdotte queste quantità, ogni spettrografo ha la sua funzione, nel caso si vogliano studiare corpi di cui è ignoto il redshift converrà adottare una bassa risoluzione che permetterà così di avere un ampio range di analisi. Un caso diverso è quello in cui si vogliano misurare le microvariazioni di effetto Doppler di una stella derivate dal suo moto attorno al centro di massa, ad esempio qualora si sospetti ci sia un micropianeta in orbita attorno a lei e che crei un moto dell'ordine dei $m/s$ (quindi estremamente piccolo), per cui sarà necessaria una risoluzione molto alta per osservare dei piccolissimi shift nelle lunghezze d'onda, corrispodentia queste piccolissime variazioni di velocità. Ci saranno poi anche tutti i casi intermedi rispetto agli esempi presi, questa dualità tra range e risoluzione rimane comunque imprescindibile, ma bisogna anche tenere conto della dispersione. Di fatti il sistema ottico dello spettrografo deve essere calibrato in modo che ad una certa risoluzione, ad esempio di $1\, \angstrom$, corrispondano tre o quattro pixel di dispersione in modo che poi due lunghezze d'onda siano effettivamente risolvibili a quella risoluzione, speculare a quanto visto nel caso di imaging tra campionamento e risoluzione. La limitazione fondamentale per cui si fanno questo tipi di ragionamenti è il fatto che il sistema ottico ha dimensioni finite così come lo hanno i CCD che fungono da detector nelle strumentazioni moderne, nel caso non avessimo delle dimensioni limitanti si potrebbe studiare ad alta risoluzione aumentando costantemente il numero di CCD in dotazione, in modo si manterebbe anche un ampio spettro.
+
+Nei telescopi moderni si preferisce adoperare dei \textit{reticoli di diffrazione} (reflection/diffraction gratings) come elemento dispersore al posto dei prismi, che altro non sono che superfici piane riflettenti cosparse di solchi lineari superficiali. Questi reticoli possono avere dimensioni ridotte sull'ordine dei cm nei telescopi minori, così come arrivare a dimensioni di mezzo metro o maggiori. Grazie ad essi, oltre ad aver raggiunto valori di dispersione e quindi di efficienza molto maggiori, le onde vengono direttamente riflesse (anzichè rifratte) a diversi angoli a seconda della lunghezza d'onda, per essere poi indirizzate verso il secondo collimatore, che manderanno il segnale al CCD come visto fino ad ora. Lo schema di questo tipo di spettroscopio è mostrato nella figura \ref{im:schema-spettroscopio-reticolo}, è pressochè analogo a quello classico a prisma visto nella \ref{im:schema-spettroscopio-reticolo}, con la differenza strutturale introdotta dal reticolo di spezzare lo schema della macchina anzichè averne una lineare come la prima. Inoltre la prima lente, quella tra la fenditura rettangolare e il reticolo, rimane detta collimatore, mentre la seconda, tra il reticolo e il CCD, prende il nome di imaging lens.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Immagini/Capitolo3/Spettrografo_schema_reticolo_diff.PNG}
+    \caption{Schema di uno spettrografo moderno a reticolo di diffrazione}
+    \label{im:schema-spettroscopio-reticolo}
+\end{figure}
+
+Ora vale la pena analizzare i limiti di questo sistema, primo tra di essi le implicazioni che può avere sulla risoluzione spettrale, che va ora calcolata in base ad un pattern di diffrazione, e non più rifrattivo. Nella diffrazione, sappiamo che avere un limite nel distinguere due lunghezze d'onda equivale a dire di avere un limite sulla distinzione tra due angoli, per cui vale la pena interrogarsi su quale sia l'elemento ostruttivo nel percorso di diffrazione di Fraunhofer tale da imporre questa limitazione.
+
+\begin{wrapfigure}{l}{0.35\textwidth}
+    \centering
+    \vspace{-5pt}
+    \includegraphics[width=0.34\textwidth]{Immagini/Capitolo3/Reticolo_diffrazione.PNG}
+    \caption{Schema reticolo di diffrazione visto lateralmente}
+    \label{im:schema-diff-reticolo}
+    \vspace{-5pt}
+\end{wrapfigure}
+
+Nell'immagine \ref{im:schema-diff-reticolo}, che schematizza il reticolo di diffrazione, i solchi sono rappresentati dai punti, disposti simmetricamente a distanza $a$, detto passo del reticolo, e responsabili della diffrazione di Fraunhofer. Come si vede, il fascio incide parallelamente ad un angolo $\theta_i$ rispetto la normale al reticolo, per essere diffratto ad un angolo $\theta_m$ rispetto la normale, in direzione di dove viene appositamente messo il CCD. La distinzione tra due angoli differenti rimane sempre pari a $\lambda/d$, ma in questo caso $\lambda$ è dato dalle dimensioni fisiche del reticolo, le quali fanno da elemento ostruttivo dello spettrografo. L'equazione che correla angolo incidente e angolo diffratto ad una determinata lunghezza d'onda è la seguente, detta \textit{equazione del reticolo}:
+\begin{equation}
+    \label{eq:spett-reticolo}
+    m\lambda = a \bigl(\sin\theta_m-\sin\theta_i \bigr)
+\end{equation}
+Essendo che è una condizione sui multipli interi, sarà verificata per vari valori di $m$ detti ordini, i quali presenteranno la stessa lunghezza d'onda ma ad intensità diverse per angoli di diffrazione diversi, come mostrato sempre nella \ref{im:schema-diff-reticolo}. Abbastanza spesso, anche nei telescopi di dimensioni maggiori, questi reticoli vengono combinati ad un elemento ottico, ad esempio con dei prismi, in modo da creare uno strumento in grado di disperdere la luce nella stessa direzione di incidenza, ma nuovamente per via della rifrazione. Il grande vantaggio introdotto da questa linearità sta nel fatto che si possa passare da un sistema spettrale nuovamente ad uno di imaging semplicemente togliendo questo reticolo, ad esempio sostituendolo con un filtro all'interno del telescopio. Torniamo ora ad una descrizione formale degli effetti che ha sulla dispersione e la risoluzione spettrali, differenziando la \ref{eq:spett-reticolo}, otteniamo:
+\begin{equation*}
+    md\lambda = a\cos\theta_m d\theta_m
+\end{equation*}
+In funzione dell'angolo di deviazione $\theta_m$, da cui possiamo ricavare la dispersione angolare come:
+\begin{equation*}
+    \frac{d\theta_m}{d\lambda} = \frac{m}{a\cos\theta_m}
+\end{equation*}
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+    \centering
+    \vspace{-5pt}
+    \includegraphics[width=0.34\textwidth]{Immagini/Capitolo3/Reticolo_fascio_diffratto.PNG}
+    \caption*{Rappresentazione fascio diffratto}
+    \vspace{-5pt}
+\end{wrapfigure}
+
+\noindent
+Dove la dispersione è maggiore tanto maggiore sarà l'ordine a cui andiamo. Nel caso di $N$ solchi, sappiamo che le dimensioni lineari del reticolo devono essere $Na$, dove $a$ è il passo. qui risiede, come citato prima, una limitazione del reticolo, che come con i prismi, si ha che le sue dimensioni limitano la risoluzione disponbile: per fasci obliqui l'ampiezza di fascio diffratta sarà limitatamente pari a $Na\cos\theta_m$, poichè oltre queste dimensioni non c'è fisicamente nessun reticolo che possa sottoporre il fascio incidente a diffrazione e quindi riflessione. Si ricorda che la diffrazione è data esclusivamente da Fraunhofer, per cui non vi è il fattore $1.22$ e si mantiene il solo criterio di Rayleigh di $\lambda/d$, dove $d$ sono le nuove dimensioni del fascio, per cui il primo minimo sarà dato a:
+\begin{equation*}
+    \Delta\theta_m=\frac{\lambda}{Na\cos\theta_m}
+\end{equation*}
+Si ricorda che la risoluzione viene definita analogamente alla \ref{def:ris-ang} proprio in base alla distanza a cui si trova il primo minimo delle figure di diffrazione che si intendono risolvere, inserendo questo valore di $\Delta\theta$ nella versione differenziata della \ref{eq:spett-reticolo} otteniamo $\Delta\lambda=\lambda/m$, da cui ricaviamo la risoluzione spettrale come:
+\begin{equation}
+    \label{eq:spett-ris-spet-reticolo}
+    R = \frac{\lambda}{\Delta\lambda} =
+    mN =
+    Na \frac{\sin\theta_m-\sin\theta_i}{\lambda}
+\end{equation}
+Dove si è adoperata la \ref{eq:spett-reticolo} nello sviluppo finale. Lo svantaggio principale di questi spettrografi a reticolo è che i vari ordini possono sovrapporsi, ad esempio il blu di primo ordine rischia di sovrapporsi al rosso di secondo ordine, andando a perdere range spettrale. Vedendo meglio questo concetto tra due ordini adiacenti:
+\begin{equation*}
+    a \Bigl( \sin\theta_m - \sin\theta_i \Bigr) =
+    \Bigl( m+1 \Bigr) \lambda =
+    m \Bigl( \lambda + \Delta\lambda \Bigr)
+\end{equation*}
+Da cui definiamo il \textit{range spettrale libero} $\Delta\lambda_{FSR}$, o \textit{intervallo spettrale libero}, come:
+\begin{equation}
+    \label{eq:spett-FSR}
+    \Delta\lambda_{FSR} = \frac{\lambda}{m}
+\end{equation}
+Che è l'intervallo massimale di lunghezze d'onda per il quale non avviene copertura d'ordine, dal quale è ricavabile la distanza tra due massimi consecutivi corrispondenti alla stessa lunghezza d'onda.
+
+Il motivo per cui, viceversa, si è sorpassato il modello a prisma sta nella capacità di poter raggiungere risoluzioni molto maggiori tramite l'adozione di reticoli, il primo sistema è infatti limitato dallo spessore del prisma (più è spesso maggiore la rifrazione), ma soprattutto dalla derivata dell'indice di rifrazione, il quale non cambia mai radicalmente con la lunghezza d'onda, infatti:
+\begin{equation*}
+    R_{prism}=t\frac{dn}{d\lambda}
+\end{equation*}
+Dove $t$ è lo spessore, la risoluzione dei sistemi a prisma è limitata dalla scarsa capacità dispersiva e difficilmente può superare il valore di mille, rendendoli poco adatti per studi particolarmente dettagliati. Un motivo aggiuntivo risiede nel fatto che i prismi hanno necessariamente efficienza ridotta anche nella trasmissione, essendo che il vetro assorbe parte del segnale entrante.
+
+\section{Introduzione alla spettroscopia multi-oggetti}
+
+Vedendo i risvolti maggiormente pratici, la spettroscopia può essere adoperata anche per una moltitudine di sorgenti in contemporanea, per fare ciò basterà porre una piastra in alluminio (o di un qualsiasi materiale oscurante) di fronte il telescopio, intagliando delle fenditure rettangolari in corrispondenza delle fonti che si intendono isolare e studiare.
