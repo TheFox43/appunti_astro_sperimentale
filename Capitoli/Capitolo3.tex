@@ -117,4 +117,72 @@ Dove $t$ è lo spessore, la risoluzione dei sistemi a prisma è limitata dalla s
 
 \section{Introduzione alla spettroscopia multi-oggetti}
 
-Vedendo i risvolti maggiormente pratici, la spettroscopia può essere adoperata anche per una moltitudine di sorgenti in contemporanea, per fare ciò basterà porre una piastra in alluminio (o di un qualsiasi materiale oscurante) di fronte il telescopio, intagliando delle fenditure rettangolari in corrispondenza delle fonti che si intendono isolare e studiare.
+Passando a risvolti maggiormente pratici, la spettroscopia può essere adoperata anche per una moltitudine di sorgenti in contemporanea. Per fare ciò basterà porre una piastra in alluminio (o di un qualsiasi materiale oscurante) di fronte al telescopio, intagliando delle fenditure rettangolari, tipicamente tramite laser per maggiore precisione, in corrispondenza delle fonti che si intendono isolare e studiare. La scelta delle fenditure rettangolari, piuttosto che quadrate, per studiare fonti essenzialmente sferiche, si giustifica con l'interesse che si ha nel introdurre anche il rumore di fondo spettrale del cielo, il quale verrà poi tolto in elaborazione tramite osservazioni indipendenti, esattamente come avviene per l'imaging.
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+    \centering
+    \vspace{-10pt}
+    \includegraphics[width=0.39\textwidth]{Immagini/Capitolo3/Spettro_multi_concielo.PNG}
+    \vspace{-5pt}
+    \caption*{Spettro multi-oggetti compreso di cielo}
+    \vspace{+8pt}
+
+    \includegraphics[width=0.39\textwidth]{Immagini/Capitolo3/Spettro_multi_senzacielo.PNG}
+    \vspace{-5pt}
+    \caption*{Spettro multi-oggetti sottratto di cielo}
+    \vspace{-10pt}
+\end{wrapfigure}
+
+La tecnica è molto semplice: il cielo ha intensità luminosa maggiore, per cui è possibile isolarne lo spettro analizzando le zone limitrofe sufficientemente al di sopra e al di sotto dela direzione di dispersione orizzontale (in pixel), dove sono presenti solo le sue linee spettrali. Fatta questa analisi, è sufficiente rimuovere dallo spettro originario le linee trovate isolate nelle zone citate. Questa sottrazione, pur quanto utile nell'isolare lo spettro della sorgente, non può contribuire alla riduzione del rumore di fondo del cielo. Quest'ultimo dipende dalla radice del numero di fotoni entrante ed è imprescindibile, soprattutto nelle righe spettrali sulla linea di dispersione rimangono comunque residui della sottrazione del cielo. Per arrivare al plot finale, è necessaria una calibrazione del sistema, ossia associare ad ogni pixel del CCD (essendo che nella pratica si lavora in pixel) una specifica lunghezza d'onda. Questa calibrazione viene fatta tramite lampade di laboratorio il cui spettro è già noto, facendone arrivare la luce al cammino ottico del telescopio tramite fibra ottica, in tal modo è possibile calibrare il sistema su una scala completa di lunghezze d'onda tramite l'uso di più lampade. Fatto ciò, è possibile estrarre il flusso entrante nella fenditura (in conteggi) e mediarlo sulle corrispettive lunghezze d'onda associate ai pixel, ottenendo la \ref{im:spettro-plot-conteggi}.
+
+\begin{figure}[htpb]
+    \centering
+    \begin{minipage}[c]{0.4\textwidth}
+        \centering \setlength{\captionmargin}{0pt}
+        \includegraphics[width=0.97\textwidth]{Immagini/Capitolo3/Spettro_conteggi_plottato.PNG}
+        \caption{Plot di uno spettro immediato (conteggi su Angstrom)}
+        \label{im:spettro-plot-conteggi}
+    \end{minipage}
+    \hspace{5mm}
+    \begin{minipage}[c]{0.4\textwidth}
+        \centering \setlength{\captionmargin}{0pt}
+        \includegraphics[width=0.9\textwidth]{Immagini/Capitolo3/Spettro_calibrato_flusso_plottato.PNG}
+        \caption{Plot di uno spettro calibrato in flusso (flusso su Angstrom)}
+        \label{im:spettro-plot-calibrato-flusso}
+    \end{minipage}
+\end{figure}
+
+Chiaramente, nel valutare questo grafico va tenuto in considerazione che esso non corrisponda direttamente allo spettro della fonte ma al prodotto di quest'ultimo per la funzione di risposta spettrale, data dall'efficienza dello spettrografo e quindi dalla struttura del reticolo adottato (in generale dall'elemento dispersore). Per passare da conteggi a flusso, è necessaria un'ultima calibrazione, detta \textit{calibrazione in flusso}, tramite l'osservazione di stelle "standard" il cui flusso spettrale è già noto in modo da poter far corrispondere il flusso in conteggi in un effettivo flusso spettrale in unità fisiche, ottenendo la \ref{im:spettro-plot-calibrato-flusso}. Si notano nel plot alcune righe particolarmente lunghe, le quali corrispondono ai residui della sottrazione del cielo, la quale non risulta mai perfetta e lascia comunque queste linee di rumore.
+
+Questa tecnica va applicata ad ogni sorgente isolata tramite una corrispodente fenditura, adoperato lo stesso elemento dispersore. Un'altra utilità del rumore di fondo del cielo, sempre il medesimo in one ristrette di cielo, è che aiuta nella misurazione del redshift. Di fatti, se due sorgenti isolate vengono mandate allo spettrografo, ma esse si trovano ad entrare ad ascisse diverse rispetto la fenditura, allora necessariamente per motivi geometrici ci sarà uno shift aggiuntivo nelle lungheze d'onda, nonostante la dispersione sia la medesima avendo adoperato lo stesso reticolo. Grazie al confronto delle linee di cielo tra due spettri diversi, questo shift "geometrico" è isolabile rispetto al redshift. Questa in sunto è la spettroscopia a multi-oggetti, molto adoperata nella mappatura delle galassie nell'universo grazie alla misurazione del redshift.
+
+\begin{wrapfigure}{r}{0.41\textwidth}
+    \centering
+    \vspace{-10pt}
+    \includegraphics[width=0.4\textwidth]{Immagini/Capitolo3/Telescopio_schema_fibra.PNG}
+    \caption*{Schema telescopio a fibra ottica}
+    \vspace{-5pt}
+\end{wrapfigure}
+
+Negli ultimi anni, anche grazie alla sempre maggiore robotizzazione, si è superato questo modello a copertura tramite alluminio del sistema ottico, poichè richiedente molto tempo per la preparazione e un notevole dispendio in materiali. Ora il sistema più utilizzato sfrutta una serie di \textit{fibre ottiche} direttamente allocate sul piano focale del telescopio, le quali possono essere traslate e isolano perfettamente la zona del piano interessata. Queste fibre sono tra di loro isolate, permettendo così di poter adoperare spettrografi diversi per sorgenti diverse, a seconda del tipo di indagine che si vuole svolgere (più o meno dispersivi, a maggiore o minore risoluzione). Il principale limite risiede nel fatto che ogni fibra ottica ha la sua efficienza e che chiaramente essendo dei tubi non possano essere affiancate tra di loro senza ottenere un'immagine finale a griglia, per cui non risultano adatti qualora si voglia campionare un'intera galassia parte per parte.
+
+Un'alternativa che si è tornata ad usare sono i \textit{telescopi slitless}, i quali disperdono direttamente l'intera immagine catturata e con essa tutte le sorgenti che ne fanno parte. Questi telescopi risultano particolarmente adatti per esperimenti spaziali, ad esempio è stato adoperato sul telescopio GAIA per le misure di parallasse e di effetto Doppler tramite lo spettrografo, con il quale sono state classificate un decimo delle stelle della galassia. Il principale vantaggio è quello di disperdere contemporaneamente diverse sorgenti, ma al tempo stesso questo comporta che, presa l'ascissa come direzione di dispersione, due sorgenti poste sulla stessa ordinata avranno spettri sovrapposti. Il secondo grande svantaggio è avere un grande contributo del rumore del cielo, il quale non essendo più isolato in una frazione della fenditura viene disperso al pari delle sorgenti, dando un disturbo sull'ordine delle migliaia di volte maggiore rispetto la tecnica vista in precedenza, motivo per cui questa tecnica è inadoperabile da terra.
+
+\begin{figure}[htpb]
+    \centering
+    \begin{minipage}[c]{0.4\textwidth}
+        \centering \setlength{\captionmargin}{0pt}
+        \includegraphics[width=0.9\textwidth]{Immagini/Capitolo3/Telescopio_slitless_immagine.png}
+        \caption*{Immagine diretta}
+    \end{minipage}
+    \hspace{5mm}
+    \begin{minipage}[c]{0.4\textwidth}
+        \centering \setlength{\captionmargin}{0pt}
+        \includegraphics[width=0.9\textwidth]{Immagini/Capitolo3/Telescopio_slitless_spettro.png}
+        \caption*{Immagine spettro slitless}
+    \end{minipage}
+    \caption{Spettroscopia slitless}
+    \label{im:spettroscopia-slitless}
+\end{figure}
+
+Questo tipo di spettrografi verrà adoperato anche nel prossimo satellite Euclid, in partenza nel 2023, dedicato alla cosmologia e disegnato per mappare in tre dimensioni la distribuzione delle galassie più lontane tramite misurazioni di redshift di migliaia e migliaia di spettri, in ricerca di evidenze della materia oscura. Una versione più elaborata di questa tecnica per l'analisi tridimensionale sta negli \textit{slicing mirrors}, specchi sagomati a più livelli ricavati dal pieno, ognuno ad inclinazione diversa, i quali riflettono l'immagine tagliandola a fette(slicing) e mandandola ad una serie di specchi secondari con i corrispettivi dispersori. In tal modo è possibile spezzare immagini molto grandi, ad esempio di galassie, in varie parti ed in diverse direzioni, ottenendo uno spettro tridimensionale di esse.
